@@ -57,15 +57,15 @@ Rails::Initializer.run do |config|
   # If you change this key, all old sessions will become invalid!
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
-  config.action_controller.session = {
-    :session_key => '_trst_sys_session',
-    :secret      => '6259989f56ad342145befa8634b73718f2beb8157e60dc656f48689bad812bd276a1c0861b8952798e2963838630bd4ef39628230762db69daaec42677b14315'
-  }
+  #  config.action_controller.session = {
+  #    :session_key => '_trst_sys_session',
+  #    :secret      => '6259989f56ad342145befa8634b73718f2beb8157e60dc656f48689bad812bd276a1c0861b8952798e2963838630bd4ef39628230762db69daaec42677b14315'
+  #  }
 
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with "rake db:sessions:create")
-  # config.action_controller.session_store = :active_record_store
+  config.action_controller.session_store = :active_record_store
 
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,

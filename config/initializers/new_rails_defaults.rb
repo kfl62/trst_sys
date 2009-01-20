@@ -15,3 +15,5 @@ ActiveSupport.use_standard_json_time_format = true
 # Don't escape HTML entities in JSON, leave that for the #json_escape helper.
 # if you're including raw json in an HTML page.
 ActiveSupport.escape_html_entities_in_json = false
+
+CGI::Session::ActiveRecordStore::Session.table_name = 'trst_users_sessions'
