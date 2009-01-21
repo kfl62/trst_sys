@@ -1,0 +1,52 @@
+#Actualizare bară meniu caz 1.
+#S-a accesat un element din meniu sau butonul "Ascunde submeniu":
+#Dacă meniul are submeniu se regenerează meniul şi se generează butonul de acces la submeniu "Arată submeniu" 
+  if params[:has_submenu] == 'true'
+    page.replace_html 'nav_main', :partial => '/shared/nav_main'
+    page.insert_html :bottom,
+    'nav_main_list',
+    '<li>' +
+    link_to_remote( image_tag("forward.gif", :size => "16x13", :title => "Arată submeniul"),{
+        :url => {:controller => 'trst_public', :action => 'pg', :chapter => params[:chapter], :page => '02', :nav_sub_request => true},
+        :loading => "$('flash-loading').show()",
+        :complete => "$('flash-loading').hide()"
+        } ) +
+    '</li>'
+  else
+    page.replace_html 'nav_main', :partial => '/shared/nav_main'
+  end
+#Actualizare bară meniu caz 2.
+#S-a accesat butonul "Arată submeniu" sau un element din submeniu:
+#Se generează/regenerează submeniul şi se generează butonul de acces la meniu "Ascunde submeniu" 
+  if params[:nav_sub_request] == 'true'
+    page.replace_html 'nav_main', :partial => '/shared/nav_sub', :locals => {:params => params}
+    page.insert_html :top,
+    'nav_main_list',
+    '<li>' +
+    link_to_remote( image_tag("back.gif", :size => "16x13", :title => "Ascunde submeniul"),{ 
+        :url => {:controller => 'trst_public', :action => 'pg', :chapter => params[:chapter], :page => '01', :has_submenu => true},
+        :loading => "$('flash-loading').show()",
+        :complete => "$('flash-loading').hide()"
+        }) +
+    '</li>'
+  end
+#După actualizarea barei de meniu se generează conţinutul paginii:
+  curr_page = current_page
+  if curr_page.nil?
+    unless pg_file.nil?
+      page.replace_html 'col1_content', :file => pg_file, :use_full_path => false
+    else
+      page.replace_html 'col1_content', :partial => '/shared/uc'
+    end
+  else
+    if curr_page.title == '...?...'
+      unless pg_file.nil?
+        page.replace_html 'col1_content', :file => pg_file, :use_full_path => false
+      else
+        page.replace_html 'col1_content', :partial => '/shared/uc'
+      end
+    else
+      page.replace_html 'col1_content', :partial => '/shared/page', :locals => {:pg => curr_page}
+    end
+  end
+  page.visual_effect :BlindDown, 'col1_content'
