@@ -1,0 +1,2 @@
+class TrstPublicController < ApplicationController
+end

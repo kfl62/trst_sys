@@ -1,0 +1,2 @@
+class TrstSysController < ApplicationController
+end
