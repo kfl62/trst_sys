@@ -1,0 +1,5 @@
+  <% if flash[:error] %>
+    <script type="text/javascript"> Flash.error('<%= flash[:error] -%>');</script>
+  <% elsif flash[:notice] %>
+    <script type="text/javascript"> Flash.notice('<%= flash[:notice] -%>');</script>
+  <% end %>

@@ -1,0 +1,48 @@
+<%#
+# Partial pentru generarea conţinului paginii. 
+%>
+
+<% if params[:controller] == 'trst_public' %>
+  <div class="public_title">
+    <h6><%= pg.title %></h6>
+  </div>
+  <div class="public_intro">
+    <%= pg.intro %>
+  </div>
+  <div class="public_content">
+    <%= pg.content %>
+  </div>
+  <div class="public_note">
+    <%= pg.note %>
+  </div>
+<% elsif params[:controller] == 'trst_sys' %>
+  <div class="sys_title">
+    <h6><%= render :inline => pg.title %></h6>
+  </div>
+  <div class="sys_intro">
+    <strong><em>Info:</em></strong>
+    <%= strip_tags(pg.intro) %>
+  </div>
+  <div class="sys_actions">
+    <strong><em>Lista activităţilor</em></strong>
+    <ul>
+      <% for task in current_tasks %>
+        <li>
+          <a class="link_info" href="#"  title="<%= task.title -%>" onclick="TrstWindow.info('<%= task.id -%>')"><%= task.name %></a>
+          <a class="link_exe" href="#"  title="<%= task.title -%>" onclick="TrstWindow.exe('<%= task.id -%>')">&nbsp;</a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div id="sys_content_container" class="sys_content_container">
+    <div id="sys_content" class="sys_content" style="display:none;">
+      <%= pg.content %>
+    </div>
+  </div>
+  <div class="sys_note">
+    <strong><em>Notă</em></strong>
+    <br/>
+    <%= pg.note %>
+  </div>
+  <div id="task_content" style="padding-top:1em; display:none;"></div>
+<% end %>

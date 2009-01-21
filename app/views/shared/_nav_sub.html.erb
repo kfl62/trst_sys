@@ -1,0 +1,13 @@
+<ul id="nav_main_list">
+  <% for sm in submenu %>
+  <li>
+     <%= link_to_remote(sm.name,{
+     :url => {:controller => sm.controller, :action => 'pg', :chapter => sm.chapter, :page => sm.page, :nav_sub_request => true},
+        :loading => "$('flash-loading').show()",
+        :complete => "$('flash-loading').hide()"
+        },
+        :title=> sm.title
+    ) %>
+ </li>
+  <% end %>
+</ul>
