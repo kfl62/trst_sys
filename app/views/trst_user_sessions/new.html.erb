@@ -3,9 +3,9 @@
   <br />
   <% form_for @trst_user_session, :url => trst_user_session_path do |f| %>
     <%= f.error_messages %>
-    <%= f.label :login %>:<br />
+    <%=t 'login.name' %>:<br />
     <%= f.text_field :login %><br />
-    <%= f.label :password %>:<br />
+    <%=t 'login.password' %>:<br />
     <%= f.password_field :password %><br />
     <%= f.submit "Login" %>
   <% end %>

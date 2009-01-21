@@ -8,3 +8,20 @@ ro:
       authenticated_as: "Autentificat ca şi:"
     flash:
       loading: "O clipă ... acum se încarcă pagina ..."
+  login:
+    title: "Autentificare"
+    name: "Utilizator"
+    password: "Parola"
+    flash:
+      logged_in: "Autentificare reuşită ..."
+      error: "Ooops ... autentificare nereuşită ..."
+      logged_out: "Sesiune terminată ..."
+      require_user: "Numai pentru utilizatorii autentificaţi ..."
+      require_no_user: "Numai pentru utilizatorii anonimi ..."
+      user_create: "Utilizator inregistrat..."
+      user_update: "Utilizator modificat ..."
+  activerecord:
+    attributes:
+#      trst_user_session:
+#        login: "Utilizator"
+#        password: "Parola"

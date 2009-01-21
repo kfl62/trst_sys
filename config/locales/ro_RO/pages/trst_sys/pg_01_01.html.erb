@@ -1,0 +1,66 @@
+<div class="sys_title">
+  <h6>Astăzi <%= tdy -%></h6>
+  <p> Informaţii cu caracter general </p>
+</div>
+<div id="menu" class="sys_actions">
+  <ul>
+  <li>
+    <%= link_to_remote('Vremea',{
+        :url => {:controller => 'sys', :action => 'info', :pg => 'weather'},
+        :loading => "$('flash-loading').show()",
+        :loaded => "$('flash-loading').hide()"
+        },
+        :title => 'Vremea la Cluj', :class => 'link_info'
+    )%>
+  </li>
+  <li>
+    <%= link_to_remote('Curs valutar',{
+        :url => {:controller => 'sys', :action => 'info', :pg => 'mny'},
+        :loading => "$('flash-loading').show()",
+        :loaded => "$('flash-loading').hide()"
+        },
+        :title => 'Curs valutar', :class => 'link_info'
+    )%>
+  </li>
+  <li>
+    <%= link_to_remote('Zile de naştere',{
+        :url => {:controller => 'sys', :action => 'info', :pg => 'brthdy'},
+        :loading => "$('flash-loading').show()",
+        :loaded => "$('flash-loading').hide()"
+        },
+        :title => 'Este ziua lui ...', :class => 'link_info'
+    )%>
+  </li>
+    <ul style="list-style-type : none;"> Onomastică
+    <li>
+      <%= link_to_remote('Onomastică',{
+          :url => {:controller => 'sys', :action => 'info', :pg => 'nmdy_ro'},
+          :loading => "$('flash-loading').show()",
+          :loaded => "$('flash-loading').hide()"
+          },
+          :title => 'Calendarul Ortodox', :class => 'link_info'
+      )%>
+    </li>
+    <li>
+      <%= link_to_remote('Névnapok',{
+          :url => {:controller => 'sys', :action => 'info', :pg => 'nmdy_hu'},
+          :loading => "$('flash-loading').show()",
+          :loaded => "$('flash-loading').hide()"
+          },
+          :title => 'Névnap', :class => 'link_info'
+      )%>
+    </li>
+    </ul>
+    <li>&nbsp;</li>
+    <li>&nbsp;</li>
+  </ul>
+  <p>
+    Accesînd link-urile de mai sus informaţiile vor apare în ecranul din stânga.<br>
+    Majoritatea lor provin de pe internet, din această cauză culegerea lor durează un pic :), pe această periodă este afişată bara de stare.<br>
+    Durata afişării informaţiilor este între 5-15 sec. în funcţie de conţinut.
+  </p>
+</div>
+<div id="sys_content_container" class="sys_content_container">
+  <div id="sys_content" class="sys_content" style="display : none;">
+  </div>
+</div>

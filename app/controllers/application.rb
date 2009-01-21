@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   def require_user
     unless current_trst_user
       store_location
-      flash[:notice] = "You must be logged in to access this page"
+      flash[:notice] = t('login.flash.require_user')
       redirect_to :controller => '/trst_public', :action => 'index'
       return false
     end
@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   def require_no_user
     if current_trst_user
       store_location
-      flash[:notice] = "You must be logged out to access this page"
+      flash[:notice] = t('login.flash.require_no_user')
       redirect_to account_url
       return false
     end

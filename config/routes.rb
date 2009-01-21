@@ -10,7 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   # This route can be invoked with purchase_url(:id => product.id)
   map.login 'login', :controller => 'trst_user_sessions', :action => 'new'
   map.logout 'logout', :controller => 'trst_user_sessions', :action => 'destroy'
-  map.glossar 'glossar', :controller => 'sys', :action => 'glossar'
+  map.glossar 'glossar', :controller => 'trst_sys', :action => 'glossar'
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
   map.resource :account, :controller => "trst_users"

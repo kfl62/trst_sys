@@ -8,13 +8,13 @@
         <% if current_trst_user %>
         <a href="/logout">Logout</a> |
         <% else %>
-        <a id="login_link" href="/login" class="lightview" rel="ajax" title="Autentificare :: :: autosize:true">Login</a> |
+          <a id="login_link" href="/login" class="lightview" rel="ajax" title="<%=t 'login.title' %> :: :: autosize:true">Login</a> |
         <% end -%>
-        <a href="http://www.trst.ro" target="_blank">Trustsys</a>
+        <a href="http://www.trst.ro" target="_blank">TrustSys</a>
         </span>
       </div>
       <div class="header_title">
-        <h1><em><%=t 'layout.header.company'  %> - TrstSys</em> </h1>
+        <h1><em><%=t 'layout.header.company'  %> - TrustSys</em> </h1>
         <span class="header_title">
           <%=t 'layout.header.authenticated_as'  %><br />
             <% if current_trst_user %>
