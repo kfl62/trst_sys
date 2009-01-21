@@ -1,0 +1,352 @@
+@charset "UTF-8";
+/**
+* "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
+*
+* (en) Uniform design of standard content elements
+* (de) Einheitliche Standardformatierungen für die wichtigten Inhalts-Elemente
+*
+* @copyright       Copyright 2005-2007, Dirk Jesse
+* @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
+*                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+* @link            http://www.yaml.de
+* @package         yaml
+* @version         3.0.4
+* @revision        $Revision: 138 $
+* @lastmodified    $Date: 2007-11-19 21:05:33 +0100 (Mo, 19 Nov 2007) $
+* @appdef yaml
+*/
+@media all {
+  /**
+  * Fonts
+  * (en) font-family and font-size selection for headings and standard text elements
+  * (de) Zeichensatz und Schriftgrößen für Überschriften und übliche Text-Elemente
+  *
+  * @section content-fonts
+  */
+  /* (en) reset font size for all elements to standard (16 Pixel) */
+  /* (de) Alle Schriftgrößen auf Standardgröße (16 Pixel) zurücksetzen */
+  html * {
+    font-size: 100.01%
+  }
+  /* (en) reset monospaced elements to font size 16px in Gecko browsers */
+  /* (de) Schriftgröße von monospaced Elemente auf 16 Pixel setzen */
+  textarea, pre, tt, code {
+    font-family: "Courier New", Courier, monospace;
+  }
+  /* (en) base layout gets standard font size 12px */
+  /* (de) Basis-Layout erhält Standardschriftgröße von 12 Pixeln */
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 75.00%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin: 0 0 0.25em 0;
+  }
+
+  h1 {
+    font-size: 200%
+  } /* 24px */
+  h2 {
+    font-size: 166.67%
+  } /* 20px */
+  h3 {
+    font-size: 150%
+  } /* 18px */
+  h4 {
+    font-size: 133.33%
+  } /* 16px */
+  h5 {
+    font-size: 116.67%
+  } /* 14px */
+  h6 {
+    font-size: 116.67%;
+    font-style: italic
+  } /* 14px */
+  p {
+    line-height: 1.5em;
+    margin: 0 0 1em 0;
+  }
+  /* ### Lists | Listen  #### */
+  ul, ol, dl {
+    line-height: 1.5em;
+    margin: 0 0 1em 0.25em
+  }
+
+  li {
+    margin-left: 0.25em;
+    line-height: 1.5em
+  }
+
+  dt {
+    font-weight: bold
+  }
+
+  dd {
+    margin: 0 0 1em 2em
+  }
+  /* ### text formatting | Textauszeichnung ### */
+  cite, blockquote {
+    font-style: italic
+  }
+
+  blockquote {
+    margin: 0 0 1em 1.5em
+  }
+
+  strong, b {
+    font-weight: bold
+  }
+
+  em, i {
+    font-style: italic
+  }
+
+  pre, code {
+    font-family: monospace;
+    font-size: 1.1em;
+  }
+
+  acronym, abbr {
+    letter-spacing: .07em;
+    border-bottom: .1em dashed #c00;
+    cursor: help;
+  }
+  /**
+  * Generic Content Classes
+  * (en) standard classes for positioning and highlighting
+  * (de) Standardklassen zur Positionierung und Hervorhebung
+  *
+  * @section content-generic-classes
+  */
+  .note {
+    background: #dfd;
+    padding: 1em;
+    border-top: 1px #bdb dotted;
+    border-bottom: 1px #bdb dotted;
+    width: 80%;
+    margin: auto;
+  }
+
+  .important {
+    background: #ffd;
+    padding: 1em;
+    border-top: 1px #ddb dotted;
+    border-bottom: 1px #ddb dotted;
+    width: 80%;
+    margin: auto;
+  }
+
+  .warning {
+    background: #fdd;
+    padding: 1em;
+    border-top: 1px #dbb dotted;
+    border-bottom: 1px #dbb dotted;
+    width: 80%;
+    margin: auto;
+  }
+
+  .float_left {
+    float: left;
+    display: inline;
+    margin-right: 1em;
+    margin-bottom: 0.15em;
+  }
+
+  .float_right {
+    float: right;
+    display: inline;
+    margin-left: 1em;
+    margin-bottom: 0.15em;
+  }
+
+  .center {
+    text-align: center;
+    margin: 0.5em auto;
+  }
+  /**
+  * External Links
+  *
+  * (en) Formatting of hyperlinks
+  * (de) Gestaltung von Hyperlinks
+  *
+  */
+  a {
+    color: #900;
+    text-decoration: none;
+  }
+
+  a:focus, a:hover, a:active {
+    background-color: #fee;
+    text-decoration: underline;
+  }
+
+  #topnav a {
+    color: #f5f5f5;
+    font-weight: bold;
+    background: transparent;
+    text-decoration: none;
+  }
+
+  #topnav a:focus, #topnav a:hover, #topnav a:active {
+    text-decoration: underline;
+    background-color: transparent;
+  }
+
+  #footer a {
+    color: #f5f5f5;
+    background: transparent;
+    font-weight: bold;
+  }
+
+  #footer a:focus, #footer a:hover, #footer a:active {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  a.link_glossar {
+    background: url("/images/link_glossar.gif") no-repeat center right;
+    border-bottom: 1px dotted #006100;
+    color: #006100;
+    padding-right: 14px;
+  }
+
+  a.link_glossar:focus, a.link_glossar:hover, a.link_glossar:active {
+    background-color: #c7c7c7;
+    text-decoration: none;
+  }
+
+  a.link_info {
+    background: url("/images/link_info.gif") no-repeat center right;
+    border-bottom: 1px dotted #006100;
+    color: #006100;
+    padding-right: 26px;
+  }
+
+  a.link_info:focus, a.link_info:hover, a.link_info:active {
+    background-color: #c7c7c7;
+    text-decoration: none;
+  }
+
+  a.link_exe {
+    background: url("/images/link_exe.gif") no-repeat center right;
+    border-bottom: 1px dotted #f00;
+    color: #f00;
+    padding-right: 26px;
+  }
+
+  a.link_exe:focus, a.link_exe:hover, a.link_exe:active {
+    background-color: #c7c7c7;
+    text-decoration: none;
+  }
+
+  a.link_ext {
+    border-bottom: 1px dotted #00f;
+    color: #00f;
+  }
+
+  a.link_ext:focus, a.link_ext:hover, a.link_ext:active {
+    background-color: #c7c7c7;
+    text-decoration: none;
+  }
+
+  a.link_ext_D {
+    background: url("/images/link_ext_D.gif") no-repeat center left;
+    border-bottom: 1px dotted #00f;
+    color: #00f;
+    padding-left: 12px;
+  }
+
+  a.link_ext_D:focus, a.link_ext_D:hover, a.link_ext_D:active {
+    background-color: #c7c7c7;
+    text-decoration: none;
+  }
+
+  a.link_ext_W {
+    background: url("/images/link_ext_W.gif") no-repeat center left;
+    border-bottom: 1px dotted #00f;
+    color: #00f;
+    padding-left: 14px;
+  }
+
+  a.link_ext_W:focus, a.link_ext_W:hover, a.link_ext_W:active {
+    background-color: #c7c7c7;
+    text-decoration: none;
+  }
+  /**
+  * (en) Emphasizing external Hyperlinks via CSS
+  * (de) Hervorhebung externer Hyperlinks mit CSS
+  *
+  * @section             content-external-links
+  * @app-yaml-default    disabled
+  */
+  /*
+  #main a[href^="http://www.my-domain.com"],
+  #main a[href^="https://www.my-domain.com"]
+  {
+  padding-left: 12px;
+  background-image: url('your_image.gif');
+  background-repeat: no-repeat;
+  background-position: 0 0.45em;
+  }
+  */
+  /**
+  * Tables | Tabellen
+  * (en) Generic classes for table-width and design definition
+  * (de) Generische Klassen für die Tabellenbreite und Gestaltungsvorschriften für Tabellen
+  *
+  * @section content-tables
+  */
+  table {
+    width: auto;
+    border-collapse: collapse;
+    margin-bottom: 0.5em;
+  }
+
+  table.full {
+    width: 100%;
+  }
+
+  table.fixed {
+    table-layout: fixed
+  }
+
+  th, td {
+    padding: 0.1em 0.1em;
+  }
+
+  tr.odd {
+    background: #ccc
+  }
+  
+  thead th {
+    background: #444;
+    color: #fff
+  }
+
+  tbody th {
+    background: #808080;
+    color: #efefef
+  }
+
+  tbody th.sub {
+    background: #ddd;
+    color: #333
+  }
+  /**
+  * Miscellaneous | Sonstiges
+  *
+  * @section content-misc
+  */
+  hr {
+    color: #fff;
+    background: transparent;
+    margin: 0 0 0.5em 0;
+    padding: 0 0 0.5em 0;
+    border: 0;
+    border-bottom: 1px #000 solid;
+  }
+}
+
