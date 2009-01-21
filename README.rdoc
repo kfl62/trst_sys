@@ -1,0 +1,30 @@
+at this moment only in ro ...  :(
+
+== TrustSys
+
+<b><em>Motto:</em></b>
+
+  ...pentru un vas, care nu ştie către ce port se îndreaptă, nici un vânt nu este favorabil ...
+{Lucius Annaeus Seneca (cca.4 î.e.n. - 65 e.n.)}[http://ro.wikipedia.org/wiki/Seneca]
+
+<b><em>Scop:</em></b>
+
+    Crearea, comercializarea şi întreţinerea unui produs informatic „TrstSys” care prin utilizarea lui
+    să permită clienţilor, implementarea unui sistem informatic propriu, în vederea îndeplinirii func-
+    ţiilor manageriale (previziune, organizare, antrenare, coordonare şi control) atît la nivelul de
+    procesare a tranzacţiilor cît şi la toate nivelele de conducere (operaţională, tactică şi strategică).
+
+Aplicaţia TrstSys este bazată pe framework-ul RubyOnRails[http://www.rubyonrails.org] (RoR).
+RoR[http://www.rubyonrails.org] este un excelent framework pentru crearea aplicaţiilor web 2.0.
+
+  Notă:
+    Datorită folosirii intensive a elementelor de javascript (Prototype inclus nativ în ROR),
+    se recomandă folosirea browser-ului Firefox 2.*-3.* (cu care afost testată aplicaţia), iar
+    pentru a evita apariţia scrollbar-urilor (la navigare pe pagini) se recomandă o rezoluţie
+    de min. 1280x1024.
+
+== Instalare
+
+Se instalează ca orice aplicaţie RoR[http://www.rubyonrails.org]
+
+== Structura
