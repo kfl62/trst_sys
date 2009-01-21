@@ -1,0 +1,10 @@
+## YAML Template.
+
+ro:
+  layout:
+    title: "Firma Dvs."
+    header:
+      company: "Firma Dvs."
+      authenticated_as: "Autentificat ca şi:"
+    flash:
+      loading: "O clipă ... acum se încarcă pagina ..."

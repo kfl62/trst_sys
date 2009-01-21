@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Diren/Continent-Trustsys</title>
+  <title><%=t 'layout.title'  %>-Trustsys</title>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <script type="text/javascript" src="javascripts/prototype.js"></script>
   <script type="text/javascript" src="javascripts/scriptaculous.js?load=effects"></script>
@@ -22,7 +22,7 @@
         <div id="flashes">
           <div id="flash-error" class="flash_error" style="display: none;"><%= flash[:error] %>&nbsp;</div>
           <div id="flash-notice" class="flash_notice" style="display:none"><%= flash[:notice] %>&nbsp;</div>
-          <div id="flash-loading" class="flash_loading" style="display:none"><%= flash[:loading] %>O clipă ... acum se încarcă pagina ...</div>
+          <div id="flash-loading" class="flash_loading" style="display:none"><%=t 'layout.flash.loading' %></div>
         </div>
         <div id="col1_content" class="clearfix">
           <%= @content_for_layout -%>

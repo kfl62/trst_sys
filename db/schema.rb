@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090121094556) do
+ActiveRecord::Schema.define(:version => 20090121095542) do
 
   create_table "trst_sys_menus", :force => true do |t|
     t.string   "name",        :limit => 15, :default => "Menu",    :null => false
@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(:version => 20090121094556) do
     t.datetime "updated_on"
     t.integer  "updated_by",  :limit => 6,  :default => 0,         :null => false
     t.integer  "approved_by", :limit => 6,  :default => 0,         :null => false
+  end
+
+  create_table "trst_sys_pages", :force => true do |t|
+    t.string   "controller",  :limit => 15, :default => "pub", :null => false
+    t.string   "chapter",     :limit => 2,  :default => "01",  :null => false
+    t.string   "page",        :limit => 2,  :default => "01",  :null => false
+    t.text     "title"
+    t.text     "intro"
+    t.text     "actions"
+    t.text     "content"
+    t.text     "note"
+    t.datetime "created_on"
+    t.integer  "created_by",  :limit => 6,  :default => 0,     :null => false
+    t.datetime "updated_on"
+    t.integer  "updated_by",  :limit => 6,  :default => 0,     :null => false
+    t.integer  "approved_by", :limit => 6,  :default => 0,     :null => false
   end
 
   create_table "trst_sys_submenus", :force => true do |t|

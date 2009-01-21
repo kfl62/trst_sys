@@ -14,9 +14,9 @@
         </span>
       </div>
       <div class="header_title">
-        <h1><em>Continent/Diren - TrstSys</em> </h1>
+        <h1><em><%=t 'layout.header.company'  %> - TrstSys</em> </h1>
         <span class="header_title">
-          Autentificat ca şi:<br />
+          <%=t 'layout.header.authenticated_as'  %><br />
             <% if current_trst_user %>
             <strong><em><%= current_trst_user.login %></em></strong>
             <% else %>
