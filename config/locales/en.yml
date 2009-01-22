@@ -1,5 +1,24 @@
 # Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails/locale for starting points.
 
 en:
-  hello: "Hello world"
+  layout:
+    title: "Company"
+    header:
+      company: "Company"
+      authenticated_as: "Authenticated as:"
+    flash:
+      loading: "Loading ..."
+
+  login:
+    title: "Authentication"
+    name: "Login"
+    password: "Password"
+    flash:
+      logged_in: "Logged_in successfully ..."
+      error: "Ooops ... unsuccessfull authentication ..."
+      logged_out: "Logged out successfully ..."
+      require_user: "You must be logged in to access this page ..."
+      require_no_user: "You must be logged out to access this page ..."
+      user_create: "Account registered ..."
+      user_update: "Account updated ..."
