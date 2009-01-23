@@ -1,0 +1,193 @@
+"1","trst_public","01","01","Motto:","<p>&#8222;...pentru un vas, care nu ştie către ce port se îndreaptă, nici un vânt nu este favorabil ...&#8221;
+<span class=""float_right"">
+<cite>
+<a class=""link_ext"" href=""http://ro.wikipedia.org/wiki/Seneca"" title=""vezi ... Wikipedia"" target=""_blank"">Lucius Annaeus Seneca (cca.4 î.e.n. - 65 e.n.) </a>
+</cite>
+</span>
+</p>
+","...?...","<div style = ""padding-top:6em; width:80%; margin:auto; text-align:justify;"">
+<h6>Scop:</h6>
+<p style=""text-indent : 15px;"">"" Crearea, comercializarea şi întreţinerea unui produs informatic „TrstSys” care prin utilizarea lui să permită clienţilor, implementarea unui sistem informatic propriu, în vederea îndeplinirii funcţiilor manageriale (previziune, organizare, antrenare, coordonare şi control) atît la nivelul de procesare a tranzacţiilor cît şi la toate nivelele de conducere (operaţională, tactică şi strategică). ""
+</p>
+</div>","<div class=""public_note"" style =""padding-top:4em;"">
+  <strong>Notă:</strong>
+  <p style=""text-indent : 15px; text-align : justify;"">Această parte (publică, accesibilă ca şi utilizator neautentificat) a site-lui <a href=""http://diren.trst.ro"" title=""Continent/Diren - TrstSys"" target=""_blank"">trst.diren.ro</a> se referă la produsul informatic TrstSys şi este o prezentare a acestuia, a scopului urmărit de creatori. Consider că prezentarea suportului teoretic (<a href=""#"" title=""Aspecte teoretice,Noţiuni fundamentale ale Teoriei Generale a Sistemelor,Modelarea sistemică etc..."" onclick=""TrstWindow.public_pg('chapter=02&page=01&nav_sub=true')"">Generalităţi</a>) a <a href=""#"" title=""Metodologie, Constrîngere ISO etc..."" onclick=""TrstWindow.public_pg('chapter=03&page=01&nav_sub=true')"">metodologiei</a> ce stă la baza creării, respectiv a <a href=""#"" title=""Strucura propusă"" onclick=""TrstWindow.public_pg('chapter=04&page=01&nav_sub=true')"" >structurii</a> rezultate în urma aplicării celor amintite anterior, a termeniilor şi definiţiilor folosite (<a href=""#"" title=""Termeni şi definiţii"" onclick=""TrstWindow.public_pg('chapter=05&page=01&nav_sub=true')"">Glossar</a>) precum şi o descriere a interfeţelor de lucru ce vor fi utilizate de Dvs. (<a href=""#"" title=""Descriere/Help TrstSys, Firefox"" onclick=""TrstWindow.public_pg('chapter=06&page=01&nav_sub=true')"">Despre program</a>) ne vor ajuta atât la utilizarea sistemului cât şi la dezvoltarea continuuă a acestuia, în vederea atingerii scopurilor propuse, al firmei <a href=""http://www.diren.trst.ro"" title=""Diren Exim SRL"" target=""_blank"">Continent/Diren</a> şi al creatorilor sistemului (vezi mai sus... :) ...)</p>
+  <p>Cu stimă <a href=""http://kfl62.trst.ro"" title=""Kiss Ferenc Loránt"" target=""_blank"">kfl62</a></p>
+</div>","2007-12-28","1","2009-01-08 18:27:10","1","0"
+"2","trst_public","02","01","Motto:","<p>&bdquo; Adevărata ignoranţă nu este absenţa cunoaşterii, ci refuzul de a o dob&acirc;ndi &rdquo; <span class=""float_right""><cite><a class=""link_ext"" title=""vezi ... Wikipedia"" href=""http://ro.wikipedia.org/wiki/Karl_Popper"" target=""_blank"">Sir Karl Raimund Popper (28 Iulie 1902 &ndash; 17 Septembrie 1994)</a></cite></span></p>","<p>...?...</p>","<h6>Aspecte teoretice</h6>
+<br>
+<p align=""justify"">Înlocuirea metodelor analitice într-o serie de ştiinţe – în care creşterea nivelului de cunoaştere impunea descompunerea întregului în părţile sale componente – prin metode sistemice oferă un cadru adecvat abordării sistemice în studiul fenomenelor, proceselor şi obiectelor din natură, tehnică sau societate.</p>
+","<div style=""top:440px;position:absolute"">
+<strong>Notă:</strong><br>
+Pentru informaţii suplimentare legate de acest subiect accesaţi submeniul <img src=""/images/forward.gif"" border=""0"" style=""vertical-align : middle;"">
+</div>","2007-12-28","1","2009-01-12 08:09:46","1","0"
+"3","trst_public","02","02","<p>...?...</p>","<p>...?...</p>","<p>...?...</p>","<p>...?...</p>","...?...","2007-12-29","1","2009-01-12 08:12:08","1","0"
+"4","trst_public","02","03","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:32","0","0"
+"5","trst_public","02","04","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:32","0","0"
+"6","trst_public","02","05","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:32","0","0"
+"7","trst_public","02","06","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:32","0","0"
+"8","trst_public","02","07","<p>...?...</p>","...?...","...?...","...?...","...?...","2007-12-28","1","2009-01-11 13:25:10","1","0"
+"9","trst_public","03","01","Motto:","<p>&#8222; Este greu să găseşti o pisică neagră într-o cameră întunecată, atunci când ea nu se află acolo. &#8221;
+<span class=""float_right""><cite><a class=""link_ext"" href=""http://ro.wikipedia.org/wiki/Confucius"" title=""vezi ... Wikipedia"" target=""_blank"">Confucius sau Kong Zi (551 î.e.n. - 479 î.e.n.)</a></cite></span>
+</p>
+","...?...","<h6>Metodologia aplicată</h6>
+<p align=""justify"">Aplicarea paradigmei orientării spre obiect in cazul sistemului informatic al firmei, presupune definirea claselor participante, iar posibilitatea modelării  behavioristice din limbajul UML ne permite/impune definirea stărilor,procedurilor, proceselor, activităţilor, acţiunilor specifice.Din cauza complexităţii sistemului şi pentru a evita ,pe cit posibil omisiunile, totodată din cauza scopului propus, am hotărit ca metodologia in procesul de definire a procedurilor , proceselor, activităţilor,acţiunilor, respectiv a claselor implicate intr-un sistem informatic integrat al firmei, să fie aplicarea de constrîngeri (restricţii) succesive după cum urmează:</p>
+<ul type=""none"" style=""font-size : 0.9em;"">
+<li>1. Constringere ISO 9001:2000</li>
+<li>2. Constringere IAS</li>
+<li>3. Constringere HR</li>
+</ul>
+<p align=""justify"">Aplicarea acestora inseamnă de fapt,  definirea tuturor procedurilor ,proceselor,activităţilor,acţiunilor, respectiv a claselor implicate in vederea atingerii standardului in cauză .</p>
+<p align=""justify"">Totodată TrstSys permite la instalare, respectiv configurare, definirea constrîngerilor particulare firmei, adică folosirea din mulţimea   procedurilor , proceselor, activităţilor, acţiunilor a celor specifice, respectiv definirea instanţelor claselor conforme , dar fără a putea elimina acelea care sunt necesare atingerii standardelor de mai sus.</p>
+","<div style=""top:440px;position:absolute"">
+<strong>Notă:</strong><br>
+Pentru informaţii suplimentare legate de acest subiect accesaţi submeniul <img src=""/images/forward.gif"" border=""0"" style=""vertical-align : middle;"">
+</div>","2007-12-28","1","2008-12-25 22:37:32","0","0"
+"10","trst_public","03","02","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:32","0","0"
+"11","trst_public","03","03","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:32","0","0"
+"12","trst_public","03","04","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:32","0","0"
+"13","trst_public","03","05","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:32","0","0"
+"14","trst_public","03","06","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:32","0","0"
+"15","trst_public","04","01","Motto:","<p>&#8222; Înainte să faci ceva perfect, fă ceva perfectibil. &#8221;
+<span class=""float_right""><cite><a class=""link_ext"" href=""http://ro.wikipedia.org/wiki/Bill_Gates"" title=""vezi ... Wikipedia"" target=""_blank"">William Henry Gates al III-lea (n.28 octombrie 1955)</a></cite></span>
+</p>
+","...?...","<h6>Structura propusă</h6>
+<div class=""float_left""><ul type=""none"">
+  <li id=""3.1"">3.1 General (3100)</li>
+    <ul type=""none"">
+    <li id=""3.1.1"">3.1.1 Manager (3101)</li>
+    <li id=""3.1.2"">3.1.2 Secretariat (3102)</li>
+    <li id=""3.1.3"">3.1.3 Birou juridic (3103)</li>
+    <li id=""3.1.4"">3.1.4 Birou de asigurare a calitatii (3104)</li>
+    </ul>
+  <li id=""3.2"">3.2 Cercetare dezvoltare (3200)</li>
+    <ul type=""none"">
+      <li id=""3.2.1"">3.2.1 Proiectare (3201)</li>
+      <li id=""3.2.2"">3.2.2 Investitii (3202)</li>
+    </ul>
+  <li id=""3.3"">3.3 Comercial (3300)</li>
+    <ul type=""none"">
+      <li id=""3.3.1"">3.3.1 Furnizori & Aprovizionare (3301)</li>
+      <li id=""3.3.2"">3.3.2 Clienti & Desfacere (3302)</li>
+      <li id=""3.3.3"">3.3.3 Marketing (3303)</li>
+    </ul>
+  <li id=""3.4"">3.4 Productie (3400)</li>
+    <ul type=""none"">
+      <li id=""3.4.1"">3.4.1 Puncte de lucru (3401)</li>
+      <li id=""3.4.2"">3.4.2 Comenzi (3402)</li>
+</ul>
+</div>
+<div class=""float_left"">
+<ul type=""none"">
+  <li id=""3.5"">3.5 Financiar-Contabil (3500)</li>
+    <ul type=""none"">
+      <li id=""3.5.1"">3.5.1 Contabilitate generala (3501)</li>
+      <li id=""3.5.2"">3.5.2 Mijloace fixe (3502)</li>
+      <li id=""3.5.3"">3.5.3 Furnizori & Cumparari (3503)</li>
+      <li id=""3.5.4"">3.5.4 Beneficiari & Facturare (3504)</li>
+      <li id=""3.5.5"">3.5.5 Obiecte de inventar (3505)</li>
+      <li id=""3.5.6"">3.5.6 Gestiune (3506)</li>
+    </ul>
+  <li id=""3.6"">3.6 Resurse umane (3600)</li>
+    <ul type=""none"">
+      <li id=""3.6.1"">3.6.1 Personal (3601)</li>
+      <li id=""3.6.2"">3.6.2 Normare & Salarii (3602)</li>
+      <li id=""3.6.3"">3.6.3 Chestionare (3603)</li>
+    </ul>
+  <li id=""3.7"">3.7 Maintenance/Sistem informatic</li>
+</ul>
+</div>
+","<div style=""top:440px;position:absolute"">
+<strong>Notă:</strong><br>
+Pentru informaţii suplimentare legate de acest subiect accesaţi submeniul <img src=""/images/forward.gif"" border=""0"" style=""vertical-align : middle;"">
+</div>","2007-12-28","1","2008-12-25 22:37:32","0","0"
+"16","trst_public","04","02","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"17","trst_public","04","03","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"18","trst_public","04","04","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"19","trst_public","04","05","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"20","trst_public","04","06","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2009-01-05 18:28:34","1","0"
+"21","trst_public","04","07","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"22","trst_public","04","08","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"23","trst_public","04","09","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"24","trst_public","05","01","Motto:","<p>&#8222; A citi înseamnă a traduce, şi asta fiindcă nu există două persoane care să aibă acceaşi experienţă. Un cititor prost e ca un traducător prost; interpretează literar când ar trebui să parafrazeze şi parafrazează când ar trebui să interpreteze literar. &#8221;
+<span class=""float_right""><cite><a class=""link_ext"" href=""http://ro.wikipedia.org/wiki/Wystan_Hugh_Auden"" title=""vezi ... Wikipedia"" target=""_blank"">Wystan Hugh Auden (n. 21 februarie 1907 - d. 29 septembrie 1973)</a></cite></span>
+</p>
+","...?...","<h6 id=""2"">Introducere</h6>
+<p> bla...bla...bla </p>
+","<div style=""top:440px;position:absolute"">
+<strong>Notă:</strong><br>
+Pentru informaţii suplimentare legate de acest subiect accesaţi submeniul <img src=""/images/forward.gif"" border=""0"" style=""vertical-align : middle;"">
+</div>","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"25","trst_public","05","02","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"26","trst_public","05","03","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"27","trst_public","05","04","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"28","trst_public","05","05","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"29","trst_public","05","06","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"30","trst_public","06","01","Motto:","<p>&#8222; Nu mă tem de calculatoare. Mă tem de lipsa acestora... &#8221;<br>&#8222; O parte din caracterul neuman al calculatorului este că, după ce a fost programat în mod competent şi a început să lucreze, este complet sincer... &#8221;
+<span class=""float_right""><cite><a class=""link_ext"" href=""http://ro.wikipedia.org/wiki/Isaac_Asimov"" title=""vezi ... Wikipedia"" target=""_blank"">Dr. Isaac Asimov (n. 2 ianuarie 1920 - d. 6 aprilie 1992) </a></cite></span>
+</p>
+","...?...","<h6 id=""2"">Introducere</h6>
+<p><a class=""link_info"" href=""api.html"" target=""_blank"">API Doc's</a> </p>
+","<div style=""top:440px;position:absolute"">
+<strong>Notă:</strong><br>
+Pentru informaţii suplimentare legate de acest subiect accesaţi submeniul <img src=""/images/forward.gif"" border=""0"" style=""vertical-align : middle;"">
+</div>","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"31","trst_public","06","02","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"32","trst_public","06","03","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"33","trst_public","06","04","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"34","trst_sys","01","01","Astăzi <%= tdy -%>","Informaţii de uz general :)","  <li>
+	<a class=""link_info""  title=""Vremea la Cluj"" onclick=""TrstWindow.info('sys','info','weather')""  href=""#"">Vremea</a>
+  </li>
+  <li>
+ 	<a class=""link_info""  title=""Curs valutar"" onclick=""TrstWindow.info('sys','info','mny')""  href=""#"">Curs valutar</a>
+  </li>
+  <li>
+	<a class=""link_info""  title=""Este ziua lui ..."" onclick=""TrstWindow.info('sys','info','brthdy')""  href=""#"">Zile de naştere</a>
+  </li>
+    <ul style=""list-style-type : none;""> Onomastică
+    <li>
+	<a class=""link_info""  title=""Calendarul ortodox"" onclick=""TrstWindow.info('sys','info','nmdy_ro')""  href=""#"">Onomastică</a>
+    </li>
+    <li>
+	<a class=""link_info""  title=""Névnap"" onclick=""TrstWindow.info('sys','info','nmdy_hu')""  href=""#"">Névnapok</a>
+    </li>
+    </ul>
+","...?...","Accesînd link-urile de mai sus informaţiile vor apare în ecranul din stânga. Majoritatea lor provin de pe internet, din această cauză culegerea lor durează un pic :), pe această periodă este afişată bara de stare. Durata afişării informaţiilor este între 5-15 sec. în funcţie de conţinut. Pentru a începe activitatea accesaţi submeniul <img src=""/images/forward.gif"" border=""0"" style=""vertical-align : middle;"">
+","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"35","trst_sys","01","02","Pagina de lucru","<p>Activităţi zilnice</p>","...?...","...?...","...?...","2007-12-28","1","2009-01-12 08:52:20","1","0"
+"36","trst_sys","01","03","Fişa postului","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"37","trst_sys","01","04","Procedurile de sistem","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"38","trst_sys","01","05","Help","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"39","trst_sys","02","01","Funcţiile generale","...?...","...?...","...?...","<p>Pentru informaţii suplimentare legate de acest subiect accesaţi submeniul <img style=""vertical-align : middle;"" src=""../images/forward.gif"" border=""0"" alt="""" /></p>","2007-12-28","1","2009-01-11 15:22:45","1","0"
+"40","trst_sys","02","02","Manager","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"41","trst_sys","02","03","Secretariat","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"42","trst_sys","02","04","Birou juridic","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"43","trst_sys","02","05","Biroul de asigurare a calităţii","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"44","trst_sys","03","01","Departamentul Cercetare -Dezvoltare","...?...","...?...","...?...","Pentru informaţii suplimentare legate de acest departament accesaţi submeniul <img src=""/images/forward.gif"" border=""0"" style=""vertical-align : middle;"">
+
+","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"45","trst_sys","03","02","Birou proiectare","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"46","trst_sys","03","03","Investiţii","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"47","trst_sys","04","01","Departamentul Comercial","...?...","...?...","...?...","Pentru informaţii suplimentare legate de acest departament accesaţi submeniul <img src=""/images/forward.gif"" border=""0"" style=""vertical-align : middle;"">","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"48","trst_sys","04","02","Furnizori & Aprovizionare","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"49","trst_sys","04","03","Beneficiari(Clienţi) & Desfacere","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"50","trst_sys","04","04","Birou marketing","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"51","trst_sys","05","01","Departamentul Producţie şi/sau servicii","...?...","...?...","...?...","Pentru informaţii suplimentare legate de acest departament accesaţi submeniul <img src=""/images/forward.gif"" border=""0"" style=""vertical-align : middle;"">","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"52","trst_sys","05","02","Puncte de lucru","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"53","trst_sys","05","03","Comenzi","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"54","trst_sys","06","01","Departament Financiar-Contabil","...?...","...?...","...?...","Pentru informaţii suplimentare legate de acest departament accesaţi submeniul <img src=""/images/forward.gif"" border=""0"" style=""vertical-align : middle;"">","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"55","trst_sys","06","02","Contabilitate generală","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"56","trst_sys","06","03","Mijloace fixe","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"57","trst_sys","06","04","Furnizori & Cumpărări","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"58","trst_sys","06","05","Beneficiari & Facturare","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"59","trst_sys","06","06","Obiecte de inventar","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"60","trst_sys","06","07","Gestiune","...?...","...?...","...?...","","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"61","trst_sys","07","01","Departamentul Resurse Umane","...?...","...?...","...?...","Pentru informaţii suplimentare legate de acest departament accesaţi submeniul <img src=""/images/forward.gif"" border=""0"" style=""vertical-align : middle;"">
+","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"62","trst_sys","07","02","Birou personal","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"63","trst_sys","07","03","Normare & Calcul salarii","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"64","trst_sys","07","04","Chestionare","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"65","trst_sys","08","01","Administrare sistem","Câteva cuvinte de introducere","<li><a class=""link_info"" href=""api.html"" target=""_blank"">API Doc's</a></li>
+<li>...?...</li>
+<li>...?...</li>","Conţinut","<p>Pentru informaţii suplimentare legate de acest departament accesaţi submeniul <img style=""vertical-align : middle;"" src=""../images/forward.gif"" border=""0"" alt="""" /></p>","2007-12-28","1","2009-01-12 11:08:49","1","0"
+"66","trst_sys","08","02","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"

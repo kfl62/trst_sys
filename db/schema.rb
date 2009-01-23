@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090121095542) do
+ActiveRecord::Schema.define(:version => 20090123023025) do
 
   create_table "trst_sys_menus", :force => true do |t|
     t.string   "name",        :limit => 15, :default => "Menu",    :null => false
@@ -49,6 +49,21 @@ ActiveRecord::Schema.define(:version => 20090121095542) do
     t.string   "page",             :limit => 2,  :default => "01",      :null => false
     t.boolean  "active",                         :default => true,      :null => false
     t.string   "title",            :limit => 25, :default => "...?...", :null => false
+    t.datetime "created_on"
+    t.integer  "created_by",       :limit => 6,  :default => 0,         :null => false
+    t.datetime "updated_on"
+    t.integer  "updated_by",       :limit => 6,  :default => 0,         :null => false
+    t.integer  "approved_by",      :limit => 6,  :default => 0,         :null => false
+  end
+
+  create_table "trst_sys_tasks", :force => true do |t|
+    t.integer  "trst_sys_page_id", :limit => 6,  :default => 34,        :null => false
+    t.string   "controller",       :limit => 15, :default => "info",    :null => false
+    t.string   "exe_id",           :limit => 20, :default => "...?...", :null => false
+    t.string   "exe_params",       :limit => 40, :default => "...?...", :null => false
+    t.string   "name",             :limit => 15, :default => "...?...", :null => false
+    t.text     "title"
+    t.text     "info"
     t.datetime "created_on"
     t.integer  "created_by",       :limit => 6,  :default => 0,         :null => false
     t.datetime "updated_on"

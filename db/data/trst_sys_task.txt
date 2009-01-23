@@ -1,0 +1,15 @@
+"1","34","info","weather","400x250,true","Vremea","Starea vremii","Starea vremii","2007-12-31","1","2008-12-25 22:38:11","1","1"
+"2","34","info","mny","460x280,","Curs valutar","Evoluţia cursului valutar","Evoluţia cursului valutar (EUR, USD) în ultimele şapte zile","2007-12-31","1","2008-12-25 22:38:11","1","1"
+"3","34","info","nmdy_ro","400x80,","Onomastică","Onomastică după calendarul ortodox","Onomastică după calendarul ortodox","2007-12-31","1","2008-12-25 22:38:11","1","1"
+"4","34","info","nmdy_hu","350x150,","Névnap","Onomastică după calendarul reformat \n
+Névnapok a református kalendárium szerint","Onomastică după calendarul reformat <br>
+Névnapok a református kalendárium szerint
+","2007-12-31","1","2008-12-25 22:38:11","1","1"
+"5","65","info","db_sys_menu","","Editare meniu","Editare meniu","Editare meniu","2007-12-31","1","2008-12-25 22:38:11","1","1"
+"6","65","info","db_sys_submenu","","Editare submeniu","Editare submeniu","Editare submeniu","2007-12-31","1","2008-12-25 22:38:11","1","1"
+"7","65","info","db_sys_page","","Editare pagini","Editare pagini
+","Editare pagini
+","2007-12-31","1","2008-12-25 22:38:11","1","1"
+"8","65","info","db_sys_task","","Editare taskuri","Editare taskuri","<p>Editare taskuri</p>
+<p>Editarea taskurilor permite ...</p>","2007-12-31","1","2009-01-12 11:05:43","1","1"
+"9","65","info","db_prtn","","Editare parteneri","Editare parteneri","Editare parteneri","2007-12-31","1","","0","0"
