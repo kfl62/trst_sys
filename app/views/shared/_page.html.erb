@@ -20,11 +20,11 @@
     <h6><%= render :inline => pg.title %></h6>
   </div>
   <div class="sys_intro">
-    <strong><em>Info:</em></strong>
+    <strong><em><%=t 'layout.page.sys_intro' %></em></strong>
     <%= strip_tags(pg.intro) %>
   </div>
   <div class="sys_actions">
-    <strong><em>Lista activităţilor</em></strong>
+    <strong><em><%=t 'layout.page.sys_actions' %></em></strong>
     <ul>
       <% for task in current_tasks %>
         <li>
@@ -40,7 +40,7 @@
     </div>
   </div>
   <div class="sys_note">
-    <strong><em>Notă</em></strong>
+    <strong><em><%=t 'layout.page.sys_note' %></em></strong>
     <br/>
     <%= pg.note %>
   </div>

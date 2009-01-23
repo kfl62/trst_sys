@@ -1,0 +1,26 @@
+task = current_task_todo(params[:id])
+case params[:type]
+when "info"
+  page.replace_html 'sys_content', task.info
+  page.visual_effect :Unfold, 'sys_content'
+  page.delay(10) do
+    page.visual_effect :Fold, 'sys_content'
+  end
+when "exe"
+  page.hide 'task_content'
+  page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')
+  page.replace_html 'task_content', :partial => '/trst_sys/exe/' + task.exe_id, :locals => {:params => params}
+when "edit"
+  page.hide 'task_content'
+  page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')
+  page.replace_html 'task_content', :partial => '/trst_sys/exe/' + task.exe_id, :locals => {:params => params}
+  page.select('input').last.show()
+when "save"
+  page.hide 'task_content'
+  page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')
+  page.replace_html 'task_content' , :partial => '/trst_sys/exe/' + task.exe_id, :locals => {:params => params}
+when "page"
+  page.replace_html 'task_content', :partial => '/trst_sys/exe/' + task.exe_id, :locals => {:params => params}
+else
+  page.replace_html 'task_content', 'Eroare ... Views/trst_sys/task.rjs ...'
+end

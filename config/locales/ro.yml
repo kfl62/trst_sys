@@ -5,6 +5,13 @@ ro:
     header:
       company: "Firma Dvs."
       authenticated_as: "Autentificat ca şi:"
+    menu:
+      submenu_show: "Arată submeniul"
+      submenu_hide: "Ascunde submeniul"
+    page:
+      sys_intro: "Info:"
+      sys_actions: "Lista activităţilor"
+      sys_note: "Notă"
     flash:
       loading: "O clipă ... acum se încarcă pagina ..."
       
@@ -21,11 +28,16 @@ ro:
       user_create: "Utilizator inregistrat..."
       user_update: "Utilizator modificat ..."
 
+  pages:
+    pg34:
+      tdy: "Astăzi {{dt_long}}, săpt.({{dt_week}}) ziua ({{dt_yday}}) a anului, au mai rămas ({{dt_dylft}}) zile."
+
   date:
     formats:
       default: "%d-%m-%Y"
       short: "%d %b"
       long: "%d %B %Y"
+      long_trst: "%A, %d %B %Y"
 #      only_day: "%e"
 
     day_names: [Duminică, Luni, Marți, Miercuri, Joi, Vineri, Sâmbată]

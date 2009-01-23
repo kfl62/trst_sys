@@ -135,7 +135,7 @@ Pentru informaţii suplimentare legate de acest subiect accesaţi submeniul <img
 "31","trst_public","06","02","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
 "32","trst_public","06","03","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
 "33","trst_public","06","04","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
-"34","trst_sys","01","01","Astăzi <%= tdy -%>","Informaţii de uz general :)","  <li>
+"34","trst_sys","01","01","<%= tdy -%>","Informaţii de uz general :)","  <li>
 	<a class=""link_info""  title=""Vremea la Cluj"" onclick=""TrstWindow.info('sys','info','weather')""  href=""#"">Vremea</a>
   </li>
   <li>
