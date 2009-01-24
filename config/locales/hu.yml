@@ -10,6 +10,7 @@
       default: "%Y.%m.%d."
       short: "%b %e."
       long: "%Y. %B %e."
+      long_trst: "%Y. %B %e. %A"
     day_names: [vasárnap, hétfő, kedd, szerda, csütörtök, péntek, szombat]
     abbr_day_names: [v., h., k., sze., cs., p., szo.]
     month_names: [~, január, február, március, április, május, június, július, augusztus, szeptember, október, november, december]
@@ -93,8 +94,8 @@
 
   support:
     array:
-#      sentence_connector: "és"
-#      skip_last_comma: true
+      sentence_connector: "és"
+      skip_last_comma: true
       words_connector: ", "
       two_words_connector: " és "
       last_word_connector: " és "
