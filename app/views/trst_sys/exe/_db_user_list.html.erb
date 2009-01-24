@@ -8,7 +8,7 @@
     <%=t 'tasks.db_user.list.allowed_text_0' %>
     <%= link_to_function t('tasks.db_user.list.allowed_password_change'),"TrstWindow.edit(#{params[:id]},#{current_trst_user.id}); return false;" %>
     <%=t 'tasks.db_user.list.allowed_text_1' %>
-    <%= link_to_function t('tasks.db_user.list.allowed_view_account'),"TrstWindow.edit(#{params[:id]},#{current_trst_user.id}); return false;" %>
+    <%= link_to_function t('tasks.db_user.list.allowed_view_account'),"TrstWindow.show(#{params[:id]},#{current_trst_user.id}); return false;" %>
   </div>
 <% else %>
   <% obj = trst_find_all(TrstUser) ; i = obj.offset %>
@@ -56,6 +56,11 @@
                 :title => t('activerecord.attributes.crud.show'),
                 :style => "cursor : pointer;",
                 :onclick => "TrstWindow.show(#{params[:id]}, #{o.id}); return false;" %>
+              <%= image_tag 'db_delete.png',
+                :alt => t('activerecord.attributes.crud.remove'),
+                :title => t('activerecord.attributes.crud.remove'),
+                :style => "cursor : pointer;",
+                :onclick => "TrstWindow.remove(#{params[:id]}, #{o.id}); return false;" %>
             </td>
           </tr>
         <% end %>

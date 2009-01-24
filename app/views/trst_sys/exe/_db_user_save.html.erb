@@ -3,32 +3,42 @@
 # and open the template in the editor.
 %>
 <% if params[:obj_id] == "new"
-  o = TrstUser.new
   params[:user][:created_by] = current_trst_user.id
-  o.update_attributes(params[:user])
-  obs = t('tasks.db_user.save.user_create')
+  save_obj(TrstUser,params[:obj_id],params[:user])
+  o = find_obj(TrstUser,'last')
   params[:obj_id] = o.id
+  obs = t('tasks.db_user.save.user_create')
+elsif params[:remove]
+  o = find_obj(TrstUser,params[:obj_id])
+  obs = t('tasks.db_user.save.user_remove', :login_name => o.login)
+  TrstUser.delete(params[:obj_id])
 else
   save_obj(TrstUser,params[:obj_id],params[:user])
   o = find_obj(TrstUser,params[:obj_id])
   obs = t('tasks.db_user.save.user_update')
 end -%>
-<div style="width:500px;height:340px">
-  <p><%= obs %></p>
-  <table style="width:80%; margin:auto;">
-    <thead>
-      <tr>
-        <th><%=t 'activerecord.attributes.label_attribute' %></th>
-        <th><%=t 'activerecord.attributes.label_value' %></th>
-      </tr>
-    </thead>
-    <tbody align="left">
-      <%= custom_schema_definitions_html(o) %>
-      <tr>
-        <td align="center" colspan="2">
-          <%= link_to_function t('activerecord.attributes.crud.show'),"TrstWindow.show(#{params[:id]},#{params[:obj_id]})" %>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<% if params[:remove] %>
+  <div align="center" style="width:400px;height:3em">
+    <%= obs %>
+  </div>
+<% else %>
+  <div style="width:500px;height:190px">
+    <p><%= obs %></p>
+    <table style="width:80%; margin:auto;">
+      <thead>
+        <tr>
+          <th><%=t 'activerecord.attributes.label_attribute' %></th>
+          <th><%=t 'activerecord.attributes.label_value' %></th>
+        </tr>
+      </thead>
+      <tbody align="left">
+        <%= custom_schema_definitions_html(o) %>
+        <tr>
+          <td align="center" colspan="2">
+            <%= link_to_function t('activerecord.attributes.crud.show'),"TrstWindow.show(#{params[:id]},#{params[:obj_id]})" %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>

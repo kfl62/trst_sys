@@ -2,7 +2,7 @@
 # Editare, adăugare utilizatori
 # Singurul utilizator care are voie este cel cu id==1
 %>
-<div id="show"  style="width:420px;height:360px">
+<div id="show"  style="width:420px;height:310px">
   <% user = find_obj(TrstUser,params[:obj_id])  %>
   <table style="width:80%; margin:auto;">
     <thead>
@@ -31,10 +31,6 @@
       <tr>
         <td align="left"><%= TrstUser.human_attribute_name("mdl_name") %></td>
         <td align="left"><%= user.mdl_name %></td>
-      </tr>
-      <tr>
-        <td align="left"><%= TrstUser.human_attribute_name("email") %></td>
-        <td align="left"><%= user.email %></td>
       </tr>
       <tr>
         <td align="left"><%= TrstUser.human_attribute_name("login_count") %></td>

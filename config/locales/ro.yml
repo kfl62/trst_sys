@@ -46,6 +46,7 @@ ro:
       save:
         user_create: "Utilizatorul  a fost creat ..."
         user_update: "Modificările au fost salvate..."
+        user_remove: "Utilizatorul <strong>{{login_name}}</strong> a fost şters..."
         link_to_show: "Detalii cont"
         link_to_list: "Lista utilizatorilor"
 
@@ -186,7 +187,7 @@ ro:
       label_attribute : "Câmp"
       label_value: "Valoare"
       custom_schema_definitions:
-        created_on: "Creat la date de"
+        created_on: "Creat la data de"
         created_by: "Creat de către"
         updated_on: "Modificat la data de"
         updated_by: "Modificat de către"
@@ -196,7 +197,7 @@ ro:
         new: "Adăugare"
         edit: "Editare"
         save: "Salvare"
-        delete: "Ştergere"
+        remove: "Ştergere"
         cancel: "Renunţare"
         show: "Detalii"
       paginate:
