@@ -1,4 +1,4 @@
-task = current_task_todo(params[:id])
+task = current_task(params[:id])
 case params[:type]
 when "info"
   page.replace_html 'sys_content', task.info
@@ -9,7 +9,7 @@ when "info"
 when "exe"
   page.hide 'task_content'
   page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')
-  page.replace_html 'task_content', :partial => '/trst_sys/exe/' + task.exe_id + '_list', :locals => {:params => params}
+  page.replace_html 'task_content', :partial => '/trst_sys/exe/' + task.exe_id + current_task_test_partials(task), :locals => {:params => params}
 when "edit"
   page.hide 'task_content'
   page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')

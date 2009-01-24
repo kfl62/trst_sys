@@ -34,6 +34,9 @@ module TrstSysExeHelper
     w["wd"] = data[data.index('<t>',850) .. data.index('</t>',850) -1]
     w["sunr"] = data[data.index('<sunr>') .. data.index('</sunr>') -1]
     w["suns"] = data[data.index('<suns>') .. data.index('</suns>') -1]
+
+    w["ws"] = "0" if data[data.index('<s>') + 3  .. data.index('</s>') -1 ] == "calm"
+    w["wd"] = "Variabil" if data[data.index('<t>',850) .. data.index('</t>',850) -1] == ("calm" || "CALM" || "VAR")
     return w
   end
   
@@ -74,5 +77,13 @@ module TrstSysExeHelper
     h = Net::HTTP.new('credo.ro', 80)
     @resp, @data = h.get('/calendar-azi.php')
     @data = @data.split('\'')[1]
+  end
+
+  def nmdy_hu
+    td = Date.today
+    tm = td + 1
+    h = YAML.load_file("#{RAILS_ROOT}/db/data/name_day_hu.yml")
+    I18n.locale = :hu
+    return '<strong>' + l(td, :format => 'long_trst') + '</strong><br /> Ma <strong>' + h[td.month][td.day].split(',').to_sentence + '</strong>, holnap <strong>' + h[tm.month][tm.day].split(',').to_sentence + '</strong>  ünnepli a névnapját.'
   end
 end

@@ -8,11 +8,14 @@ module TrstSysHelper
 
   # Caută în baza de date acţiunea accesată ptr. afişarea descrierii acţiunii (info)
   # respectiv ptr. detalii privind executarea lui (exe)
-  def current_task_todo(id)
-    task = TrstSysTask.find(id)
-    return task
+  def current_task(id)
+    TrstSysTask.find(id)
   end
-  
+
+  def current_task_test_partials(arg1)
+    FileTest.exists?("#{RAILS_ROOT}/app/views/trst_sys/exe/_" + arg1.exe_id + ".html.erb") ? '' : '_list'
+  end
+
   # TODO de formulat
   def find_obj(arg1,arg2)
     if arg2 == 'last'
