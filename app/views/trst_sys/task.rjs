@@ -19,6 +19,10 @@ when "save"
   page.hide 'task_content'
   page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')
   page.replace_html 'task_content' , :partial => '/trst_sys/exe/' + task.exe_id + '_save', :locals => {:params => params}
+when "remove"
+  page.hide 'task_content'
+  page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')
+  page.replace_html 'task_content' , :partial => '/trst_sys/exe/' + task.exe_id + '_save', :locals => {:params => params}
 when "show"
   page.hide 'task_content'
   page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')

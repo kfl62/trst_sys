@@ -100,6 +100,16 @@ var TrstWindow = {
       }
     })
   },
+  remove: function(arg1,arg2){
+    new Ajax.Request('trst_sys/task?type=remove&id=' + arg1 + '&obj_id=' + arg2 + '&remove=true',{
+      onCreate: function(){
+        $('flash-loading').show()
+      },
+      onComplete: function(){
+        $('flash-loading').hide()
+      }
+    })
+  },
   rich_edit: function(arg1,arg2,arg3,arg4){
     Lightview.show({
       href: 'trst_sys/rich_edit?type=edit&id=' + arg1 + '&obj_name=' + arg2 + '&obj_id=' + arg3 + '&obj_method=' + arg4,
