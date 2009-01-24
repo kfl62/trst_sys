@@ -1,0 +1,94 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<% if current_trst_user.id != 1  %>
+  <div id="edit"  style="width:420px;height:110px">
+    <% @user = find_obj(TrstUser,params[:obj_id]) %>
+    <% remote_form_for :user, @user,
+      :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
+      <table style="width:80%; margin:auto;">
+        <thead>
+          <tr>
+            <th colspan="2"><%=t 'tasks.db_user.edit.password_change_title' %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="left"><%=  f.object.new_record? ? t('tasks.db_user.edit.password') : t('tasks.db_user.edit.password_change') %></td>
+            <td align="left"><%= f.password_field :password %></td>
+          </tr>
+          <tr>
+            <td align="left"><%=t 'tasks.db_user.edit.password_confirmation' %></td>
+            <td align="left"><%= f.password_field :password_confirmation %></td>
+          </tr>
+          <tr>
+            <td align="center" colspan="2">
+              <br/>
+              <input type="hidden"  name="user[updated_by]" value="<%= current_trst_user.id %>" />
+              <input type="submit" value="<%=t 'activerecord.attributes.crud.save' %>"/>
+              <input type="button" value="<%=t 'activerecord.attributes.crud.cancel' %>" onclick="Lightview.hide();"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+<% else %>
+  <div id="edit"  style="width:420px;height:260px">
+    <%  if params[:obj_id] == "new"
+      @user = TrstUser.new
+    else
+      @user = find_obj(TrstUser,params[:obj_id])
+    end -%>
+    <% remote_form_for :user, @user,
+      :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
+      <table style="width:80%; margin:auto;">
+        <thead>
+          <tr>
+            <th><%=t 'activerecord.attributes.label_attribute' %></th>
+            <th><%=t 'activerecord.attributes.label_value' %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="left"><%= TrstUser.human_attribute_name("login") %></td>
+            <td align="left"><%= f.text_field :login %></td>
+          </tr>
+          <tr>
+            <td align="left"><%= TrstUser.human_attribute_name("email") %></td>
+            <td align="left"><%= f.text_field :email %></td>
+          </tr>
+          <tr>
+            <td align="left"><%= TrstUser.human_attribute_name("lst_name") %></td>
+            <td align="left"><%= f.text_field :lst_name %></td>
+          </tr>
+          <tr>
+            <td align="left"><%= TrstUser.human_attribute_name("frst_name") %></td>
+            <td align="left"><%= f.text_field :frst_name %></td>
+          </tr>
+          <tr>
+            <td align="left"><%= TrstUser.human_attribute_name("mdl_name") %></td>
+            <td align="left"><%= f.text_field :mdl_name %></td>
+          </tr>
+          <tr>
+            <td align="left"><%=  f.object.new_record? ? t('tasks.db_user.edit.password') : t('tasks.db_user.edit.password_change') %></td>
+            <td align="left"><%= f.password_field :password %></td>
+          </tr>
+          <tr>
+            <td align="left"><%=t 'tasks.db_user.edit.password_confirmation' %></td>
+            <td align="left"><%= f.password_field :password_confirmation %></td>
+          </tr>
+          <tr>
+            <td align="center" colspan="2">
+              <br/>
+              <input type="hidden"  name="user[updated_by]" value="<%= current_trst_user.id %>" />
+              <input type="submit" value="<%=t 'activerecord.attributes.crud.save' %>"/>
+              <input type="button" value="<%=t 'activerecord.attributes.crud.cancel' %>" onclick="Lightview.hide();"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+<% end %>

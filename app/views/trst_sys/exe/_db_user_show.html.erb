@@ -1,0 +1,59 @@
+<%#
+# Editare, adăugare utilizatori
+# Singurul utilizator care are voie este cel cu id==1
+%>
+<div id="show"  style="width:420px;height:360px">
+  <% user = find_obj(TrstUser,params[:obj_id])  %>
+  <table style="width:80%; margin:auto;">
+    <thead>
+      <tr>
+        <th><%=t 'activerecord.attributes.label_attribute' %></th>
+        <th><%=t 'activerecord.attributes.label_value' %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align="left"><%= TrstUser.human_attribute_name("login") %></td>
+        <td align="left"><%= user.login %></td>
+      </tr>
+      <tr>
+        <td align="left"><%= TrstUser.human_attribute_name("email") %></td>
+        <td align="left"><%= user.email %></td>
+      </tr>
+      <tr>
+        <td align="left"><%= TrstUser.human_attribute_name("lst_name") %></td>
+        <td align="left"><%= user.lst_name %></td>
+      </tr>
+      <tr>
+        <td align="left"><%= TrstUser.human_attribute_name("frst_name") %></td>
+        <td align="left"><%= user.frst_name %></td>
+      </tr>
+      <tr>
+        <td align="left"><%= TrstUser.human_attribute_name("mdl_name") %></td>
+        <td align="left"><%= user.mdl_name %></td>
+      </tr>
+      <tr>
+        <td align="left"><%= TrstUser.human_attribute_name("email") %></td>
+        <td align="left"><%= user.email %></td>
+      </tr>
+      <tr>
+        <td align="left"><%= TrstUser.human_attribute_name("login_count") %></td>
+        <td align="left"><%= user.login_count %></td>
+      </tr>
+      <tr>
+        <td align="left"><%= TrstUser.human_attribute_name("last_login_at") %></td>
+        <td align="left"><%= user.last_login_at %></td>
+      </tr>
+      <tr>
+        <td align="left"><%= TrstUser.human_attribute_name("last_login_ip") %></td>
+        <td align="left"><%= user.last_login_ip %></td>
+      </tr>
+      <%= custom_schema_definitions_html(user) %>
+      <tr>
+        <td align="center" colspan="2">
+          <br/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,82 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<% if current_trst_user.id != 1  %>
+  <div align="center" style="width : 400px; height : 5em;">
+    <%=t 'tasks.db_user.list.not_allowed', :id_1 => TrstUser.find(1).login %><br />
+    <%=t 'tasks.db_user.list.allowed_text_0' %>
+    <%= link_to_function t('tasks.db_user.list.allowed_password_change'),"TrstWindow.edit(#{params[:id]},#{current_trst_user.id}); return false;" %>
+    <%=t 'tasks.db_user.list.allowed_text_1' %>
+    <%= link_to_function t('tasks.db_user.list.allowed_view_account'),"TrstWindow.edit(#{params[:id]},#{current_trst_user.id}); return false;" %>
+  </div>
+<% else %>
+  <% obj = trst_find_all(TrstUser) ; i = obj.offset %>
+  <% if obj.length == 0  %>
+    <script type="text/javascript"> TrstWindow.edit(<%= params[:id] %>,"new");</script>
+  <% end %>
+  <div  style="width:760px;height:480px">
+    <table class="full">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th><%= TrstUser.human_attribute_name("id") %></th>
+          <th><%= TrstUser.human_attribute_name("login") %></th>
+          <th><%= TrstUser.human_attribute_name("lst_name") %></th>
+          <th><%= TrstUser.human_attribute_name("frst_name") %></th>
+          <th><%= TrstUser.human_attribute_name("mdl_name") %></th>
+          <th><%= TrstUser.human_attribute_name("email") %></th>
+          <th><%= TrstUser.human_attribute_name("login_count") %></th>
+          <th><%= TrstUser.human_attribute_name("last_login_at") %></th>
+          <th><%= TrstUser.human_attribute_name("last_login_ip") %></th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for o in obj %>
+          <tr class="<%= cycle("even","odd") %>">
+            <td align="right"><%= i += 1 %>.&nbsp;</td>
+            <td align="right"><%= o.id %></td>
+            <td align="left"><%= o.login %></td>
+            <td align="left"><%= o.lst_name %></td>
+            <td align="left"><%= o.frst_name %></td>
+            <td align="left"><%= o.mdl_name %></td>
+            <td align="left"><%= o.email %></td>
+            <td align="left"><%= o.login_count %></td>
+            <td align="left"><%= o.last_login_at %></td>
+            <td align="left"><%= o.last_login_ip %></td>
+            <td align="left">
+              <%= image_tag 'db_edit.png',
+                :alt => t('activerecord.attributes.crud.edit'),
+                :title => t('activerecord.attributes.crud.edit'),
+                :style => "cursor : pointer;",
+                :onclick => "TrstWindow.edit(#{params[:id]}, #{o.id}); return false;" %>
+              <%= image_tag 'db_info.png',
+                :alt => t('activerecord.attributes.crud.show'),
+                :title => t('activerecord.attributes.crud.show'),
+                :style => "cursor : pointer;",
+                :onclick => "TrstWindow.show(#{params[:id]}, #{o.id}); return false;" %>
+            </td>
+          </tr>
+        <% end %>
+        <% if i.modulo(obj.per_page) > 0 %>
+          <% (obj.per_page-i.modulo(obj.per_page)).times do %>
+            <tr class="even">
+              <td colspan="11">&nbsp;</td>
+            </tr>
+          <% end %>
+        <% end %>
+        <tr class="even">
+          <td colspan="10" align="center" style="padding-top:10px"><%= trst_paginate(obj) %></td>
+          <td>
+            <%= image_tag 'db_new.png',
+              :alt => t('activerecord.attributes.crud.new'),
+              :title => t('activerecord.attributes.crud.new'),
+              :style => "padding : 0 0 0 5px; cursor : pointer;",
+              :onclick => "TrstWindow.edit(#{params[:id]},'new'); return false;" %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>
