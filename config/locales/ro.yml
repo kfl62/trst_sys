@@ -25,12 +25,29 @@ ro:
       logged_out: "Sesiune terminată ..."
       require_user: "Numai pentru utilizatorii autentificaţi ..."
       require_no_user: "Numai pentru utilizatorii anonimi ..."
-      user_create: "Utilizator inregistrat..."
-      user_update: "Utilizator modificat ..."
 
   pages:
     pg34:
       tdy: "Astăzi {{dt_long}}, săpt.({{dt_week}}) ziua ({{dt_yday}}) a anului, au mai rămas ({{dt_dylft}}) zile."
+
+  tasks:
+    db_user:
+      list:
+        not_allowed: "Editarea/Adăugarea este permis numai utilizatorului \"<strong>{{id_1}}</strong>\""
+        allowed_text_0: "Dvs. puteţi să "
+        allowed_password_change: "vă modificaţi parola"
+        allowed_text_1: " şi să vă consultaţi "
+        allowed_view_account: "...contul..."
+      edit:
+        password: "Parolă"
+        password_change_title: "Modificare parolă"
+        password_change: "Parola modificată"
+        password_confirmation: "Confirmare parolă"
+      save:
+        user_create: "Utilizatorul  a fost creat ..."
+        user_update: "Modificările au fost salvate..."
+        link_to_show: "Detalii cont"
+        link_to_list: "Lista utilizatorilor"
 
   date:
     formats:
@@ -131,6 +148,13 @@ ro:
         precision: 1
       storage_units: [Bytes, KB, MB, GB, TB]
 
+  support:
+      array:
+#        sentence_connector: "și"
+        words_connector: ", "
+        two_words_connector: " şi "
+        last_word_connector: " şi "
+
   activerecord:
     errors:
       template:
@@ -158,9 +182,34 @@ ro:
         less_than_or_equal_to: "trebuie să fie mai mic sau egal cu {{count}}"
         odd: "trebuie să fie par"
         even: "trebuie să fie impar"
-  support:
-      array:
-#        sentence_connector: "și"
-        words_connector: ", "
-        two_words_connector: " şi "
-        last_word_connector: " şi "
+    attributes:
+      label_attribute : "Câmp"
+      label_value: "Valoare"
+      custom_schema_definitions:
+        created_on: "Creat la date de"
+        created_by: "Creat de către"
+        updated_on: "Modificat la data de"
+        updated_by: "Modificat de către"
+        approved_by: "Aprobat de către"
+        authenticated_as: "autentificat ca şi"
+      crud:
+        new: "Adăugare"
+        edit: "Editare"
+        save: "Salvare"
+        delete: "Ştergere"
+        cancel: "Renunţare"
+        show: "Detalii"
+      paginate:
+        first: "Prima pagină"
+        prev: "Pagina anterioară"
+        next: "Pagina următoare"
+        last: "Ultima pagină"
+      trst_user:
+        id: "Id."
+        login: "Utilizator"
+        frst_name: "Prenume"
+        mdl_name: "Prenume2"
+        lst_name: "Nume"
+        login_count: "Nr.Conexiuni"
+        last_login_at: "Ultima conexiune"
+        last_login_ip: "IP"
