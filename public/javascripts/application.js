@@ -52,40 +52,50 @@ var Flash = {
 var TrstWindow = {
   public_pg: function(arg1){
     new Ajax.Request('trst_public/pg?' + arg1,{
-      onCreate: function(request){
+      onCreate: function(){
         $('flash-loading').show()
       },
-      onComplete: function(request){
+      onComplete: function(){
         $('flash-loading').hide()
       }
     })
   },
   info: function(arg1){
     new Ajax.Request('trst_sys/task?type=info&id=' + arg1,{
-      onCreate: function(request){
+      onCreate: function(){
         $('flash-loading').show()
       },
-      onComplete: function(request){
+      onComplete: function(){
         $('flash-loading').hide()
       }
     })
   },
   exe: function(arg1){
     new Ajax.Request('trst_sys/task?type=exe&id=' + arg1,{
-      onCreate: function(request){
+      onCreate: function(){
         $('flash-loading').show()
       },
-      onComplete: function(request){
+      onComplete: function(){
         $('flash-loading').hide()
       }
     })
   },
   edit: function(arg1,arg2){
     new Ajax.Request('trst_sys/task?type=edit&id=' + arg1 + '&obj_id=' + arg2,{
-      onCreate: function(request){
+      onCreate: function(){
         $('flash-loading').show()
       },
-      onComplete: function(request){
+      onComplete: function(){
+        $('flash-loading').hide()
+      }
+    })
+  },
+  show: function(arg1,arg2){
+    new Ajax.Request('trst_sys/task?type=show&id=' + arg1 + '&obj_id=' + arg2,{
+      onCreate: function(){
+        $('flash-loading').show()
+      },
+      onComplete: function(){
         $('flash-loading').hide()
       }
     })
