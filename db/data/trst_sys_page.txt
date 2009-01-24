@@ -187,7 +187,5 @@ Pentru informaţii suplimentare legate de acest subiect accesaţi submeniul <img
 "62","trst_sys","07","02","Birou personal","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
 "63","trst_sys","07","03","Normare & Calcul salarii","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
 "64","trst_sys","07","04","Chestionare","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
-"65","trst_sys","08","01","Administrare sistem","Câteva cuvinte de introducere","<li><a class=""link_info"" href=""api.html"" target=""_blank"">API Doc's</a></li>
-<li>...?...</li>
-<li>...?...</li>","Conţinut","<p>Pentru informaţii suplimentare legate de acest departament accesaţi submeniul <img style=""vertical-align : middle;"" src=""../images/forward.gif"" border=""0"" alt="""" /></p>","2007-12-28","1","2009-01-12 11:08:49","1","0"
-"66","trst_sys","08","02","...?...","...?...","...?...","...?...","...?...","2007-12-28","1","2008-12-25 22:37:33","0","0"
+"65","trst_sys","08","01","Administrare sistem","Câteva cuvinte de introducere","...?...","...?...","<p>Pentru informaţii suplimentare legate de acest departament accesaţi submeniul <img style=""vertical-align : middle;"" src=""../images/forward.gif"" border=""0"" alt="""" /></p>","2007-12-28","1","2009-01-12 11:08:49","1","0"
+"66","trst_sys","08","02","Baze de date","Administrarea bazelor de date","...?...","...?...","<p>Pentru informaţii suplimentare legate de acest departament accesaţi submeniul <img style=""vertical-align : middle;"" src=""../images/forward.gif"" border=""0"" alt="""" /></p>","2007-12-28","1","2008-12-25 22:37:33","0","0"

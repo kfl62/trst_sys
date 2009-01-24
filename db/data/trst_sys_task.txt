@@ -5,11 +5,13 @@
 Névnapok a református kalendárium szerint","Onomastică după calendarul reformat <br>
 Névnapok a református kalendárium szerint
 ","2007-12-31","1","2008-12-25 22:38:11","1","1"
-"5","65","info","db_sys_menu","","Editare meniu","Editare meniu","Editare meniu","2007-12-31","1","2008-12-25 22:38:11","1","1"
-"6","65","info","db_sys_submenu","","Editare submeniu","Editare submeniu","Editare submeniu","2007-12-31","1","2008-12-25 22:38:11","1","1"
-"7","65","info","db_sys_page","","Editare pagini","Editare pagini
+"5","65","info","db_user","","Editare utilizatori","Editare utilizatori
+","Editare utilizatori
+","2007-12-31","1","2009-01-12 11:05:43","1","1"
+"6","65","info","db_sys_menu","","Editare meniu","Editare meniu","Editare meniu","2007-12-31","1","2008-12-25 22:38:11","1","1"
+"7","65","info","db_sys_submenu","","Editare submeniu","Editare submeniu","Editare submeniu","2007-12-31","1","2008-12-25 22:38:11","1","1"
+"8","65","info","db_sys_page","","Editare pagini","Editare pagini
 ","Editare pagini
 ","2007-12-31","1","2008-12-25 22:38:11","1","1"
-"8","65","info","db_sys_task","","Editare taskuri","Editare taskuri","<p>Editare taskuri</p>
+"9","65","info","db_sys_task","","Editare taskuri","Editare taskuri","<p>Editare taskuri</p>
 <p>Editarea taskurilor permite ...</p>","2007-12-31","1","2009-01-12 11:05:43","1","1"
-"9","65","info","db_prtn","","Editare parteneri","Editare parteneri","Editare parteneri","2007-12-31","1","","0","0"
