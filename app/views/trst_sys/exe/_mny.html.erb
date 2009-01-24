@@ -1,0 +1,63 @@
+<% mny() %>
+<div style="width:490px; height:225px">
+  <table class="full" cellspacing="3" border="0" cellpadding="3">
+    <thead>
+      <tr>
+        <th>Ziua</th>
+        <th align="center"><%= l(@dt[6], :format => 'day_name')%><br/><%= l(@dt[6], :format => "day_abbr_month") %></th>
+        <th align="center"><%= l(@dt[5], :format => 'day_name')%><br/><%= l(@dt[5], :format => "day_abbr_month") %></th>
+        <th align="center"><%= l(@dt[4], :format => 'day_name')%><br/><%= l(@dt[4], :format => "day_abbr_month") %></th>
+        <th align="center"><%= l(@dt[3], :format => 'day_name')%><br/><%= l(@dt[3], :format => "day_abbr_month") %></th>
+        <th align="center"><%= l(@dt[2], :format => 'day_name')%><br/><%= l(@dt[2], :format => "day_abbr_month") %></th>
+        <th align="center"><%= l(@dt[1], :format => 'day_name')%><br/><%= l(@dt[1], :format => "day_abbr_month") %></th>
+        <th align="center" style="color : #ff0000;"><%= l(@dt[0], :format => 'day_name')%><br/><%= l(@dt[0], :format => "day_abbr_month") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>EUR</td>
+        <td style="text-align : center;"><%= number_with_precision(@d_eur[6],4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_eur[5],4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_eur[4],4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_eur[3],4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_eur[2],4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_eur[1],4) %></td>
+        <td style="color : #ff0000; text-align : center;"><%= number_with_precision(@d_eur[0],4) %></td>
+      </tr>
+      <tr>
+        <td>USD</td>
+        <td style="text-align : center;"><%= number_with_precision(@d_usd[6],4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_usd[5],4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_usd[4],4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_usd[3],4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_usd[2],4) %></td>
+        <td style="text-align : center;"><%= @d_usd[1] %></td>
+        <td style="color : #ff0000; text-align : center;"><%= number_with_precision(@d_usd[0],4) %></td>
+      </tr>
+      <tr>
+        <td>Var - &#8364;<br/></td>
+        <td style="text-align : right;"><%= mny_var(@d_eur,6) %></td>
+        <td style="text-align : right;"><%= mny_var(@d_eur,5) %></td>
+        <td style="text-align : right;"><%= mny_var(@d_eur,4) %></td>
+        <td style="text-align : right;"><%= mny_var(@d_eur,3) %></td>
+        <td style="text-align : right;"><%= mny_var(@d_eur,2) %></td>
+        <td style="text-align : right;"><%= mny_var(@d_eur,1) %></td>
+        <td style="text-align : right;"><%= mny_var(@d_eur,0) %></td>
+      </tr>
+      <tr>
+        <td>Var - &#036;</td>
+        <td style="text-align : right;"><%= mny_var(@d_usd,6) %></td>
+        <td style="text-align : right;"><%= mny_var(@d_usd,5) %></td>
+        <td style="text-align : right;"><%= mny_var(@d_usd,4) %></td>
+        <td style="text-align : right;"><%= mny_var(@d_usd,3) %></td>
+        <td style="text-align : right;"><%= mny_var(@d_usd,2) %></td>
+        <td style="text-align : right;"><%= mny_var(@d_usd,1) %></td>
+        <td style="text-align : right;"><%= mny_var(@d_usd,0) %></td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="font-size : 90%; padding-left : 10px; text-align : left; text-indent : 0px;"><br/>&#8226;<br/>Cursurile ptr. ziua curenta se actualizeaza in jur de ora 12:30.<br/>
+    In anume situatii se utilizeaza cursul din ziua anterioara ! (Verificati legislatia in cauza ...)<br/>
+    Variatiile zilnice sunt exprimate in puncte 1 pct = 0.0001 RON sau 1pct = 1 ROL
+  </div>
+</div>

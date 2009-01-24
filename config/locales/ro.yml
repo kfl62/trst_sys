@@ -56,6 +56,8 @@ ro:
       short: "%d %b"
       long: "%d %B %Y"
       long_trst: "%A, %d %B %Y"
+      day_name: "%A"
+      day_abbr_month: "%d-%b"
 #      only_day: "%e"
 
     day_names: [Duminică, Luni, Marți, Miercuri, Joi, Vineri, Sâmbată]

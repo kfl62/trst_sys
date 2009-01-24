@@ -1,0 +1,35 @@
+<% w=weather() %>
+<div style="width:380px; height:200px;">
+  <div style="text-align : left; padding-left:10px; padding-top : 10px;">
+    <%= w["city"] %> ( <%= w["lat"] + '&#176;N , ' + w["lon"] + '&#176;E' %> )
+  </div>
+  <div style="float : left; width : 150px;">
+    <%= image_tag "weather/#{w["icon"]}.png" %>
+  </div>
+  <div style="padding-top : 10px;">
+    La ora locală <%= w["refh"][1..2].join(' ') %> se înregistrau :<br><br>
+    <table>
+      <tbody>
+        <tr>
+          <td width="50px">Temp:</td>
+          <td><%= w["tmp"] %>&#176;C</td>
+        </tr>
+        <tr>
+          <td>Pres:</td>
+          <td><%= number_with_precision((w["pres"].to_f*760/1040), :precision => 2) %> Hgmm</td>
+        </tr>
+        <tr>
+          <td>Hum:</td>
+          <td><%= w["hmid"] %> %</td>
+        </tr>
+        <tr>
+          <td>Vânt:</td>
+          <td><%= w["ws"] %> km/h din direcţia <%= w["wd"] %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style=" clear : both; font-size : 90%; padding-left : 10px; text-align : left; text-indent : 0px;">
+      &#8226;<br>Soarele răsare <%= w["sunr"] %> şi apune <%= w["suns"] %>
+    </div>
+  </div>
+</div>
