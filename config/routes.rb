@@ -13,8 +13,6 @@ ActionController::Routing::Routes.draw do |map|
   map.glossar 'glossar', :controller => 'trst_sys', :action => 'glossar'
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
-  map.resource :account, :controller => "trst_users"
-  map.resources :trst_users
   map.resource :trst_user_session
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
