@@ -31,12 +31,12 @@ module TrstSysExeHelper
     w["pres"] = data[data.index('<r>') + 3 .. data.index('</r>') -1]
     w["hmid"] = data[data.index('<hmid>') .. data.index('</hmid>') -1]
     w["ws"] = data[data.index('<s>') + 3  .. data.index('</s>') -1 ]
-    w["wd"] = data[data.index('<t>',850) .. data.index('</t>',850) -1]
+    w["wd"] = data[data.index('<t>',850) + 3 .. data.index('</t>',850) -1]
     w["sunr"] = data[data.index('<sunr>') .. data.index('</sunr>') -1]
     w["suns"] = data[data.index('<suns>') .. data.index('</suns>') -1]
 
-    w["ws"] = "0" if data[data.index('<s>') + 3  .. data.index('</s>') -1 ] == "calm"
-    w["wd"] = "Variabil" if data[data.index('<t>',850) .. data.index('</t>',850) -1] == ("calm" || "CALM" || "VAR")
+    w["ws"] = "0" if w["ws"] == "calm"
+    w["wd"] = "Variabil"  if w["wd"] == "CALM" || w["wd"] == "VAR"
     return w
   end
   
