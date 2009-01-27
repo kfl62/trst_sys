@@ -1,0 +1,47 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<% if params[:obj_id] == "new"
+  params[:page][:created_by] = current_trst_user.id
+  save_obj(TrstSysPage,params[:obj_id],params[:page])
+  o = find_obj(TrstSysPage,'last')
+  params[:obj_id] = o.id
+  obs = t('tasks.db_sys_page.save.create')
+elsif params[:remove]
+  o = find_obj(TrstSysPage,params[:obj_id])
+  obs = t('tasks.db_sys_page.save.remove', :page_name => o.title)
+  TrstSysPage.delete(params[:obj_id])
+else
+  save_obj(TrstSysPage,params[:obj_id],params[:page])
+  o = find_obj(TrstSysPage,params[:obj_id])
+  obs = t('tasks.db_sys_page.save.update')
+end -%>
+<% if params[:remove] %>
+  <div align="center" style="width:400px;height:3em">
+    <%= obs %>
+  </div>
+<% else %>
+  <div style="width:500px;height:190px">
+    <p><%= obs %></p>
+    <table style="width:80%; margin:auto;">
+      <thead>
+        <tr>
+          <th><%=t 'activerecord.attributes.label_attribute' %></th>
+          <th><%=t 'activerecord.attributes.label_value' %></th>
+        </tr>
+      </thead>
+      <tbody align="left">
+        <%= custom_schema_definitions_html(o) %>
+        <tr>
+          <td align="center" colspan="2" style="padding-top:10px">
+            <%= link_to_function t('tasks.db_sys_menu.save.link_to_show'),
+              "TrstWindow.show(#{params[:id]},#{params[:obj_id]})" %>&nbsp;|&nbsp;
+            <%= link_to_function t('tasks.db_sys_menu.save.link_to_list'),
+              "TrstWindow.exe(#{params[:id]},#{params[:obj_id]})" %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>
