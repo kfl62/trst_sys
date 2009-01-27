@@ -7,15 +7,15 @@
   save_obj(TrstUser,params[:obj_id],params[:user])
   o = find_obj(TrstUser,'last')
   params[:obj_id] = o.id
-  obs = t('tasks.db_user.save.user_create')
+  obs = t('tasks.db_user.save.create')
 elsif params[:remove]
   o = find_obj(TrstUser,params[:obj_id])
-  obs = t('tasks.db_user.save.user_remove', :login_name => o.login)
+  obs = t('tasks.db_user.save.remove', :login_name => o.login)
   TrstUser.delete(params[:obj_id])
 else
   save_obj(TrstUser,params[:obj_id],params[:user])
   o = find_obj(TrstUser,params[:obj_id])
-  obs = t('tasks.db_user.save.user_update')
+  obs = t('tasks.db_user.save.update')
 end -%>
 <% if params[:remove] %>
   <div align="center" style="width:400px;height:3em">

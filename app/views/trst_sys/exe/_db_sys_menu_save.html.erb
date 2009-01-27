@@ -3,19 +3,19 @@
 # and open the template in the editor.
 %>
 <% if params[:obj_id] == "new"
-  params[:user][:created_by] = current_trst_user.id
+  params[:menu][:created_by] = current_trst_user.id
   save_obj(TrstSysMenu,params[:obj_id],params[:menu])
   o = find_obj(TrstSysMenu,'last')
   params[:obj_id] = o.id
-  obs = t('tasks.db_sys_menu.save.user_create')
+  obs = t('tasks.db_sys_menu.save.create')
 elsif params[:remove]
   o = find_obj(TrstSysMenu,params[:obj_id])
-  obs = t('tasks.db_sys_menu.save.user_remove', :menu_name => o.name)
+  obs = t('tasks.db_sys_menu.save.remove', :menu_name => o.name)
   TrstSysMenu.delete(params[:obj_id])
 else
   save_obj(TrstSysMenu,params[:obj_id],params[:menu])
   o = find_obj(TrstSysMenu,params[:obj_id])
-  obs = t('tasks.db_sys_menu.save.user_update')
+  obs = t('tasks.db_sys_menu.save.update')
 end -%>
 <% if params[:remove] %>
   <div align="center" style="width:400px;height:3em">

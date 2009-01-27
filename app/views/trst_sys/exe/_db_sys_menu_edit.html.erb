@@ -4,11 +4,10 @@
 %>
 <div style="width : 380px; height : 200px;">
     <%  if params[:obj_id] == "new"
-      @user = TrstSysMenu.new
+      @menu = TrstSysMenu.new
     else
-      @user = find_obj(TrstSysMenu,params[:obj_id])
+      @menu = find_obj(TrstSysMenu,params[:obj_id])
     end -%>
-  <% @menu = find_obj(TrstSysMenu,params[:obj_id]) %>
   <% remote_form_for :menu, @menu,
     :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
     <table style="width:80%; margin:auto;">
