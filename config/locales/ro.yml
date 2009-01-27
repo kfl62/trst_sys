@@ -49,6 +49,26 @@ ro:
         user_remove: "Utilizatorul <strong>{{login_name}}</strong> a fost şters..."
         link_to_show: "Detalii cont"
         link_to_list: "Lista utilizatorilor"
+      show:
+        link_to_edit: "Editare utilizator"
+        link_to_list: "Lista utilizatorilor"
+    db_sys_menu:
+      list:
+        name: "Denumire"
+        controller: "Controllerul invocat"
+        chapter: "Capitolul"
+        page: "Pagina implicită"
+        has_submenu: "Are submeniu ?"
+        title: "Tooltip"
+      save:
+        user_create: "Elementul din meniu  a fost creat ..."
+        user_update: "Modificările au fost salvate..."
+        user_remove: "Elementul din meniu <strong>{{menu_name}}</strong> a fost şters..."
+        link_to_show: "Detalii meniu"
+        link_to_list: "Lista meniurilor"
+      show:
+        link_to_edit: "Editare meniu"
+        link_to_list: "Lista meniurilor"
 
   date:
     formats:
@@ -216,3 +236,10 @@ ro:
         login_count: "Nr.Conexiuni"
         last_login_at: "Ultima conexiune"
         last_login_ip: "IP"
+      trst_sys_menu:
+        name: "Nume"
+        controller: "Contr."
+        chapter: "Cap."
+        page: "Pag."
+        has_submenu: "SubM ?"
+        title: "Titlu"

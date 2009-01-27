@@ -45,21 +45,24 @@
             <td align="left"><%= o.login_count %></td>
             <td align="left"><%= o.last_login_at %></td>
             <td align="left"><%= o.last_login_ip %></td>
-            <td align="left">
+            <td align="center" style="border-left : 1px ridge #ffffff; width : 50px">
               <%= image_tag 'db_edit.png',
                 :alt => t('activerecord.attributes.crud.edit'),
                 :title => t('activerecord.attributes.crud.edit'),
-                :style => "cursor : pointer;",
+                :size => "13x13",
+                :style => "cursor : pointer; vertical-align : middle;",
                 :onclick => "TrstWindow.edit(#{params[:id]}, #{o.id}); return false;" %>
               <%= image_tag 'db_info.png',
                 :alt => t('activerecord.attributes.crud.show'),
                 :title => t('activerecord.attributes.crud.show'),
-                :style => "cursor : pointer;",
+                :size => "13x13",
+                :style => "cursor : pointer; vertical-align : middle;",
                 :onclick => "TrstWindow.show(#{params[:id]}, #{o.id}); return false;" %>
               <%= image_tag 'db_delete.png',
                 :alt => t('activerecord.attributes.crud.remove'),
                 :title => t('activerecord.attributes.crud.remove'),
-                :style => "cursor : pointer;",
+                :size => "13x13",
+                :style => "cursor : pointer; vertical-align : middle;",
                 :onclick => "TrstWindow.remove(#{params[:id]}, #{o.id}); return false;" %>
             </td>
           </tr>
@@ -73,11 +76,12 @@
         <% end %>
         <tr class="even">
           <td colspan="10" align="center" style="padding-top:10px"><%= trst_paginate(obj) %></td>
-          <td>
+          <td align="center" style="border-left : 1px ridge #ffffff; width : 50px">
             <%= image_tag 'db_new.png',
               :alt => t('activerecord.attributes.crud.new'),
               :title => t('activerecord.attributes.crud.new'),
-              :style => "padding : 0 0 0 5px; cursor : pointer;",
+              :size => "18x18",
+              :style => "padding : 0 0 0 5px; cursor : pointer; vertical-align : middle;",
               :onclick => "TrstWindow.edit(#{params[:id]},'new'); return false;" %>
           </td>
         </tr>

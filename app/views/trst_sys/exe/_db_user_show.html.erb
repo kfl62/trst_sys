@@ -2,7 +2,7 @@
 # Editare, adăugare utilizatori
 # Singurul utilizator care are voie este cel cu id==1
 %>
-<div id="show"  style="width:420px;height:310px">
+<div id="show"  style="width:420px;height:340px">
   <% user = find_obj(TrstUser,params[:obj_id])  %>
   <table style="width:80%; margin:auto;">
     <thead>
@@ -46,8 +46,11 @@
       </tr>
       <%= custom_schema_definitions_html(user) %>
       <tr>
-        <td align="center" colspan="2">
-          <br/>
+        <td align="center" colspan="2" style="padding-top:10px">
+            <%= link_to_function t('tasks.db_user.show.link_to_edit'),
+              "TrstWindow.edit(#{params[:id]},#{params[:obj_id]})" %>&nbsp;|&nbsp;
+            <%= link_to_function t('tasks.db_user.show.link_to_list'),
+              "TrstWindow.exe(#{params[:id]},#{params[:obj_id]})" %>
         </td>
       </tr>
     </tbody>

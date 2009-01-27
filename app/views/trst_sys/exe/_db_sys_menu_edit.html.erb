@@ -1,0 +1,57 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<div style="width : 380px; height : 200px;">
+    <%  if params[:obj_id] == "new"
+      @user = TrstSysMenu.new
+    else
+      @user = find_obj(TrstSysMenu,params[:obj_id])
+    end -%>
+  <% @menu = find_obj(TrstSysMenu,params[:obj_id]) %>
+  <% remote_form_for :menu, @menu,
+    :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
+    <table style="width:80%; margin:auto;">
+      <thead>
+        <tr>
+          <th><%=t 'activerecord.attributes.label_attribute' %></th>
+          <th><%=t 'activerecord.attributes.label_value' %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_menu.list.name' %></td>
+          <td><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_menu.list.controller' %></td>
+          <td><%= f.text_field :controller %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_menu.list.chapter' %></td>
+          <td><%= f.text_field :chapter %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_menu.list.page' %></td>
+          <td><%= f.text_field :page %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_menu.list.has_submenu' %></td>
+          <td align="left"><%= f.check_box :has_submenu %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_menu.list.title' %></td>
+          <td><%= f.text_field :title %></td>
+        </tr>
+        <tr>
+          <td align="center" colspan="2">
+            <br/>
+            <input type="hidden"  name="menu[updated_by]" value="<%= current_trst_user.id %>" />
+            <input type="submit" value="<%=t 'activerecord.attributes.crud.save' %>"/>
+            <input type="button" value="<%=t 'activerecord.attributes.crud.cancel' %>" onclick="Lightview.hide()"/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+</div>

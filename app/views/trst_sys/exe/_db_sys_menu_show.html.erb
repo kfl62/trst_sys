@@ -1,0 +1,54 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<div style="width:460px;height:320px">
+  <% o = find_obj(TrstSysMenu,params[:obj_id]) %>
+  <table style="width:80%; margin:auto;">
+    <thead>
+      <tr>
+        <th><%=t 'activerecord.attributes.label_attribute' %></th>
+        <th><%=t 'activerecord.attributes.label_value' %></th>
+      </tr>
+    </thead>
+    <tbody align="left">
+      <tr>
+        <td>Id</td>
+        <td><%= o.id %></td>
+      </tr>
+      <tr>
+        <td><%=t 'tasks.db_sys_menu.list.name' %></td>
+        <td><%= o.name %></td>
+      </tr>
+      <tr>
+        <td><%=t 'tasks.db_sys_menu.list.controller' %></td>
+        <td><%= o.controller %></td>
+      </tr>
+      <tr>
+        <td><%=t 'tasks.db_sys_menu.list.chapter' %></td>
+        <td><%= o.chapter %></td>
+      </tr>
+      <tr>
+        <td><%=t 'tasks.db_sys_menu.list.page' %></td>
+        <td><%= o.page %></td>
+      </tr>
+      <tr>
+        <td><%=t 'tasks.db_sys_menu.list.has_submenu' %></td>
+        <td><%= o.has_submenu %></td>
+      </tr>
+      <tr>
+        <td><%=t 'tasks.db_sys_menu.list.title' %></td>
+        <td><%= o.title %></td>
+      </tr>
+      <%= custom_schema_definitions_html(o) %>
+      <tr>
+          <td align="center" colspan="2" style="padding-top:10px">
+            <%= link_to_function t('tasks.db_sys_menu.show.link_to_edit'),
+              "TrstWindow.edit(#{params[:id]},#{params[:obj_id]})" %>&nbsp;|&nbsp;
+            <%= link_to_function t('tasks.db_sys_menu.show.link_to_list'),
+              "TrstWindow.exe(#{params[:id]},#{params[:obj_id]})" %>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

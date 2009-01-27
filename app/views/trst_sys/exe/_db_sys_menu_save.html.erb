@@ -4,18 +4,18 @@
 %>
 <% if params[:obj_id] == "new"
   params[:user][:created_by] = current_trst_user.id
-  save_obj(TrstUser,params[:obj_id],params[:user])
-  o = find_obj(TrstUser,'last')
+  save_obj(TrstSysMenu,params[:obj_id],params[:menu])
+  o = find_obj(TrstSysMenu,'last')
   params[:obj_id] = o.id
-  obs = t('tasks.db_user.save.user_create')
+  obs = t('tasks.db_sys_menu.save.user_create')
 elsif params[:remove]
-  o = find_obj(TrstUser,params[:obj_id])
-  obs = t('tasks.db_user.save.user_remove', :login_name => o.login)
-  TrstUser.delete(params[:obj_id])
+  o = find_obj(TrstSysMenu,params[:obj_id])
+  obs = t('tasks.db_sys_menu.save.user_remove', :menu_name => o.name)
+  TrstSysMenu.delete(params[:obj_id])
 else
-  save_obj(TrstUser,params[:obj_id],params[:user])
-  o = find_obj(TrstUser,params[:obj_id])
-  obs = t('tasks.db_user.save.user_update')
+  save_obj(TrstSysMenu,params[:obj_id],params[:menu])
+  o = find_obj(TrstSysMenu,params[:obj_id])
+  obs = t('tasks.db_sys_menu.save.user_update')
 end -%>
 <% if params[:remove] %>
   <div align="center" style="width:400px;height:3em">
@@ -35,9 +35,9 @@ end -%>
         <%= custom_schema_definitions_html(o) %>
         <tr>
           <td align="center" colspan="2" style="padding-top:10px">
-            <%= link_to_function t('tasks.db_user.save.link_to_show'),
+            <%= link_to_function t('tasks.db_sys_menu.save.link_to_show'),
               "TrstWindow.show(#{params[:id]},#{params[:obj_id]})" %>&nbsp;|&nbsp;
-            <%= link_to_function t('tasks.db_user.save.link_to_list'),
+            <%= link_to_function t('tasks.db_sys_menu.save.link_to_list'),
               "TrstWindow.exe(#{params[:id]},#{params[:obj_id]})" %>
           </td>
         </tr>
