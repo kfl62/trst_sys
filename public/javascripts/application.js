@@ -110,9 +110,9 @@ var TrstWindow = {
       }
     })
   },
-  rich_edit: function(arg1,arg2,arg3,arg4){
+  mce_edit: function(arg1,arg2,arg3,arg4){
     Lightview.show({
-      href: 'trst_sys/rich_edit?type=edit&id=' + arg1 + '&obj_name=' + arg2 + '&obj_id=' + arg3 + '&obj_method=' + arg4,
+      href: 'trst_sys/mce_edit?type=edit&id=' + arg1 + '&obj_name=' + arg2 + '&obj_id=' + arg3 + '&obj_method=' + arg4,
       title: "Editor de text",
       options: {
         autosize: false,

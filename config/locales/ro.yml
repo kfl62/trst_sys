@@ -29,6 +29,11 @@ ro:
   pages:
     pg34:
       tdy: "Astăzi {{dt_long}}, săpt.({{dt_week}}) ziua ({{dt_yday}}) a anului, au mai rămas ({{dt_dylft}}) zile."
+    mce_edit:
+      title: "Editor de text"
+      update: "Modificările la câmpul <strong>\"{{attribut_name}}\"</strong>  au fost salvate, cu următorul conţinut:"
+      link_to_edit: "Înapoi la câmpuri"
+      link_to_list: "Înapoi la tabel"
 
   tasks:
     db_user:
@@ -86,6 +91,25 @@ ro:
       show:
         link_to_edit: "Editare submeniu"
         link_to_list: "Lista submeniurilor"
+    db_sys_page:
+      list:
+        controller: "Controller"
+        chapter: "Capitolul"
+        page: "Pagina"
+        title: "Titlu"
+        intro: "Introducere"
+        actions: "Acțiuni"
+        content: "Conținut"
+        note: "Notă"
+      save:
+        create: "Pagina  a fost creată ..."
+        update: "Modificările au fost salvate..."
+        remove: "Pagina <strong>{{pagina_name}}</strong> a fost ştearsă..."
+        link_to_show: "Detalii pagină"
+        link_to_list: "Lista paginilor"
+      show:
+        link_to_edit: "Editare pagină"
+        link_to_list: "Lista paginilor"
 
   date:
     formats:
@@ -267,3 +291,12 @@ ro:
         page: "Pag."
         has_submenu: "Activ ?"
         title: "Titlu"
+      trst_sys_page:
+        controller: "Contr."
+        chapter: "Cap."
+        page: "Pag."
+        title: "Titlu"
+        intro: "Intro"
+        actions: "Acțiuni"
+        content: "Conținut"
+        note: "Notă"

@@ -6,4 +6,8 @@ class TrstSysController < ApplicationController
 
   end
   
+  def mce_edit
+   render :layout => false
+  end
+  
 end

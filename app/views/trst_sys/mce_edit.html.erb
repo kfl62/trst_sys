@@ -1,0 +1,48 @@
+<% if params[:type] == "edit" %>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+      <title><%=t 'pages.mce_edit.title' %></title>
+      <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+      <script type="text/javascript" src="/javascripts/tiny_mce/tiny_mce.js"></script>
+      <script type="text/javascript" src="/javascripts/tiny_mce_ini.js"></script>
+      <script type="text/javascript" src="/javascripts/prototype.js"></script>
+      <link href="/stylesheets/central.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body style="background-color : #AFAFAF; padding: 10px 10px 0 10px;">
+      <% obj = find_obj(params[:obj_name].constantize,params[:obj_id]) %>
+      <% remote_form_for :obj, obj,
+        :url => {:action => 'mce_edit', :id => params[:id], :type => 'save',:obj_name => params[:obj_name] , :obj_id => params[:obj_id], :obj_method => params[:obj_method]} do |f| %>
+        <%= f.text_area params[:obj_method].intern, {:style => "width:100%;height:435px;"}  %>
+        <input type="hidden"  name="obj[updated_by]" value="<%= current_trst_user.id %>" />
+        <p style="padding: 5px 0 0 10px">
+          <a href="/trst_sys#" onclick="document.forms[0].submit();return false;"><%=t 'activerecord.attributes.crud.save' %></a>
+          &nbsp;|&nbsp;<a href="/trst_sys#" onclick="parent.TrstWindow.edit(<%= params[:id] %>,<%= params[:obj_id] %>);return false;"><%=t 'activerecord.attributes.crud.cancel' %>/<%=t 'pages.mce_edit.link_to_edit' %></a>
+          &nbsp;|&nbsp;<a href="/trst_sys#" onclick="parent.TrstWindow.exe(<%= params[:id] %>);return false;"><%=t 'activerecord.attributes.crud.cancel' %>/<%=t 'pages.mce_edit.link_to_list' %></a>
+          &nbsp;|&nbsp;<a href="/trst_sys#" onclick="parent.Lightview.hide();return false;"><%=t 'activerecord.attributes.crud.cancel' %></a>
+        </p>
+      <% end %>
+    </body
+  </html>
+<% elsif params[:type] == "save" %>
+  <% save_obj(params[:obj_name].constantize,params[:obj_id],params[:obj]) %>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+      <title><%=t 'pages.mce_edit.title' %></title>
+      <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+      <link href="/stylesheets/central.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body style="background-color : #AFAFAF; padding: 5px 10px 5px 10px;">
+      <div  class="sys_title"><%=t 'pages.mce_edit.update', :attribut_name => params[:obj_method] %> </div>
+      <div style="background-color : #ffffff; width:100%; height:410px;">
+        <%= params[:obj].values[0] %>
+      </div>
+      <p style="padding: 15px 0 0 10px">
+        <a href="/trst_sys#" onclick="parent.TrstWindow.edit(<%= params[:id] %>,<%= params[:obj_id] %>);return false;"><%=t 'pages.mce_edit.link_to_edit' %></a>
+        &nbsp;|&nbsp;<a href="/trst_sys#" onclick="parent.TrstWindow.exe(<%= params[:id] %>);return false;"><%=t 'pages.mce_edit.link_to_list' %></a>
+        &nbsp;|&nbsp;<a href="/trst_sys#" onclick="parent.Lightview.hide();return false;"><%=t 'activerecord.attributes.crud.cancel' %></a>
+      </p>
+    </body
+  </html>
+<% end %>
