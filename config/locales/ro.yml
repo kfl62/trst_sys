@@ -44,9 +44,9 @@ ro:
         password_change: "Parola modificată"
         password_confirmation: "Confirmare parolă"
       save:
-        user_create: "Utilizatorul  a fost creat ..."
-        user_update: "Modificările au fost salvate..."
-        user_remove: "Utilizatorul <strong>{{login_name}}</strong> a fost şters..."
+        create: "Utilizatorul  a fost creat ..."
+        update: "Modificările au fost salvate..."
+        remove: "Utilizatorul <strong>{{login_name}}</strong> a fost şters..."
         link_to_show: "Detalii cont"
         link_to_list: "Lista utilizatorilor"
       show:
@@ -61,14 +61,31 @@ ro:
         has_submenu: "Are submeniu ?"
         title: "Tooltip"
       save:
-        user_create: "Elementul din meniu  a fost creat ..."
-        user_update: "Modificările au fost salvate..."
-        user_remove: "Elementul din meniu <strong>{{menu_name}}</strong> a fost şters..."
+        create: "Elementul din meniu  a fost creat ..."
+        update: "Modificările au fost salvate..."
+        remove: "Elementul din meniu <strong>{{menu_name}}</strong> a fost şters..."
         link_to_show: "Detalii meniu"
         link_to_list: "Lista meniurilor"
       show:
         link_to_edit: "Editare meniu"
         link_to_list: "Lista meniurilor"
+    db_sys_submenu:
+      list:
+        name: "Denumire"
+        controller: "Controllerul invocat"
+        chapter: "Capitolul"
+        page: "Pagina implicită"
+        active: "Este activ ?"
+        title: "Tooltip"
+      save:
+        create: "Elementul din submeniu  a fost creat ..."
+        update: "Modificările au fost salvate..."
+        remove: "Elementul din submeniu <strong>{{submenu_name}}</strong> a fost şters..."
+        link_to_show: "Detalii submeniu"
+        link_to_list: "Lista submeniurilor"
+      show:
+        link_to_edit: "Editare submeniu"
+        link_to_list: "Lista submeniurilor"
 
   date:
     formats:
@@ -242,4 +259,11 @@ ro:
         chapter: "Cap."
         page: "Pag."
         has_submenu: "SubM ?"
+        title: "Titlu"
+      trst_sys_submenu:
+        name: "Nume"
+        controller: "Contr."
+        chapter: "Cap."
+        page: "Pag."
+        has_submenu: "Activ ?"
         title: "Titlu"

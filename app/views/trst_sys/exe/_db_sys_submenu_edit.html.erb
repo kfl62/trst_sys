@@ -1,0 +1,56 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<div style="width : 380px; height : 200px;">
+    <%  if params[:obj_id] == "new"
+      @submenu = TrstSysSubmenu.new
+    else
+      @submenu = find_obj(TrstSysSubmenu,params[:obj_id])
+    end -%>
+  <% remote_form_for :submenu, @submenu,
+    :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
+    <table style="width:80%; margin:auto;">
+      <thead>
+        <tr>
+          <th><%=t 'activerecord.attributes.label_attribute' %></th>
+          <th><%=t 'activerecord.attributes.label_value' %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_submenu.list.name' %></td>
+          <td><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_submenu.list.controller' %></td>
+          <td><%= f.text_field :controller %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_submenu.list.chapter' %></td>
+          <td><%= f.text_field :chapter %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_submenu.list.page' %></td>
+          <td><%= f.text_field :page %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_submenu.list.active' %></td>
+          <td align="left"><%= f.check_box :active %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_submenu.list.title' %></td>
+          <td><%= f.text_field :title %></td>
+        </tr>
+        <tr>
+          <td align="center" colspan="2">
+            <br/>
+            <input type="hidden"  name="submenu[updated_by]" value="<%= current_trst_user.id %>" />
+            <input type="submit" value="<%=t 'activerecord.attributes.crud.save' %>"/>
+            <input type="button" value="<%=t 'activerecord.attributes.crud.cancel' %>" onclick="Lightview.hide()"/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+</div>
