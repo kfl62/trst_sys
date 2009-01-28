@@ -18,7 +18,7 @@ module WillPaginateHelper
         :html => {:title => t('activerecord.attributes.paginate.first')}
       ) if arg1.current_page > 1
       html += link_to_remote('&nbsp;&lsaquo;&nbsp;',
-        :url => { :action => 'task', :id => params[:id], :type => 'page', :page => (arg1.total_pages-1).to_s},
+        :url => { :action => 'task', :id => params[:id], :type => 'page', :page => (arg1.previous_page).to_s},
         :html => {:title => t('activerecord.attributes.paginate.prev')}
       ) if arg1.current_page > 2
       html += '<span style="font-size:0.9em"> pg. <strong>'+ arg1.current_page.to_s + '</strong> din ' + '<strong>' + arg1.total_pages.to_s + '</strong> </span>' if arg1.total_pages >1
