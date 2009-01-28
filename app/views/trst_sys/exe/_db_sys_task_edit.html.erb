@@ -1,0 +1,69 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<div style="width : 380px; height : 240px;">
+  <%  if params[:obj_id] == "new"
+    @task = TrstSysTask.new
+  else
+    @task = find_obj(TrstSysTask,params[:obj_id])
+  end -%>
+  <% remote_form_for :task, @task,
+    :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
+    <table style="width:80%; margin:auto;">
+      <thead>
+        <tr>
+          <th><%=t 'activerecord.attributes.label_attribute' %></th>
+          <th><%=t 'activerecord.attributes.label_value' %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_task.list.trst_sys_page_id' %> :</td>
+          <td align="left"><%= f.text_field :trst_sys_page_id %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_task.list.controller' %> :</td>
+          <td align="left"><%= f.text_field :controller %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_task.list.exe_id' %> :</td>
+          <td align="left"><%= f.text_field :exe_id %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_task.list.exe_params' %> :</td>
+          <td align="left"><%= f.text_field :exe_params %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_task.list.name' %> :</td>
+          <td align="left"><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_task.list.title' %> :</td>
+          <td align="left"><%= f.text_field :title %></td>
+        </tr>
+        <tr>
+          <td align="left"><%=t 'tasks.db_sys_task.list.info' %> :*</td>
+          <td>
+            <a href="#" onclick="TrstWindow.mce_edit(<%= params[:id] %>,'TrstSysTask' ,<%= params[:obj_id] %>, 'info')">
+              <%= truncate(strip_tags(@task.info), :length => 40) %>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" colspan="2">
+            <br/>
+            <input type="hidden"  name="task[updated_by]" value="<%= current_trst_user.id %>" />
+            <input type="submit" value="<%=t 'activerecord.attributes.crud.save' %>"/>
+            <input type="button" value="<%=t 'activerecord.attributes.crud.cancel' %>" onclick="Lightview.hide()"/>
+          </td>
+        </tr>
+        <tr>
+          <td align="left" colspan="2">
+            <p>* ptr. a edita câmpul <strong>click</strong> pe link ...</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+</div>

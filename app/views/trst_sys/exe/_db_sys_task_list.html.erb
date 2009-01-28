@@ -1,0 +1,77 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<div  style="width:760px;height:480px">
+  <% obj = trst_find_all(TrstSysTask) ; i = obj.offset %>
+  <% if obj.length == 0  %>
+    <script type="text/javascript"> TrstWindow.edit(<%= params[:id] %>,"new");</script>
+  <% end %>
+  <table class="full">
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th title="<%=t 'tasks.db_sys_task.list.trst_sys_page_id' %>"><%= TrstSysTask.human_attribute_name("trst_sys_page_id") %></th>
+        <th title="<%=t 'tasks.db_sys_task.list.controller' %>"><%= TrstSysTask.human_attribute_name("controller") %></th>
+        <th title="<%=t 'tasks.db_sys_task.list.exe_id' %>"><%= TrstSysTask.human_attribute_name("exe_id") %></th>
+        <th title="<%=t 'tasks.db_sys_task.list.exe_params' %>"><%= TrstSysTask.human_attribute_name("exe_params") %></th>
+        <th title="<%=t 'tasks.db_sys_task.list.name' %>"><%= TrstSysTask.human_attribute_name("name") %></th>
+        <th title="<%=t 'tasks.db_sys_task.list.title' %>"><%= TrstSysTask.human_attribute_name("title") %></th>
+        <th title="<%=t 'tasks.db_sys_task.list.info' %>"><%= TrstSysTask.human_attribute_name("info") %></th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for o in obj %>
+        <tr class="<%= cycle("even","odd") %>">
+          <td align="right"><%= i += 1 %>.&nbsp;</td>
+          <td align="left"><%= o.trst_sys_page_id %></td>
+          <td align="left"><%= o.controller %></td>
+          <td align="left"><%= truncate(o.exe_id, :length => 20) %></td>
+          <td align="left"><%= truncate(o.exe_params, :length => 20) %></td>
+          <td align="left"><%= truncate(o.name, :length => 20) %></td>
+          <td align="left"><%= truncate(o.title, :length => 20) %></td>
+          <td align="left"><%= truncate(strip_tags(o.info), :length => 20) %></td>
+          <td align="center" style="border-left : 1px ridge #ffffff; width : 50px">
+            <%= image_tag 'db_edit.png',
+              :alt => t('activerecord.attributes.crud.edit'),
+              :title => t('activerecord.attributes.crud.edit'),
+              :size => "13x13",
+              :style => "cursor : pointer; vertical-align : middle;",
+              :onclick => "TrstWindow.edit(#{params[:id]}, #{o.id}); return false;" %>
+            <%= image_tag 'db_info.png',
+              :alt => t('activerecord.attributes.crud.show'),
+              :title => t('activerecord.attributes.crud.show'),
+              :size => "13x13",
+              :style => "cursor : pointer; vertical-align : middle;",
+              :onclick => "TrstWindow.show(#{params[:id]}, #{o.id}); return false;" %>
+            <%= image_tag 'db_delete.png',
+              :alt => t('activerecord.attributes.crud.remove'),
+              :title => t('activerecord.attributes.crud.remove'),
+              :size => "13x13",
+              :style => "cursor : pointer; vertical-align : middle;",
+              :onclick => "TrstWindow.remove(#{params[:id]}, #{o.id}); return false;" %>
+          </td>
+        </tr>
+      <% end %>
+      <% if i.modulo(obj.per_page) > 0 %>
+        <% (obj.per_page-i.modulo(obj.per_page)).times do %>
+          <tr class="even">
+            <td colspan="9">&nbsp;</td>
+          </tr>
+        <% end %>
+      <% end %>
+      <tr class="even">
+        <td colspan="8" align="center" style="padding-top:10px"><%= trst_paginate(obj) %></td>
+        <td style="border-left : 1px ridge #ffffff; width : 50px">
+          <%= image_tag 'db_new.png',
+            :alt => t('activerecord.attributes.crud.new'),
+            :title => t('activerecord.attributes.crud.new'),
+            :size => "18x18",
+            :style => "padding : 0 0 0 10px; cursor : pointer; vertical-align : middle;",
+            :onclick => "TrstWindow.edit(#{params[:id]},'new'); return false;" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

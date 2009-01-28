@@ -110,6 +110,24 @@ ro:
       show:
         link_to_edit: "Editare pagină"
         link_to_list: "Lista paginilor"
+    db_sys_task:
+      list:
+        trst_sys_page_id: "TrstSys Pagina"
+        controller: "Controller"
+        exe_id: "Identificator"
+        exe_params: "Parametrii"
+        name: "Nume"
+        title: "Titlu"
+        info: "Info"
+      save:
+        create: "Acțiunea  a fost creată ..."
+        update: "Modificările au fost salvate..."
+        remove: "Acțiunea <strong>{{task_name}}</strong> a fost ştearsă..."
+        link_to_show: "Detalii acțiune"
+        link_to_list: "Lista acțiunilor"
+      show:
+        link_to_edit: "Editare acțiune"
+        link_to_list: "Lista acțiunilor"
 
   date:
     formats:
@@ -300,3 +318,11 @@ ro:
         actions: "Acțiuni"
         content: "Conținut"
         note: "Notă"
+      trst_sys_task:
+        trst_sys_page_id: "Pag."
+        controller: "Contr."
+        exe_id: "Identificator"
+        exe_params: "Parametrii"
+        name: "Nume"
+        title: "Titlu"
+        info: "Info"
