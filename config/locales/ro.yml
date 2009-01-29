@@ -2,8 +2,10 @@
 ro:
   layout:
     title: "Firma Dvs."
+    title_development: "Firma Dvs."
+    title_klclean: "klClean"
+    title_diren: "Diren/Continent"
     header:
-      company: "Firma Dvs."
       authenticated_as: "Autentificat ca şi:"
     menu:
       submenu_show: "Arată submeniul"

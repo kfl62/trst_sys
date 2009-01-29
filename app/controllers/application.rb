@@ -4,8 +4,10 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 
+  before_filter :current_database
+
   filter_parameter_logging :password, :password_confirmation
-  helper_method :current_trst_user_session, :current_trst_user
+  helper_method :current_trst_user_session, :current_trst_user, :current_title, :current_logo
 
 
   private
@@ -44,6 +46,33 @@ class ApplicationController < ActionController::Base
   def redirect_back_or_default(default)
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
+  end
+
+  def current_location
+    case request.domain
+    when "localhost"
+      return Rails.env
+    when "trst.ro"
+      return request.subdomains.first + '.' + Rails.env
+    else
+      subdomain_first = request.subdomains.first
+      return request.domain.split('.')[0] + '.' + Rails.env if subdomain_first == 'srv' || subdomain_first == 'trst'
+    end
+  end
+
+  def current_database
+    ActiveRecord::Base.establish_connection(
+      :adapter => "sqlite3",
+      :database  => Rails.root + '/db/' + current_location + '.sqlite3'
+    )
+  end
+
+  def current_title
+    t('layout.title_' + current_location.split(".")[0])
+  end
+
+  def current_logo
+     "sigla_#{current_location.split('.')[0]}.gif"
   end
 
 end
