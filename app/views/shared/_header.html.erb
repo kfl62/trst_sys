@@ -1,36 +1,36 @@
-    <div id="header">
-      <div id="topnav">
-        <!-- start: skip link navigation -->
-        <a class="skip" href="#navigation" title="skip link">Skip to the navigation</a><span class="hideme">.</span>
-        <a class="skip" href="#content" title="skip link">Skip to the content</a><span class="hideme">.</span>
-        <!-- end: skip link navigation -->
-        <span>
-        <% if current_trst_user %>
+<div id="header">
+  <div id="topnav">
+    <!-- start: skip link navigation -->
+    <a class="skip" href="#navigation" title="skip link">Skip to the navigation</a><span class="hideme">.</span>
+    <a class="skip" href="#content" title="skip link">Skip to the content</a><span class="hideme">.</span>
+    <!-- end: skip link navigation -->
+    <span>
+      <% if current_trst_user %>
         <a href="/logout">Logout</a> |
-        <% else %>
-          <a id="login_link" href="/login" class="lightview" rel="ajax" title="<%=t 'login.title' %> :: :: autosize:true">Login</a> |
-        <% end -%>
-        <a href="http://www.trst.ro" target="_blank">TrustSys</a>
-        </span>
-      </div>
-      <div class="header_title">
-        <h1><em><%=t 'layout.header.company'  %> - TrustSys</em> </h1>
-        <span class="header_title">
-          <%=t 'layout.header.authenticated_as'  %><br />
-            <% if current_trst_user %>
-            <strong><em><%= current_trst_user.login %></em></strong>
-            <% else %>
-            <strong><em>Anonymous</em></strong>
-            <% end -%>
-        </span>
-      </div>
-    </div>
-    <!-- begin: main navigation nav -->
-    <div id="nav">
-      <!-- skip anchor: navigation -->
-      <a id="navigation" name="navigation"></a>
-      <div id="nav_main">
-        <%= render :partial => '/shared/nav_main' -%>
-      </div>
-    </div>
-    <!-- end: main navigation -->
+      <% else %>
+        <a id="login_link" href="/login" class="lightview" rel="ajax" title="<%=t 'login.title' %> :: :: autosize:true">Login</a> |
+      <% end -%>
+      <a href="http://www.trst.ro" target="_blank">TrustSys</a>
+    </span>
+  </div>
+  <div class="header_title">
+    <h1><em><%= current_title  %> - TrustSys</em> </h1>
+  </div>
+  <div class="header_current_trst_user">
+    <%=t 'layout.header.authenticated_as'  %><br />
+    <% if current_trst_user %>
+      <strong><em><%= current_trst_user.login %></em></strong>
+    <% else %>
+      <strong><em>Anonymous</em></strong>
+    <% end -%>
+  </div>
+</div>
+<!-- begin: main navigation nav -->
+<div id="nav">
+  <!-- skip anchor: navigation -->
+  <a id="navigation" name="navigation"></a>
+  <div id="nav_main">
+    <%= render :partial => '/shared/nav_main' -%>
+  </div>
+</div>
+<!-- end: main navigation -->
