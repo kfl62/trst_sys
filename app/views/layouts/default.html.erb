@@ -1,42 +1,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <title><%=t 'layout.title'  %>-TrustSys</title>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <script type="text/javascript" src="javascripts/prototype.js"></script>
-  <script type="text/javascript" src="javascripts/scriptaculous.js?load=effects"></script>
-  <script type="text/javascript" src="javascripts/lightview.js"></script>
-  <script type="text/javascript" src="javascripts/application.js"></script>
-  <%= stylesheet_link_tag "central.css" -%>
-  <!--[if lte IE 7]>
+  <head>
+    <title><%= current_title  %>-TrustSys</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="javascripts/prototype.js"></script>
+    <script type="text/javascript" src="javascripts/scriptaculous.js?load=effects"></script>
+    <script type="text/javascript" src="javascripts/lightview.js"></script>
+    <script type="text/javascript" src="javascripts/application.js"></script>
+    <%= stylesheet_link_tag "central.css" -%>
+    <style>
+      #header {
+        background: #3e3e3e url(/images/<%= current_logo %>) no-repeat center left;
+      }
+    </style>
+    <!--[if lte IE 7]>
   <link href="patches/patch_layout_draft.css" rel="stylesheet" type="text/css" />
-  <![endif]-->
-</head>
-<body style="background-color : #3e3e3e; padding: 10px 0;">
-<div id="page_margins">
-  <div id="page">
-  <%= render :partial => '/shared/header' %>
-    <!-- begin: content area #main -->
-    <div id="main">
-      <div id="col1">
-        <div id="flashes">
-          <div id="flash-error" class="flash_error" style="display: none;"><%= flash[:error] %>&nbsp;</div>
-          <div id="flash-notice" class="flash_notice" style="display:none"><%= flash[:notice] %>&nbsp;</div>
-          <div id="flash-loading" class="flash_loading" style="display:none"><%=t 'layout.flash.loading' %></div>
+    <![endif]-->
+  </head>
+  <body style="background-color : #3e3e3e; padding: 10px 0;">
+    <div id="page_margins">
+      <div id="page">
+        <%= render :partial => '/shared/header' %>
+        <!-- begin: content area #main -->
+        <div id="main">
+          <div id="col1">
+            <div id="flashes">
+              <div id="flash-error" class="flash_error" style="display: none;"><%= flash[:error] %>&nbsp;</div>
+              <div id="flash-notice" class="flash_notice" style="display:none"><%= flash[:notice] %>&nbsp;</div>
+              <div id="flash-loading" class="flash_loading" style="display:none"><%=t 'layout.flash.loading' %></div>
+            </div>
+            <div id="col1_content" class="clearfix">
+              <%= @content_for_layout -%>
+            </div>
+          </div>
         </div>
-        <div id="col1_content" class="clearfix">
-          <%= @content_for_layout -%>
-        </div>
+        <!-- end: #main -->
       </div>
+      <!-- begin: #footer -->
+      <div id="footer">
+        (c) <a href="http://kfl62.trst.ro" title="Kiss Ferenc Loránt" target="_blank">kfl62</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layout based on <a href="http://www.yaml.de/">YAML</a>
+      </div>
+      <!-- end: #footer -->
     </div>
-    <!-- end: #main -->
-  </div>
-    <!-- begin: #footer -->
-    <div id="footer">
-      (c) <a href="http://kfl62.trst.ro" title="Kiss Ferenc Loránt" target="_blank">kfl62</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layout based on <a href="http://www.yaml.de/">YAML</a>
-    </div>
-    <!-- end: #footer -->
-</div>
-<%= render :partial => '/shared/flash', :object => flash %>
-</body>
+    <%= render :partial => '/shared/flash', :object => flash %>
+  </body>
 </html>
