@@ -1,5 +1,6 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  include Forms::ApplicationHelper
   # Caută în baza de date elementele  meniului principal
   def menu
     menu = TrstSysMenu.find(:all, :conditions => ['controller = ?', params[:controller]])
