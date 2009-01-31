@@ -14,7 +14,21 @@ class Forms::ApplicationFormBuilder < ActionView::Helpers::FormBuilder
     def label(method, text = nil, options = {})
       @template.label(@object_name, method, text, objectify_options(options))
     end
-
+    def th_label_tag(method, text = nil, options = {})
+      @template.th_label_tag(@object_name, method, text, objectify_options(options))
+    end
+    def td_value_tag(method, options = {})
+      @template.td_value_tag(@object_name, method, objectify_options(options))
+    end
+    def td_label_tag(method, text = nil, options = {})
+      @template.td_label_tag(@object_name, method, text, objectify_options(options))
+    end
+    def td_text_field(method, options = {})
+      @template.td_text_field(@object_name, method, objectify_options(options))
+    end
+    def text_field(method, options = {})
+      @template.text_field(@object_name, method, objectify_options(options))
+    end
   end
 
   private
