@@ -1,0 +1,38 @@
+<div style="width : 380px; height : 240px;">
+  <%  if params[:obj_id] == "new"
+    obj = TrstPrtn.new
+  else
+    obj = find_obj(TrstPrtn,params[:obj_id])
+  end -%>
+  <% remote_form_for :prtn, obj,
+    :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
+    <table style="width:80%; margin:auto;">
+      <thead>
+        <tr>
+          <%= f.th_label_tag :id, nil, {:attributes => "label_attribute"} %>
+          <%= f.th_label_tag :id, nil, {:attributes => "label_value"} %>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <%= f.td_label_tag :full_name, "Prefix / Nume / Sufix", {:colspan => 2} %>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <%= f.text_field :prefix, {:size => 2} %>
+            <%= f.text_field :name, {:size => 10} %>
+            <%= f.text_field :suffix, {:size => 3} %>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" colspan="2">
+            <br/>
+            <input type="hidden"  name="prtn[updated_by]" value="<%= current_trst_user.id %>" />
+            <input type="submit" value="<%=t 'activerecord.attributes.crud.save' %>"/>
+            <input type="button" value="<%=t 'activerecord.attributes.crud.cancel' %>" onclick="Lightview.hide()"/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+</div>

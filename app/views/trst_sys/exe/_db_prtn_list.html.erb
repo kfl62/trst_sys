@@ -1,0 +1,85 @@
+<div  style="width:760px;height:480px">
+  <% obj = trst_find_all(TrstPrtn) ; i = obj.offset %>
+  <% if obj.length == 0  %>
+    <script type="text/javascript"> TrstWindow.edit(<%= params[:id] %>,"new");</script>
+  <% end %>
+  <table class="full">
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <%= th_label_tag obj, :id %>
+        <%= th_label_tag obj, :full_name %>
+        <%= th_label_tag obj, :namesh %>
+        <%= th_label_tag obj, :id_chamcom %>
+        <%= th_label_tag obj, :id_fiscal %>
+        <%= th_label_tag obj, :id_itm %>
+        <%= th_label_tag obj, :id_account %>
+        <%= th_label_tag obj, :address %>
+        <%= th_label_tag obj, :city %>
+        <%= th_label_tag obj, :zip %>
+        <%= th_label_tag obj, :tel %>
+        <%= th_label_tag obj, :fax %>
+        <%= th_label_tag obj, :email %>
+        <th>&nbsp;</th>
+     </tr>
+    </thead>
+    <tbody>
+      <% for o in obj %>
+        <tr class="<%= cycle("even","odd")%>" >
+          <td align="right"><%= i += 1 %>.</td>
+          <%= td_value_tag o, :id, {:align => 'right'} %>
+          <%= td_value_tag o, :full_name %>
+          <%= td_value_tag o, :namesh %>
+          <%= td_value_tag o, :id_chamcom %>
+          <%= td_value_tag o, :id_fiscal %>
+          <%= td_value_tag o, :id_itm %>
+          <%= td_value_tag o, :id_account %>
+          <%= td_value_tag o, :address %>
+          <%= td_value_tag o, :city %>
+          <%= td_value_tag o, :zip %>
+          <%= td_value_tag o, :tel %>
+          <%= td_value_tag o, :fax %>
+          <%= td_value_tag o, :email %>
+          <td align="center" style="border-left : 1px ridge #ffffff; width : 50px">
+            <%= image_tag 'db_edit.png',
+              :alt => t('activerecord.attributes.crud.edit'),
+              :title => t('activerecord.attributes.crud.edit'),
+              :size => "13x13",
+              :style => "cursor : pointer; vertical-align : middle;",
+              :onclick => "TrstWindow.edit(#{params[:id]}, #{o.id}); return false;" %>
+            <%= image_tag 'db_info.png',
+              :alt => t('activerecord.attributes.crud.show'),
+              :title => t('activerecord.attributes.crud.show'),
+              :size => "13x13",
+              :style => "cursor : pointer; vertical-align : middle;",
+              :onclick => "TrstWindow.show(#{params[:id]}, #{o.id}); return false;" %>
+            <%= image_tag 'db_delete.png',
+              :alt => t('activerecord.attributes.crud.remove'),
+              :title => t('activerecord.attributes.crud.remove'),
+              :size => "13x13",
+              :style => "cursor : pointer; vertical-align : middle;",
+              :onclick => "TrstWindow.remove(#{params[:id]}, #{o.id}); return false;" %>
+          </td>
+        </tr>
+      <% end %>
+      <% if i.modulo(obj.per_page) > 0 %>
+        <% (obj.per_page-i.modulo(obj.per_page)).times do %>
+          <tr class="even">
+            <td colspan="15">&nbsp;</td>
+          </tr>
+        <% end %>
+      <% end %>
+      <tr class="even">
+        <td colspan="14" align="center" style="padding-top:10px"><%= trst_paginate(obj) %></td>
+        <td style="border-left : 1px ridge #ffffff; width : 50px">
+          <%= image_tag 'db_new.png',
+            :alt => t('activerecord.attributes.crud.new'),
+            :title => t('activerecord.attributes.crud.new'),
+            :size => "18x18",
+            :style => "padding : 0 0 0 10px; cursor : pointer; vertical-align : middle;",
+            :onclick => "TrstWindow.edit(#{params[:id]},'new'); return false;" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
