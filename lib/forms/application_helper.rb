@@ -127,12 +127,7 @@ module Forms::ApplicationHelper
     "<tr class='even'>
         <td colspan='#{options[:colspan]}'  align='center' style='padding-top:10px'>#{trst_paginate(object_name)}</td>
         <td style='border-left : 1px ridge #ffffff; width : 50px'>
-        #{image_tag 'db_new.png',
-    :alt => t('activerecord.attributes.crud.new'),
-    :title => t('activerecord.attributes.crud.new'),
-    :size => "18x18",
-    :style => "padding : 0 0 0 10px; cursor : pointer; vertical-align : middle;",
-    :onclick => "TrstWindow.edit(#{params[:id]},'new'); return false;"}
+        #{image_tag_for_link("new", {:arg1 => params[:id], :arg2 => "new", :size => "18x18", :style => "padding : 0 0 0 10px; cursor : pointer; vertical-align : middle;" })}
         </td>
       </tr>
     "
@@ -152,29 +147,20 @@ module Forms::ApplicationHelper
 
   def link_to_task_last_column(object_name)
     "<td align='center' style='border-left : 1px ridge #ffffff; width : 50px'>
-    #{image_tag 'db_edit.png',
-      :alt => t('activerecord.attributes.crud.edit'),
-      :title => t('activerecord.attributes.crud.edit'),
-      :size => "13x13",
-      :style => "cursor : pointer; vertical-align : middle;",
-      :onclick => "TrstWindow.edit(#{params[:id]}, #{object_name.id}); return false;"}
-    #{image_tag 'db_info.png',
-      :alt => t('activerecord.attributes.crud.show'),
-      :title => t('activerecord.attributes.crud.show'),
-      :size => "13x13",
-      :style => "cursor : pointer; vertical-align : middle;",
-      :onclick => "TrstWindow.show(#{params[:id]}, #{object_name.id}); return false;"}
-    #{image_tag 'db_delete.png',
-      :alt => t('activerecord.attributes.crud.remove'),
-      :title => t('activerecord.attributes.crud.remove'),
-      :size => "13x13",
-      :style => "cursor : pointer; vertical-align : middle;",
-      :onclick => "TrstWindow.remove(#{params[:id]}, #{object_name.id}); return false;"}
+    #{image_tag_for_link("edit,show,remove", {:arg1 => params[:id], :arg2 => object_name.id })}
     </td>"
   end
 
-  def image_for_link_to_task
-    
+  def image_tag_for_link(src,options ={})
+    html = ""
+    src.split(",").each { |s|
+      options[:alt] = options[:title] = t('activerecord.attributes.crud.' + s)
+      options[:size] = "13x13" unless options[:size]
+      options[:style] = "cursor : pointer; vertical-align : middle;" unless options[:style]
+      options[:onclick] = "TrstWindow.#{s}(#{options.delete(:arg1)}, #{options.delete(:arg2)}); return false;"
+      html += image_tag("db_#{s}.png", options)
+    }
+    html
   end
 
 end

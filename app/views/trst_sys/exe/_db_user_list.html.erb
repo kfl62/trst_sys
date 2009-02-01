@@ -52,13 +52,13 @@
                 :size => "13x13",
                 :style => "cursor : pointer; vertical-align : middle;",
                 :onclick => "TrstWindow.edit(#{params[:id]}, #{o.id}); return false;" %>
-              <%= image_tag 'db_info.png',
+              <%= image_tag 'db_show.png',
                 :alt => t('activerecord.attributes.crud.show'),
                 :title => t('activerecord.attributes.crud.show'),
                 :size => "13x13",
                 :style => "cursor : pointer; vertical-align : middle;",
                 :onclick => "TrstWindow.show(#{params[:id]}, #{o.id}); return false;" %>
-              <%= image_tag 'db_delete.png',
+              <%= image_tag 'db_remove.png',
                 :alt => t('activerecord.attributes.crud.remove'),
                 :title => t('activerecord.attributes.crud.remove'),
                 :size => "13x13",
