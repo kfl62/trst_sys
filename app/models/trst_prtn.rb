@@ -45,7 +45,7 @@ class TrstPrtn < ActiveRecord::Base
     20
   end
 
-  def name_long
+  def full_name
     prefix = self.prefix? ? self.prefix : 'S.C. ?'
     name = self.name? ? self.name : '...?...'
     suffix = self.suffix? ? self.suffix : 'S.R.L. ?'
