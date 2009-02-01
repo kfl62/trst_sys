@@ -4,30 +4,21 @@ module Forms::ApplicationHelper
     obj = object_name_is(object_name,options)
     if options[:short_name]
       options.delete(:short_name)
-      text = obj.classify.constantize.human_attribute_name("#{method}")
+      text ||= obj.classify.constantize.human_attribute_name("#{method}")
     else
-      text = t('tasks.' + obj.to_s.gsub(/trst/,"db") + '.list.' + method.to_s)
-    end if text.nil? || text.blank?
+      text ||= t('tasks.' + obj.to_s.gsub(/trst/,"db") + '.list.' + method.to_s)
+    end
     options.delete(:object)
     options["name"] ||= "#{object_name}_#{method}"
     options["name"] ||= "#{obj}_#{method}" if  object_name.is_a? Object
     content_tag(:label, text , options)
   end
   
-  #TODO text not nil or blank
   def th_label_tag(object_name,method, text = nil, options = {})
     obj = object_name_is(object_name,options)
-    case options[:attributes]
-    when 'label_attribute'
-      options.delete(:attributes)
-      text = t('activerecord.attributes.label_attribute')
-    when 'label_value'
-      options.delete(:attributes)
-      text = t('activerecord.attributes.label_value')
-    else
-      options[:title] = t('tasks.' + obj.to_s.gsub(/trst/,"db") + '.list.' + method.to_s)
-      text =  obj.classify.constantize.human_attribute_name("#{method}")
-    end
+    text ||= t('activerecord.attributes.' + options.delete(:attributes)) if options.has_key?(:attributes)
+    text ||=  obj.classify.constantize.human_attribute_name("#{method}")
+    options[:title] = options.has_key?(:attributes) ? "" : t('tasks.' + obj.to_s.gsub(/trst/,"db") + '.list.' + method.to_s)
     options.delete(:object)
     content_tag(:th, text, options)
   end
@@ -43,7 +34,7 @@ module Forms::ApplicationHelper
     obj = object_name_is(object_name,options)
     options.delete(:object)
     options[:title] = t('tasks.' + obj.to_s.gsub(/trst/,"db") + '.list.' + method.to_s)
-    text = t('tasks.' + obj.to_s.gsub(/trst/,"db") + '.list.' + method.to_s) if text.nil? || text.blank?
+    text ||= t('tasks.' + obj.to_s.gsub(/trst/,"db") + '.list.' + method.to_s)
     content_tag(:td, text, options)
   end
 
@@ -58,7 +49,7 @@ module Forms::ApplicationHelper
   end
     
   def text_field(object_name,method, options = {})
-    options[:size] = options["maxlength"] unless options[:size]
+    options[:size] ||= options["maxlength"] || 30
     options[:type] = "text"
     options[:value] ||= options[:object].send(method)
     options[:id] = "#{object_name}_#{method}"
@@ -91,7 +82,7 @@ module Forms::ApplicationHelper
     when :edit
       last_row_for_edit
     when :list
-      options[:colspan] = 10 unless options[:colspan]
+      options[:colspan] ||= 10
       last_row_for_list(object_name, options)
     when :row20
       last_row_for_row20(object_name, options)
@@ -155,8 +146,8 @@ module Forms::ApplicationHelper
     html = ""
     src.split(",").each { |s|
       options[:alt] = options[:title] = t('activerecord.attributes.crud.' + s)
-      options[:size] = "13x13" unless options[:size]
-      options[:style] = "cursor : pointer; vertical-align : middle;" unless options[:style]
+      options[:size] ||= "13x13"
+      options[:style] ||= "cursor : pointer; vertical-align : middle;"
       options[:onclick] = "TrstWindow.#{s}(#{options.delete(:arg1)}, #{options.delete(:arg2)}); return false;"
       html += image_tag("db_#{s}.png", options)
     }
