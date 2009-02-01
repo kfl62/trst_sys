@@ -25,13 +25,11 @@
           </td>
         </tr>
         <tr>
-          <td align="center" colspan="2">
-            <br/>
-            <input type="hidden"  name="prtn[updated_by]" value="<%= current_trst_user.id %>" />
-            <input type="submit" value="<%=t 'activerecord.attributes.crud.save' %>"/>
-            <input type="button" value="<%=t 'activerecord.attributes.crud.cancel' %>" onclick="Lightview.hide()"/>
-          </td>
+          <%= f.td_label_tag :contactpers %>
+          <%= f.td_text_field :contactpers, {:size => 20 } %>
         </tr>
+          <%= f.hidden_fields :updated_by => current_trst_user.id %>
+          <%= f.last_row_for :edit %>
       </tbody>
     </table>
   <% end %>
