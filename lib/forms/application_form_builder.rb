@@ -29,6 +29,12 @@ class Forms::ApplicationFormBuilder < ActionView::Helpers::FormBuilder
     def text_field(method, options = {})
       @template.text_field(@object_name, method, objectify_options(options))
     end
+    def hidden_fields(fields)
+      @template.hidden_fields(@object_name, fields)
+    end
+    def last_row_for(method, options = {})
+      @template.last_row_for(@object_name, method, objectify_options(options))
+    end
   end
 
   private
