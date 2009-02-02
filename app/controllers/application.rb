@@ -60,10 +60,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def database_string
+    FileTest.exists?(Rails.root + '/db/' + current_location + '.sqlite3') ?
+      Rails.root + '/db/' + current_location + '.sqlite3' :
+      Rails.root + '/db/development.sqlite3'
+  end
+
   def current_database
     ActiveRecord::Base.establish_connection(
       :adapter => "sqlite3",
-      :database  => Rails.root + '/db/' + current_location + '.sqlite3'
+      :database  => database_string
     )
   end
 
