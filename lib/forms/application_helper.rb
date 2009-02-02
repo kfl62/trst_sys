@@ -148,7 +148,9 @@ module Forms::ApplicationHelper
       options[:alt] = options[:title] = t('activerecord.attributes.crud.' + s)
       options[:size] ||= "13x13"
       options[:style] ||= "cursor : pointer; vertical-align : middle;"
-      options[:onclick] = "TrstWindow.#{s}(#{options.delete(:arg1)}, #{options.delete(:arg2)}); return false;"
+      options[:onclick] = "TrstWindow.#{s}(#{options[:arg1]}, #{options[:arg2]}); return false;"
+      options[:onclick] = "if (confirm('#{t('activerecord.attributes.crud.remove_confirm')}')) {TrstWindow.#{s}(#{options[:arg1]}, #{options[:arg2]}); return false} else {return false;}" if s == "remove"
+      options.delete_if { |k,v|  k.to_s.include? "arg"}
       html += image_tag("db_#{s}.png", options)
     }
     html

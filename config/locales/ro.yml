@@ -314,6 +314,7 @@ ro:
         edit: "Editare"
         save: "Salvare"
         remove: "Ştergere"
+        remove_confirm: "!!! Atenţie se va şterge înregistrarea !!!"
         cancel: "Renunţare"
         show: "Detalii"
       paginate:
