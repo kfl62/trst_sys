@@ -12,7 +12,7 @@
       <tr>
         <th>&nbsp;</th>
         <th title="<%=t 'tasks.db_sys_task.list.trst_sys_page_id' %>"><%= TrstSysTask.human_attribute_name("trst_sys_page_id") %></th>
-        <th title="<%=t 'tasks.db_sys_task.list.controller' %>"><%= TrstSysTask.human_attribute_name("controller") %></th>
+        <th title="<%=t 'tasks.db_sys_task.list.prefix' %>"><%= TrstSysTask.human_attribute_name("prefix") %></th>
         <th title="<%=t 'tasks.db_sys_task.list.exe_id' %>"><%= TrstSysTask.human_attribute_name("exe_id") %></th>
         <th title="<%=t 'tasks.db_sys_task.list.exe_params' %>"><%= TrstSysTask.human_attribute_name("exe_params") %></th>
         <th title="<%=t 'tasks.db_sys_task.list.name' %>"><%= TrstSysTask.human_attribute_name("name") %></th>
@@ -26,7 +26,7 @@
         <tr class="<%= cycle("even","odd") %>">
           <td align="right"><%= i += 1 %>.&nbsp;</td>
           <td align="left"><%= o.trst_sys_page_id %></td>
-          <td align="left"><%= o.controller %></td>
+          <td align="left"><%= o.prefix %></td>
           <td align="left"><%= truncate(o.exe_id, :length => 20) %></td>
           <td align="left"><%= truncate(o.exe_params, :length => 20) %></td>
           <td align="left"><%= truncate(o.name, :length => 20) %></td>
