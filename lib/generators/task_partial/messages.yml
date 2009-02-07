@@ -1,0 +1,62 @@
+ro:
+  msg1:
+    "
+    \nInfo:
+    \n  Taskul există
+    \n"
+  msg2:
+    "
+    \nInfo:
+    \n  Clasa există tabelul există
+    \n  {{prefix}}
+    \n"
+  msg3:
+    "
+    \nInfo:
+    \n Clasa există tabelul nu există
+    \n
+    \n
+    \n"
+  msg4:
+    "
+    \nInfo:
+    \n  Clasa nu este definită
+    \n
+    "
+  msg5:
+    "
+    \nInfo:
+    \n  Taskul nu este definit
+    \n
+    "
+  continue: "Continuaţi ('d','n')"
+en:
+  msg1:
+    "
+    \nInfo:
+    \n  RO only
+    \n"
+  msg2:
+    "
+    \nInfo:
+    \n  RO only
+    \n"
+  msg3:
+    "
+    \nInfo:
+    \n  RO only
+    \n"
+  msg4:
+    "
+    \nInfo:
+    \n  RO only
+    \n
+    "
+  msg5:
+    "
+    \nInfo:
+    \n  RO only
+    \n
+    "
+  continue: "Continue ('y','n')"
+  

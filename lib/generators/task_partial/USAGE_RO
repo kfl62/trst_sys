@@ -1,0 +1,16 @@
+Descriere:
+  Se generează parţialele (list,edit,save şi show) ptr. taskul din tabelul
+  TrstSysTask, bazat pe valoarea câmpului 'exe_id'.
+Convenţie:
+  calea_de_bază este /app/views/trst_sys controllerul implicit fiind "trst_sys"
+  (se poate schimba cu --controller_path=valoare) la aceasta se adaugă valoarea
+  câmpului prefix din tabel sau implicit "sys" în cazul în care câmpul este gol
+  şi în final numele taskului.
+  "/app/views/controller_path/prefix/final/_*.html.erb" sau
+  "/app/views/controller_path/prefix/final.html.erb" în cazul --single
+  Dacă la generare aţi dat numele tabelului din baza de date aceasta se va
+  descompune după cum urmează: trst(se elimină)_prefix(dacă există)_final
+  "/app/views/controller_path/prefix/final/_*.html.erb"
+Exemple:
+  Nu este cazul. Înainte de a se genera parţialele veţi fi informat despre
+  modul de aranjare a lor şi asupra posibilităţilor de modificare...

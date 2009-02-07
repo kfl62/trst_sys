@@ -1,13 +1,2 @@
 Description:
-  Generating list,edit,save and show partials for tasks from TrstSysTask table, based on 'exe_id' value.
-Convention:
-  base_path /app/views/trst_sys (change with --controller_path)
-  partial_path base_path/xxx/yyy/zzz/_*.html.erb with "./script/generate task_partial xxx_yyy_zzz"
-  or partial_path base_path/xxx/yyy/_zzz.html.erb with "./script/generate task_partial xxx_yyy_zzz --single"
-Example:
-  "./script/generate task_partial db_sys_menu" =>
-    /app/views/trst_sys/db/sys/menu/_list.html.erb, _edit.html.rb ....
-  "./script/generate task_partial db_sys_menu --single" =>
-    /app/views/trst_sys/db/sys/_menu.html.erb
-  "./script/generate task_partial db_sys_menu --single --controller_path "other_path"" =>
-    /app/views/other_path/db/sys/_menu.html.erb
+  Avaible only in RO for moment !
