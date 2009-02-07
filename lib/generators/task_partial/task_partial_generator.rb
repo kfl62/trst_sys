@@ -3,7 +3,7 @@ class TaskPartialGenerator < Rails::Generator::Base
   def initialize(runtime_args, runtime_options = {})
     super
     options[:collision] = :skip
-    I18n.load_path=(File.join(spec.path, 'messages.yml'))
+    I18n.load_path << File.join(spec.path, 'messages.yml')
     usage if args.empty?
     @name = args.shift
     @message = usage_message
