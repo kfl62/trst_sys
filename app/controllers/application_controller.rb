@@ -4,10 +4,10 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 
-  #before_filter :current_database
+  before_filter :current_database
 
   filter_parameter_logging :password, :password_confirmation
-  helper_method :current_trst_user_session, :current_trst_user, :current_title, :current_logo
+  helper_method :current_trst_user_session, :current_trst_user, :current_title, :current_logo,:current_location, :database_string
 
 
   private
@@ -61,9 +61,9 @@ class ApplicationController < ActionController::Base
   end
 
   def database_string
-    FileTest.exists?(Rails.root + '/db/' + current_location + '.sqlite3') ?
-      Rails.root + '/db/' + current_location + '.sqlite3' :
-      Rails.root + '/db/development.sqlite3'
+    FileTest.exists?(File.join(Rails.root,"db","#{current_location}.sqlite3")) ?
+      File.join(Rails.root,"db","#{current_location}.sqlite3"):
+      File.join(Rails.root,"db/development.sqlite3")
   end
 
   def current_database
