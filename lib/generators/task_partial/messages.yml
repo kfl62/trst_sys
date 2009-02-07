@@ -29,7 +29,7 @@ ro:
     \n  Taskul nu este definit
     \n
     "
-  continue: "Continuaţi ('d','n')"
+  continue: "Simulare/Executare ('s','e')"
 en:
   msg1:
     "

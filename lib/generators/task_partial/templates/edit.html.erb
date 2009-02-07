@@ -1,6 +1,22 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
-
-<%= "edit" %>
+<div style="width : 380px; height : 240px;">
+  <%  if params[:obj_id] == "new"
+    obj = Trst....new
+  else
+    obj = find_obj(Trst...,params[:obj_id])
+  end -%>
+  <% remote_form_for :prtn, obj,
+    :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
+    <table style="width:80%; margin:auto;">
+      <thead>
+        <tr>
+          <%= f.th_label_tag :id, nil, {:attributes => "label_attribute"} %>
+          <%= f.th_label_tag :id, nil, {:attributes => "label_value"} %>
+        </tr>
+      </thead>
+      <tbody>
+          <%= f.hidden_fields :updated_by => current_trst_user.id %>
+          <%= f.last_row_for :edit %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

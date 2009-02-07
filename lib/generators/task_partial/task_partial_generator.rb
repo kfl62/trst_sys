@@ -2,6 +2,7 @@ class TaskPartialGenerator < Rails::Generator::Base
   default_options :single => false, :create => false, :controller_path => "trst_sys"
   def initialize(runtime_args, runtime_options = {})
     super
+    options[:collision] = :skip
     I18n.load_path=(File.join(spec.path, 'messages.yml'))
     usage if args.empty?
     @name = args.shift
@@ -9,35 +10,36 @@ class TaskPartialGenerator < Rails::Generator::Base
     msg(@name)
     print @message
     print I18n.t("continue")
-    r = gets
-    exit unless r == 'y' || r == "d"
+    r = gets.chomp
+    options[:pretend] = true unless r == "e"
   end
 
   def manifest
     record do |m|
-      #      if options[:single]
-      #        m.directory File.join("app/views/#{options[:controller_path]}",task_path[0,task_path.rindex(/\//)])
-      #        m.template(
-      #          "single.html.erb",
-      #          File.join("app/views/#{options[:controller_path]}",task_path[0,task_path.rindex(/\//)],"_#{single_file_name}.html.erb"))
-      #      else
-      #        m.directory File.join("app/views/#{options[:controller_path]}",task_path)
-      #        for action in task_views
-      #          m.template(
-      #            "#{action}.html.erb",
-      #            File.join("app/views/#{options[:controller_path]}", task_path, "_#{action}.html.erb")
-      #          )
-      #        end
-      #      end
+      m.directory dir_path(@name)
+      for action in task_views
+        m.template("#{action}.html.erb",File.join(dir_path(@name),"_#{action}.html.erb"))
+      end unless options[:single]
+      m.template("single.html.erb",File.join(dir_path(@name),"_#{@name.split('_').last}.html.erb")) if options[:single]
     end
   end
 
   private
+
+  def dir_path(name)
+    dir_path = File.join("app/views",options[:controller_path],prefix(name),name.split('_').last)
+    dir_path = File.join("app/views",options[:controller_path],prefix(name)) if options[:single]
+    dir_path
+  end
+
+  def task_views
+    %w[ edit list save show ]
+  end
   
   def usage_message
     File.exists?(File.join(spec.path, "USAGE_#{I18n.default_locale.to_s.upcase}")) ?
-    File.read(File.join(spec.path, "USAGE_#{I18n.default_locale.to_s.upcase}")) :
-    File.read(File.join(spec.path, "USAGE"))
+      File.read(File.join(spec.path, "USAGE_#{I18n.default_locale.to_s.upcase}")) :
+      File.read(File.join(spec.path, "USAGE"))
   end
 
   def task_exists?(name)
