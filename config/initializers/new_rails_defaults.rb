@@ -16,4 +16,4 @@ ActiveSupport.use_standard_json_time_format = true
 # if you're including raw json in an HTML page.
 ActiveSupport.escape_html_entities_in_json = false
 
-CGI::Session::ActiveRecordStore::Session.table_name = 'trst_users_sessions'
+ActiveRecord::SessionStore::Session.table_name = 'trst_users_sessions'

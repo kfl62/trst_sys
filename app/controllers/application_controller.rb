@@ -4,7 +4,7 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 
-  before_filter :current_database
+  #before_filter :current_database
 
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_trst_user_session, :current_trst_user, :current_title, :current_logo
