@@ -9,26 +9,26 @@ when "info"
 when "exe"
   page.hide 'task_content'
   page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')
-  page.replace_html 'task_content', :partial => '/trst_sys/exe/' + task.exe_id + current_task_test_partials(task), :locals => {:params => params}
+  page.replace_html 'task_content', :partial => partial_path(task,"list"), :locals => {:params => params}
 when "edit"
   page.hide 'task_content'
   page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')
-  page.replace_html 'task_content', :partial => '/trst_sys/exe/' + task.exe_id + '_edit', :locals => {:params => params}
+  page.replace_html 'task_content', :partial => partial_path(task,"edit"), :locals => {:params => params}
   page.select('input').last.show()
 when "save"
   page.hide 'task_content'
   page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')
-  page.replace_html 'task_content' , :partial => '/trst_sys/exe/' + task.exe_id + '_save', :locals => {:params => params}
+  page.replace_html 'task_content' , :partial => partial_path(task,"save"), :locals => {:params => params}
 when "remove"
   page.hide 'task_content'
   page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')
-  page.replace_html 'task_content' , :partial => '/trst_sys/exe/' + task.exe_id + '_save', :locals => {:params => params}
+  page.replace_html 'task_content' , :partial => partial_path(task,"save"), :locals => {:params => params}
 when "show"
   page.hide 'task_content'
   page.call('Lightview.show({href: "#task_content",title: "' + task.name + '"});','return false;')
-  page.replace_html 'task_content' , :partial => '/trst_sys/exe/' + task.exe_id + '_show', :locals => {:params => params}
+  page.replace_html 'task_content' , :partial => partial_path(task,"show"), :locals => {:params => params}
 when "page"
-  page.replace_html 'task_content', :partial => '/trst_sys/exe/' + task.exe_id + current_task_test_partials(task), :locals => {:params => params}
+  page.replace_html 'task_content', :partial => partial_path(task,"list"), :locals => {:params => params}
 else
   page.replace_html 'task_content', 'Eroare ... Views/trst_sys/task.rjs ...'
 end

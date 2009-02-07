@@ -12,8 +12,13 @@ module TrstSysHelper
     TrstSysTask.find(id)
   end
 
-  def current_task_test_partials(arg1)
-    FileTest.exists?("#{RAILS_ROOT}/app/views/trst_sys/exe/_" + arg1.exe_id + ".html.erb") ? '' : '_list'
+  def partial_path(arg1,arg2)
+    base = "#{RAILS_ROOT}/app/views/trst_sys"
+    prefix =  arg1.prefix.blank? ?  "" : "#{arg1.prefix}"
+    name = "#{arg1.exe_id}.html.erb" if FileTest.exists?(File.join(base,prefix ,"_#{arg1.exe_id}.html.erb"))
+    name ||= "#{arg1.exe_id}/#{arg2}.html.erb"
+    partial_path = File.join("trst_sys",prefix,name)
+    partial_path
   end
 
   # TODO de formulat

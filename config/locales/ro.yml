@@ -115,7 +115,7 @@ ro:
     db_sys_task:
       list:
         trst_sys_page_id: "TrstSys Pagina"
-        controller: "Controller"
+        prefix: "Prefix"
         exe_id: "Identificator"
         exe_params: "Parametrii"
         name: "Nume"
@@ -356,7 +356,7 @@ ro:
         note: "Notă"
       trst_sys_task:
         trst_sys_page_id: "Pag."
-        controller: "Contr."
+        Prefix: "Prefix"
         exe_id: "Identificator"
         exe_params: "Parametrii"
         name: "Nume"
