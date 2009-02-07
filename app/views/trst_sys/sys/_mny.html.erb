@@ -16,23 +16,23 @@
     <tbody>
       <tr>
         <td>EUR</td>
-        <td style="text-align : center;"><%= number_with_precision(@d_eur[6],4) %></td>
-        <td style="text-align : center;"><%= number_with_precision(@d_eur[5],4) %></td>
-        <td style="text-align : center;"><%= number_with_precision(@d_eur[4],4) %></td>
-        <td style="text-align : center;"><%= number_with_precision(@d_eur[3],4) %></td>
-        <td style="text-align : center;"><%= number_with_precision(@d_eur[2],4) %></td>
-        <td style="text-align : center;"><%= number_with_precision(@d_eur[1],4) %></td>
-        <td style="color : #ff0000; text-align : center;"><%= number_with_precision(@d_eur[0],4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_eur[6], :precision => 4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_eur[5], :precision => 4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_eur[4], :precision => 4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_eur[3], :precision => 4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_eur[2], :precision => 4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_eur[1], :precision => 4) %></td>
+        <td style="color : #ff0000; text-align : center;"><%= number_with_precision(@d_eur[0], :precision => 4) %></td>
       </tr>
       <tr>
         <td>USD</td>
-        <td style="text-align : center;"><%= number_with_precision(@d_usd[6],4) %></td>
-        <td style="text-align : center;"><%= number_with_precision(@d_usd[5],4) %></td>
-        <td style="text-align : center;"><%= number_with_precision(@d_usd[4],4) %></td>
-        <td style="text-align : center;"><%= number_with_precision(@d_usd[3],4) %></td>
-        <td style="text-align : center;"><%= number_with_precision(@d_usd[2],4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_usd[6], :precision => 4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_usd[5], :precision => 4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_usd[4], :precision => 4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_usd[3], :precision => 4) %></td>
+        <td style="text-align : center;"><%= number_with_precision(@d_usd[2], :precision => 4) %></td>
         <td style="text-align : center;"><%= @d_usd[1] %></td>
-        <td style="color : #ff0000; text-align : center;"><%= number_with_precision(@d_usd[0],4) %></td>
+        <td style="color : #ff0000; text-align : center;"><%= number_with_precision(@d_usd[0], :precision => 4) %></td>
       </tr>
       <tr>
         <td>Var - &#8364;<br/></td>

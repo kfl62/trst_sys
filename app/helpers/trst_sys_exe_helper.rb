@@ -64,11 +64,11 @@ module TrstSysExeHelper
   def mny_var(arg1,arg2)
     var = (arg1[arg2].to_f - arg1[arg2 +1].to_f)*10000
     if  var < 0
-      return '<img src="/images/mny_down.gif">&nbsp;&nbsp;' + number_with_precision(var.abs,0)
+      return '<img src="/images/mny_down.gif">&nbsp;&nbsp;' + number_with_precision(var.abs, :precision => 0)
     elsif var == 0
-      return '&#8230;&nbsp;&nbsp;' + number_with_precision(var.abs,0)
+      return '&#8230;&nbsp;&nbsp;' + number_with_precision(var.abs, :precision => 0)
     else
-      return '<img src="/images/mny_up.gif">&nbsp;&nbsp;' + number_with_precision(var.abs,0)
+      return '<img src="/images/mny_up.gif">&nbsp;&nbsp;' + number_with_precision(var.abs, :precision => 0)
     end
   end
 
