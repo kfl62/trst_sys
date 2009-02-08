@@ -11,20 +11,16 @@ module ApplicationHelper
     submenu = TrstSysSubmenu.find(:all, :conditions => ['controller = ? AND chapter = ?', params[:controller], params[:chapter]])
     return submenu
   end
-
   # Verifică existenţa fişierului "surogat/de înlocuire" paginii aferente elementului ales
   def pg_file
-    pg_file = "#{RAILS_ROOT}/config/locales/ro_RO/pages/" + controller.controller_name + '/pg_'+ params[:chapter] + '_' +params[:page] + '.html.erb'
-    if FileTest.exists?(pg_file)
-      return pg_file
-    else
-      return nil
-    end
+    Rails.root.join("config/locales/ro_RO/pages", controller.controller_name,"pg_#{params[:chapter]}_#{params[:page]}.html.erb").exist? ?
+      Rails.root.join("config/locales/ro_RO/pages", controller.controller_name,"pg_#{params[:chapter]}_#{params[:page]}.html.erb").to_s :
+      nil
   end
-
   # Caută în baza de date pagina aferentă elementului ales
   def current_page
-    current_page = TrstSysPage.find(:first,:conditions => ['controller = ? AND chapter = ? AND page = ?',params[:controller],params[:chapter],params[:page]])
+    current_page = TrstSysPage.find(:first,
+      :conditions => ['controller = ? AND chapter = ? AND page = ?',params[:controller],params[:chapter],params[:page]])
     return current_page
   end
 end
