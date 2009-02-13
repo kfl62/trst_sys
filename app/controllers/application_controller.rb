@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
 
   private
   def current_trst_user_session
-    return @current_user_session if defined?(@current_user_session)
-    @current_user_session = TrstUserSession.find
+    return @current_trst_user_session if defined?(@current_trst_user_session)
+    @current_trst_user_session = TrstUserSession.find
   end
 
   def current_trst_user
