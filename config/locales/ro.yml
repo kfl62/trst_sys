@@ -3,8 +3,11 @@ ro:
   layout:
     title: "Firma Dvs."
     title_development: "Firma Dvs."
+    title_demo: "Demo S.R.L."
     title_klclean: "klClean"
     title_diren: "Diren/Continent"
+    title_clean-tech: "Cleantech"
+    title_clean-cons: "Clean Consulting"
     header:
       authenticated_as: "Autentificat ca şi:"
     menu:
