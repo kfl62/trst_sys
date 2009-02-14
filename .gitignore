@@ -2,3 +2,5 @@
 !.gitignore
 !.gitmodules
 nbproject
+/vendor/rails/
+/website/
