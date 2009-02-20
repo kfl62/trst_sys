@@ -117,7 +117,7 @@ ro:
         link_to_list: "Lista paginilor"
     db_sys_task:
       list:
-        trst_sys_page_id: "TrstSys Pagina"
+        trst_sys_page_id: "Pagina"
         prefix: "Prefix"
         exe_id: "Identificator"
         exe_params: "Parametrii"
