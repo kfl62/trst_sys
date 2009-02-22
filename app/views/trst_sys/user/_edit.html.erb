@@ -3,7 +3,7 @@
 # and open the template in the editor.
 %>
 <% if current_trst_user.id != 1  %>
-  <div id="edit"  style="width:420px;height:110px">
+  <div id="edit"  style="width:440px;height:110px">
     <% @user = find_obj(TrstUser,params[:obj_id]) %>
     <% remote_form_for :user, @user,
       :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
@@ -35,7 +35,7 @@
     <% end %>
   </div>
 <% else %>
-  <div id="edit"  style="width:420px;height:210px">
+  <div id="edit"  style="width:440px;height:210px">
     <%  if params[:obj_id] == "new"
       @user = TrstUser.new
     else
