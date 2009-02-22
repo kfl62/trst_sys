@@ -24,15 +24,15 @@
         </tr>
         <tr>
           <td align="left"><%=t 'tasks.db_sys_task.list.prefix' %> :</td>
-          <td align="left"><%= f.text_field :prefix %></td>
+          <td align="left"><%= current_trst_user.id == 1 ? (f.text_field :prefix)  : (f.text_field :prefix, :readonly => 'readonly') %></td>
         </tr>
         <tr>
           <td align="left"><%=t 'tasks.db_sys_task.list.exe_id' %> :</td>
-          <td align="left"><%= f.text_field :exe_id %></td>
+          <td align="left"><%= current_trst_user.id == 1 ? (f.text_field :exe_id) : (f.text_field :exe_id, :readonly => 'readonly') %></td>
         </tr>
         <tr>
           <td align="left"><%=t 'tasks.db_sys_task.list.exe_params' %> :</td>
-          <td align="left"><%= f.text_field :exe_params %></td>
+          <td align="left"><%= current_trst_user.id == 1 ? (f.text_field :exe_params) : (f.text_field :exe_params, :readonly => 'readonly') %></td>
         </tr>
         <tr>
           <td align="left"><%=t 'tasks.db_sys_task.list.name' %> :</td>
