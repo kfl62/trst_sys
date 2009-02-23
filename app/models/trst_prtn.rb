@@ -52,4 +52,18 @@ class TrstPrtn < ActiveRecord::Base
     return prefix + ' ' + name + ' ' + suffix
   end
 
+  def full_address
+    address = self.address? ? self.addres : 'str. ?'
+    city = self.city? ? self.city : '...?...'
+    zip = self.zip? ? self.zip : '...?...'
+    state = self.state? ? self.state : '...?...'
+    return address + ', ' + city + ', ' + zip + ', ' + state
+  end
+
+  def full_telnr
+    tel = self.tel? ? self.tel : '...?...'
+    fax = self.fax? ? self.fax : '...?...'
+    return tel + ', Fax/Mobil ' + fax
+  end
+
 end
