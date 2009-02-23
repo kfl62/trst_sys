@@ -86,6 +86,8 @@ module Forms::ApplicationHelper
       last_row_for_list(object_name, options)
     when :row20
       last_row_for_row20(object_name, options)
+    when :save
+      last_row_for_save(object_name, options)
     end
   end
   
@@ -133,6 +135,18 @@ module Forms::ApplicationHelper
           </tr>"
       end
     end
+    html
+  end
+
+  def last_row_for_save(object_name, options)
+    text = object_name_is(object_name,options).to_s.gsub(/trst/,"db")
+    html = "<tr>"
+    html += "<td align='center' colspan='2' style='padding-top:10px'>"
+    html += link_to_function t("tasks.#{text}.save.link_to_show"), "TrstWindow.show(#{params[:id]},#{params[:obj_id]})"
+    html += "&nbsp;&nbsp;|&nbsp;&nbsp;"
+    html += link_to_function t("tasks.#{text}.save.link_to_list"), "TrstWindow.exe(#{params[:id]},#{params[:obj_id]})"
+    html += "</td>"
+    html += "</tr>"
     html
   end
 
