@@ -1,0 +1,62 @@
+<div style="width:500px;height:440px">
+  <% o = find_obj(TrstPrtn,params[:obj_id]) %>
+  <table style="width:80%; margin:auto;">
+    <thead>
+      <tr>
+        <th><%=t 'activerecord.attributes.label_attribute' %></th>
+        <th><%=t 'activerecord.attributes.label_value' %></th>
+      </tr>
+    </thead>
+    <tbody align="left">
+      <tr>
+        <%= td_label_tag o, :full_name %>
+        <%= td_value_tag o, :full_name %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :namesh %>
+        <%= td_value_tag o, :namesh %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :id_chamcom %>
+        <%= td_value_tag o, :id_chamcom %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :id_fiscal %>
+        <%= td_value_tag o, :id_fiscal %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :id_itm %>
+        <%= td_value_tag o, :id_itm %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :id_account %>
+        <%= td_value_tag o, :id_account %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :id_internet %>
+        <%= td_value_tag o, :id_internet %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :address %>
+        <%= td_value_tag o, :full_address %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :contactpers %>
+        <%= td_value_tag o, :contactpers %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :tel %>
+        <%= td_value_tag o, :full_telnr %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :email %>
+        <%= td_value_tag o, :email %>
+      </tr
+      <tr>
+        <td colspan="2"><hr/></td>
+      </tr>
+      <%= custom_schema_definitions_html(o) %>
+      <%= last_row_for  o, :show %>
+    </tbody>
+  </table>
+</div>

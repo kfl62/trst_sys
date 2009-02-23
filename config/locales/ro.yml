@@ -388,4 +388,7 @@ ro:
         fax: "Fax."
         email: "Email"
         webaddress: "www"
-
+        fullname_0_edit: "Prefix (S.C. ...) / Nume / Suffix S.A. ..."
+        fullname_1_edit: "Nr. Cam. Comerţ / Cod Fiscal / Cod ITM / Cont contab."
+        fullname_2_edit: "Adresa (str.nr...)/ Oraş / Cod poştal / Judeţ"
+        fullname_3_edit: "Nr. telefon/ Fax, Mobil / Adresă email"

@@ -1,0 +1,36 @@
+<% if params[:obj_id] == "new"
+  params[:prtn][:created_by] = current_trst_user.id
+  save_obj(TrstPrtn,params[:obj_id],params[:prtn])
+  o = find_obj(TrstPrtn,'last')
+  params[:obj_id] = o.id
+  obs = t('tasks.db_prtn.save.create')
+elsif params[:remove]
+  o = find_obj(TrstPrtn,params[:obj_id])
+  obs = t('tasks.db_prtn.save.remove', :prtn_name => o.full_name)
+  TrstPrtn.delete(params[:obj_id])
+else
+  save_obj(TrstPrtn,params[:obj_id],params[:prtn])
+  o = find_obj(TrstPrtn,params[:obj_id])
+  obs = t('tasks.db_prtn.save.update')
+end -%>
+<% if params[:remove] %>
+  <div align="center" style="width:400px;height:3em">
+    <%= obs %>
+  </div>
+<% else %>
+  <div style="width:500px;height:190px">
+    <p><%= obs %></p>
+    <table style="width:80%; margin:auto;">
+      <thead>
+        <tr>
+          <th><%=t 'activerecord.attributes.label_attribute' %></th>
+          <th><%=t 'activerecord.attributes.label_value' %></th>
+        </tr>
+      </thead>
+      <tbody align="left">
+        <%= custom_schema_definitions_html(o) %>
+        <%= last_row_for o, :save %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
