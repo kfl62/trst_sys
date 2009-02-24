@@ -108,6 +108,7 @@ ro:
         link_to_list: "Lista submeniurilor"
     db_sys_page:
       list:
+        id: "ID"
         controller: "Controller"
         chapter: "Capitolul"
         page: "Pagina"

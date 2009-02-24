@@ -1,7 +1,3 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
 <div style="width : 400px; height : 260px;">
   <%  if params[:obj_id] == "new"
     @page = TrstSysPage.new
@@ -13,25 +9,25 @@
     <table style="width:80%; margin:auto;">
       <thead>
         <tr>
-          <th><%=t 'activerecord.attributes.label_attribute' %></th>
-          <th><%=t 'activerecord.attributes.label_value' %></th>
+          <%= f.th_label_tag :id, nil, {:attributes => "label_attribute"} %>
+          <%= f.th_label_tag :id, nil, {:attributes => "label_value"} %>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_page.list.controller' %> :</td>
-          <td><%= f.text_field :controller, :size => 20 %></td>
+          <%= f.td_label_tag  :controller %>
+          <%= f.td_text_field :controller, :size => 20 %>
         </tr>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_page.list.chapter' %> :</td>
-          <td><%= f.text_field :chapter, :size => 5 %></td>
+          <%= f.td_label_tag  :chapter %>
+          <%= f.td_text_field :chapter, :size => 5 %>
         </tr>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_page.list.page' %> :</td>
-          <td><%= f.text_field :page, :size => 5 %></td>
+          <%= f.td_label_tag  :page %>
+          <%= f.td_text_field :page, :size => 5 %>
         </tr>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_page.list.title' %> :* </td>
+          <%= f.td_label_tag  :title %>
           <td>
             <a href="#" onclick="TrstWindow.mce_edit(<%= params[:id] %>,'TrstSysPage' ,<%= params[:obj_id] %>, 'title')">
               <%= truncate(strip_tags(@page.title), :length => 40) %>
@@ -39,7 +35,7 @@
           </td>
         </tr>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_page.list.intro' %> :* </td>
+          <%= f.td_label_tag  :intro %>
           <td>
             <a href="#" onclick="TrstWindow.mce_edit(<%= params[:id] %>,'TrstSysPage' ,<%= params[:obj_id] %>, 'intro')">
               <%= truncate(strip_tags(@page.intro), :length => 40) %>
@@ -48,7 +44,7 @@
         </tr>
         <tr>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_page.list.actions' %> :* </td>
+          <%= f.td_label_tag  :actions %>
           <td>
             <a href="#" onclick="TrstWindow.mce_edit(<%= params[:id] %>,'TrstSysPage' ,<%= params[:obj_id] %>, 'actions')">
               <%= truncate(strip_tags(@page.actions), :length => 40) %>
@@ -57,7 +53,7 @@
         </tr>
         <tr>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_page.list.content' %> :* </td>
+          <%= f.td_label_tag  :content %>
           <td>
             <a href="#" onclick="TrstWindow.mce_edit(<%= params[:id] %>,'TrstSysPage' ,<%= params[:obj_id] %>, 'content')">
               <%= truncate(strip_tags(@page.content), :length => 40) %>
@@ -66,21 +62,15 @@
         </tr>
         <tr>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_page.list.note' %> :* </td>
+          <%= f.td_label_tag  :note %>
           <td>
             <a href="#" onclick="TrstWindow.mce_edit(<%= params[:id] %>,'TrstSysPage' ,<%= params[:obj_id] %>, 'note')">
               <%= truncate(strip_tags(@page.note), :length => 40) %>
             </a>
           </td>
         </tr>
-        <tr>
-          <td align="center" colspan="2">
-            <br/>
-            <input type="hidden"  name="page[updated_by]" value="<%= current_trst_user.id %>" />
-            <input type="submit" value="<%=t 'activerecord.attributes.crud.save' %>"/>
-            <input type="button" value="<%=t 'activerecord.attributes.crud.cancel' %>" onclick="Lightview.hide()"/>
-          </td>
-        </tr>
+        <%= f.hidden_fields :updated_by => current_trst_user.id %>
+        <%= f.last_row_for :edit %>
         <tr>
           <td align="left" colspan="2">
             <p>* ptr. a edita câmpul <strong>click</strong> pe link ...</p>
