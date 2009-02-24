@@ -1,7 +1,7 @@
 <% if current_trst_user.id != 1  %>
   <div id="edit"  style="width:440px;height:110px">
-    <% @user = find_obj(TrstUser,params[:obj_id]) %>
-    <% remote_form_for :user, @user,
+    <% obj = find_obj(TrstUser,params[:obj_id]) %>
+    <% remote_form_for :user, obj,
       :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
       <table style="width:80%; margin:auto;">
         <thead>
@@ -27,11 +27,11 @@
 <% else %>
   <div id="edit"  style="width:440px;height:210px">
     <%  if params[:obj_id] == "new"
-      @user = TrstUser.new
+      obj = TrstUser.new
     else
-      @user = find_obj(TrstUser,params[:obj_id])
+      obj = find_obj(TrstUser,params[:obj_id])
     end -%>
-    <% remote_form_for :user, @user,
+    <% remote_form_for :user, obj,
       :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
       <table style="width:80%; margin:auto;">
         <thead>
