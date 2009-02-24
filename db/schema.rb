@@ -11,24 +11,11 @@
 
 ActiveRecord::Schema.define(:version => 20090224123553) do
 
-  create_table "trst_hmrs", :force => true do |t|
-    t.string   "prefix",      :limit => 10, :default => "",    :null => false
-    t.string   "lstname",     :limit => 25, :default => "",    :null => false
-    t.string   "mdlname",     :limit => 25, :default => "",    :null => false
-    t.string   "frstname",    :limit => 25, :default => "",    :null => false
-    t.string   "stts",        :limit => 10, :default => "f;e", :null => false
-    t.datetime "created_on"
-    t.integer  "created_by",  :limit => 6,  :default => 0,     :null => false
-    t.datetime "updated_on"
-    t.integer  "updated_by",  :limit => 6,  :default => 0,     :null => false
-    t.integer  "approved_by", :limit => 6,  :default => 0,     :null => false
-  end
-
   create_table "trst_hrs", :force => true do |t|
     t.string   "prefix",      :limit => 10, :default => "",    :null => false
-    t.string   "lstname",     :limit => 25, :default => "",    :null => false
-    t.string   "mdlname",     :limit => 25, :default => "",    :null => false
-    t.string   "frstname",    :limit => 25, :default => "",    :null => false
+    t.string   "frst_name",   :limit => 25, :default => "",    :null => false
+    t.string   "mdl_name",    :limit => 25, :default => "",    :null => false
+    t.string   "lst_name",    :limit => 25, :default => "",    :null => false
     t.string   "stts",        :limit => 10, :default => "f;e", :null => false
     t.datetime "created_on"
     t.integer  "created_by",  :limit => 6,  :default => 0,     :null => false

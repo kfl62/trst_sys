@@ -3,9 +3,9 @@
 #* Fişier migrare: <b><em>RAILS_ROOT/db/migrate/xxx_create_trst_hrs</em></b>
 #    create_table "trst_hmrs_names", :force => true do |t|
 #      t.string   "prefix",      :limit => 10, :default => "",  :null => false
-#      t.string   "lstname",     :limit => 25, :default => "",  :null => false
-#      t.string   "mdlname",     :limit => 25, :default => "",  :null => false
-#      t.string   "frstname",    :limit => 25, :default => "",  :null => false
+#      t.string   "frst_name",   :limit => 25, :default => "",  :null => false
+#      t.string   "mdl_name",    :limit => 25, :default => "",  :null => false
+#      t.string   "lst_name",    :limit => 25, :default => "",  :null => false
 #      t.string   "stts",        :limit => 1,  :default => "1", :null => false
 #      t.trst
 #    end
