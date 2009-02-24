@@ -1,7 +1,3 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
 <% if current_trst_user.id != 1  %>
   <div align="center" style="width : 400px; height : 5em;">
     <%=t 'tasks.db_user.list.not_allowed', :id_1 => TrstUser.find(1).login %><br />
@@ -20,15 +16,15 @@
       <thead>
         <tr>
           <th>&nbsp;</th>
-          <th><%= TrstUser.human_attribute_name("id") %></th>
-          <th><%= TrstUser.human_attribute_name("login") %></th>
-          <th><%= TrstUser.human_attribute_name("lst_name") %></th>
-          <th><%= TrstUser.human_attribute_name("frst_name") %></th>
-          <th><%= TrstUser.human_attribute_name("mdl_name") %></th>
-          <th><%= TrstUser.human_attribute_name("email") %></th>
-          <th><%= TrstUser.human_attribute_name("login_count") %></th>
-          <th><%= TrstUser.human_attribute_name("last_login_at") %></th>
-          <th><%= TrstUser.human_attribute_name("last_login_ip") %></th>
+          <%= th_label_tag obj, :id %>
+          <%= th_label_tag obj, :login %>
+          <%= th_label_tag obj, :lst_name %>
+          <%= th_label_tag obj, :frst_name %>
+          <%= th_label_tag obj, :mdl_name %>
+          <%= th_label_tag obj, :email %>
+          <%= th_label_tag obj, :login_count %>
+          <%= th_label_tag obj, :last_login_at %>
+          <%= th_label_tag obj, :last_login_ip %>
           <th>&nbsp;</th>
         </tr>
       </thead>
@@ -36,55 +32,20 @@
         <% for o in obj %>
           <tr class="<%= cycle("even","odd") %>">
             <td align="right"><%= i += 1 %>.&nbsp;</td>
-            <td align="right"><%= o.id %></td>
-            <td align="left"><%= o.login %></td>
-            <td align="left"><%= o.lst_name %></td>
-            <td align="left"><%= o.frst_name %></td>
-            <td align="left"><%= o.mdl_name %></td>
-            <td align="left"><%= o.email %></td>
-            <td align="left"><%= o.login_count %></td>
-            <td align="left"><%= o.last_login_at %></td>
-            <td align="left"><%= o.last_login_ip %></td>
-            <td align="center" style="border-left : 1px ridge #ffffff; width : 50px">
-              <%= image_tag 'db_edit.png',
-                :alt => t('activerecord.attributes.crud.edit'),
-                :title => t('activerecord.attributes.crud.edit'),
-                :size => "13x13",
-                :style => "cursor : pointer; vertical-align : middle;",
-                :onclick => "TrstWindow.edit(#{params[:id]}, #{o.id}); return false;" %>
-              <%= image_tag 'db_show.png',
-                :alt => t('activerecord.attributes.crud.show'),
-                :title => t('activerecord.attributes.crud.show'),
-                :size => "13x13",
-                :style => "cursor : pointer; vertical-align : middle;",
-                :onclick => "TrstWindow.show(#{params[:id]}, #{o.id}); return false;" %>
-              <%= image_tag 'db_remove.png',
-                :alt => t('activerecord.attributes.crud.remove'),
-                :title => t('activerecord.attributes.crud.remove'),
-                :size => "13x13",
-                :style => "cursor : pointer; vertical-align : middle;",
-                :onclick => "TrstWindow.remove(#{params[:id]}, #{o.id}); return false;" %>
-            </td>
+            <%= td_value_tag o, :id, :align => 'right' %>
+            <%= td_value_tag o, :login %>
+            <%= td_value_tag o, :lst_name %>
+            <%= td_value_tag o, :frst_name %>
+            <%= td_value_tag o, :mdl_name %>
+            <%= td_value_tag o, :email %>
+            <%= td_value_tag o, :login_count %>
+            <%= td_value_tag o, :last_login_at %>
+            <%= td_value_tag o, :last_login_ip %>
+            <%= link_to_task o, :last_column %>
           </tr>
         <% end %>
-        <% if i.modulo(obj.per_page) > 0 %>
-          <% (obj.per_page-i.modulo(obj.per_page)).times do %>
-            <tr class="even">
-              <td colspan="11">&nbsp;</td>
-            </tr>
-          <% end %>
-        <% end %>
-        <tr class="even">
-          <td colspan="10" align="center" style="padding-top:10px"><%= trst_paginate(obj) %></td>
-          <td align="center" style="border-left : 1px ridge #ffffff; width : 50px">
-            <%= image_tag 'db_new.png',
-              :alt => t('activerecord.attributes.crud.new'),
-              :title => t('activerecord.attributes.crud.new'),
-              :size => "18x18",
-              :style => "padding : 0 0 0 5px; cursor : pointer; vertical-align : middle;",
-              :onclick => "TrstWindow.edit(#{params[:id]},'new'); return false;" %>
-          </td>
-        </tr>
+      <%= last_row_for obj, :row20, {:colspan => 11, :offset => i } %>
+      <%= last_row_for obj, :list, {:colspan => 10 } %>
       </tbody>
     </table>
   </div>

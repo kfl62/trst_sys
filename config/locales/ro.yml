@@ -43,6 +43,15 @@ ro:
   tasks:
     db_user:
       list:
+        login: "Utilizator"
+        email: "Email"
+        lst_name: "Nume"
+        frst_name: "Prenume"
+        mdl_name: "Prenume2"
+        password: "Parolă"
+        login_count: "Nr.Conexiuni"
+        last_login_at: "Ultima conexiune"
+        last_login_ip: "IP ultima conexiune"
         not_allowed: "Editarea/Adăugarea este permis numai utilizatorului \"<strong>{{id_1}}</strong>\""
         allowed_text_0: "Dvs. puteţi să "
         allowed_password_change: "vă modificaţi parola"

@@ -1,58 +1,50 @@
-<%#
-# Editare, adăugare utilizatori
-# Singurul utilizator care are voie este cel cu id==1
-%>
-<div id="show"  style="width:420px;height:340px">
-  <% user = find_obj(TrstUser,params[:obj_id])  %>
+<div id="show"  style="width:420px;height:360px">
+  <% o = find_obj(TrstUser,params[:obj_id])  %>
   <table style="width:80%; margin:auto;">
     <thead>
       <tr>
-        <th><%=t 'activerecord.attributes.label_attribute' %></th>
-        <th><%=t 'activerecord.attributes.label_value' %></th>
+        <%= th_label_tag o, :id, nil, {:attributes => "label_attribute"} %>
+        <%= th_label_tag o, :id, nil, {:attributes => "label_value"} %>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td align="left"><%= TrstUser.human_attribute_name("login") %></td>
-        <td align="left"><%= user.login %></td>
+        <%= td_label_tag o, :login %>
+        <%= td_value_tag o, :login %>
       </tr>
       <tr>
-        <td align="left"><%= TrstUser.human_attribute_name("email") %></td>
-        <td align="left"><%= user.email %></td>
+        <%= td_label_tag o, :email %>
+        <%= td_value_tag o, :email %>
       </tr>
       <tr>
-        <td align="left"><%= TrstUser.human_attribute_name("lst_name") %></td>
-        <td align="left"><%= user.lst_name %></td>
+        <%= td_label_tag o, :lst_name %>
+        <%= td_value_tag o, :lst_name %>
       </tr>
       <tr>
-        <td align="left"><%= TrstUser.human_attribute_name("frst_name") %></td>
-        <td align="left"><%= user.frst_name %></td>
+        <%= td_label_tag o, :frst_name %>
+        <%= td_value_tag o, :frst_name %>
       </tr>
       <tr>
-        <td align="left"><%= TrstUser.human_attribute_name("mdl_name") %></td>
-        <td align="left"><%= user.mdl_name %></td>
+        <%= td_label_tag o, :mdl_name %>
+        <%= td_value_tag o, :mdl_name %>
       </tr>
       <tr>
-        <td align="left"><%= TrstUser.human_attribute_name("login_count") %></td>
-        <td align="left"><%= user.login_count %></td>
+        <%= td_label_tag o, :login_count %>
+        <%= td_value_tag o, :login_count %>
       </tr>
       <tr>
-        <td align="left"><%= TrstUser.human_attribute_name("last_login_at") %></td>
-        <td align="left"><%= user.last_login_at %></td>
+        <%= td_label_tag o, :last_login_at %>
+        <%= td_value_tag o, :last_login_at %>
       </tr>
       <tr>
-        <td align="left"><%= TrstUser.human_attribute_name("last_login_ip") %></td>
-        <td align="left"><%= user.last_login_ip %></td>
+        <%= td_label_tag o, :last_login_ip %>
+        <%= td_value_tag o, :last_login_ip %>
       </tr>
-      <%= custom_schema_definitions_html(user) %>
       <tr>
-        <td align="center" colspan="2" style="padding-top:10px">
-            <%= link_to_function t('tasks.db_user.show.link_to_edit'),
-              "TrstWindow.edit(#{params[:id]},#{params[:obj_id]})" %>&nbsp;|&nbsp;
-            <%= link_to_function t('tasks.db_user.show.link_to_list'),
-              "TrstWindow.exe(#{params[:id]},#{params[:obj_id]})" %>
-        </td>
+        <td colspan="2"><hr/></td>
       </tr>
+      <%= custom_schema_definitions_html(o) %>
+      <%= last_row_for o, :show %>
     </tbody>
   </table>
 </div>
