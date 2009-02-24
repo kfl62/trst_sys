@@ -1,4 +1,4 @@
-<% if params[:obj_id] == "new"
+<%% if params[:obj_id] == "new"
   params[:replace_me_with_form_for][:created_by] = current_trst_user.id
   save_obj(Trst.ReplaceMe,params[:obj_id],params[:replace_me_with_form_for])
   o = find_obj(Trst.ReplaceMe,'last')
@@ -13,24 +13,24 @@ else
   o = find_obj(Trst.ReplaceMe,params[:obj_id])
   obs = t('tasks.replace_me_with_trans.save.update')
 end -%>
-<% if params[:remove] %>
+<%% if params[:remove] %>
   <div align="center" style="width:400px;height:3em">
-    <%= obs %>
+    <%%= obs %>
   </div>
-<% else %>
+<%% else %>
   <div style="width:500px;height:190px">
-    <p><%= obs %></p>
+    <p><%%= obs %></p>
     <table style="width:80%; margin:auto;">
       <thead>
         <tr>
-          <th><%=t 'activerecord.attributes.label_attribute' %></th>
-          <th><%=t 'activerecord.attributes.label_value' %></th>
+          <th><%%=t 'activerecord.attributes.label_attribute' %></th>
+          <th><%%=t 'activerecord.attributes.label_value' %></th>
         </tr>
       </thead>
       <tbody align="left">
-        <%= custom_schema_definitions_html(o) %>
-        <%= last_row_for o, :save %>
+        <%%= custom_schema_definitions_html(o) %>
+        <%%= last_row_for o, :save %>
       </tbody>
     </table>
   </div>
-<% end %>
+<%% end %>

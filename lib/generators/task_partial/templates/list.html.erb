@@ -1,17 +1,17 @@
 <div  style="width:760px;height:480px">
-  <% obj = trst_find_all(TrstReplaceMe) ; i = obj.offset %>
-  <% if obj.length == 0  %>
-    <script type="text/javascript"> TrstWindow.edit(<%= params[:id] %>,"new");</script>
-  <% end %>
+  <%% obj = trst_find_all(TrstReplaceMe) ; i = obj.offset %>
+  <%% if obj.length == 0  %>
+    <script type="text/javascript"> TrstWindow.edit(<%%= params[:id] %>,"new");</script>
+  <%% end %>
   <table class="full">
     <thead>
     </thead>
     <tbody>
-      <% for o in obj %>
-        <tr class="<%= cycle("even","odd")%>" >
-      <% end %>
-      <%= last_row_for obj, :row20, {:colspan => .., :offset => i } %>
-      <%= last_row_for obj, :list, {:colspan => .. } %>
+      <%% for o in obj %>
+        <tr class="<%%= cycle("even","odd")%>" >
+      <%% end %>
+      <%%= last_row_for obj, :row20, {:colspan => .., :offset => i } %>
+      <%%= last_row_for obj, :list, {:colspan => .. } %>
     </tbody>
   </table>
 </div>
