@@ -1,17 +1,17 @@
 <% if params[:obj_id] == "new"
-  params[:replace_me_with_form_for][:created_by] = current_trst_user.id
-  save_obj(Trst.ReplaceMe,params[:obj_id],params[:replace_me_with_form_for])
-  o = find_obj(Trst.ReplaceMe,'last')
+  params[:hr][:created_by] = current_trst_user.id
+  save_obj(TrstHr,params[:obj_id],params[:hr])
+  o = find_obj(TrstHr,'last')
   params[:obj_id] = o.id
-  obs = t('tasks.replace_me_with_trans.save.create')
+  obs = t('tasks.db_hr.save.create')
 elsif params[:remove]
-  o = find_obj(Trst.ReplaceMe,params[:obj_id])
-  obs = t('tasks.replace_me_with_trans.save.remove', :TransParam => o.Value)
-  Trst.ReplaceMe.delete(params[:obj_id])
+  o = find_obj(TrstHr,params[:obj_id])
+  obs = t('tasks.db_hr.save.remove', :hr_name => o.full_name)
+  TrstHr.delete(params[:obj_id])
 else
-  save_obj(Trst.ReplaceMe,params[:obj_id],params[:replace_me_with_form_for])
-  o = find_obj(Trst.ReplaceMe,params[:obj_id])
-  obs = t('tasks.replace_me_with_trans.save.update')
+  save_obj(TrstHr,params[:obj_id],params[:hr])
+  o = find_obj(TrstHr,params[:obj_id])
+  obs = t('tasks.db_hr.save.update')
 end -%>
 <% if params[:remove] %>
   <div align="center" style="width:400px;height:3em">
@@ -23,8 +23,8 @@ end -%>
     <table style="width:80%; margin:auto;">
       <thead>
         <tr>
-          <th><%=t 'activerecord.attributes.label_attribute' %></th>
-          <th><%=t 'activerecord.attributes.label_value' %></th>
+          <%= th_label_tag o, :id, nil, {:attributes => "label_attribute"} %>
+          <%= th_label_tag o, :id, nil, {:attributes => "label_value"} %>
         </tr>
       </thead>
       <tbody align="left">

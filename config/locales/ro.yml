@@ -178,6 +178,25 @@ ro:
       show:
         link_to_edit: "Editare firmă"
         link_to_list: "Lista firmelor"
+    db_hr:
+      list:
+        id: "ID"
+        prefix: "Prefix (dr. etc.)"
+        frst_name: "Prenume"
+        mdl_name: "Prenume2"
+        lst_name: "Nume"
+        stts: "Statut"
+        full_name: "Nume complet"
+      save:
+        create: "Resursa umană  a fost creată ..."
+        update: "Modificările au fost salvate..."
+        remove: "Resursa umană <strong>{{hr_name}}</strong> a fost ştearsă..."
+        link_to_show: "Detalii resursă umană"
+        link_to_list: "Lista resurselor umane"
+      show:
+        link_to_edit: "Editare resursă umană"
+        link_to_list: "Lista resurselor umane"
+
 
   date:
     formats:
@@ -404,3 +423,10 @@ ro:
         fullname_1_edit: "Nr. Cam. Comerţ / Cod Fiscal / Cod ITM / Cont contab."
         fullname_2_edit: "Adresa (str.nr...)/ Oraş / Cod poştal / Judeţ"
         fullname_3_edit: "Nr. telefon/ Fax, Mobil / Adresă email"
+      trst_hr:
+        id: "ID"
+        prefix: "Prefix"
+        frst_name: "Prenume"
+        mdl_name: "Prenume2"
+        lst_name: "Nume"
+        stts: "Statut"
