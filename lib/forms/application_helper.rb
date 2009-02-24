@@ -122,7 +122,7 @@ module Forms::ApplicationHelper
     "<tr class='even'>
         <td colspan='#{options[:colspan]}'  align='center' style='padding-top:10px'>#{trst_paginate(object_name)}</td>
         <td style='border-left : 1px ridge #ffffff; width : 50px'>
-        #{image_tag_for_link("new", {:arg1 => params[:id], :arg2 => "new", :size => "18x18", :style => "padding : 0 0 0 10px; cursor : pointer; vertical-align : middle;" })}
+        #{image_tag_for_link("edit", {:arg1 => params[:id], :arg2 => "'new'", :size => "18x18", :style => "padding : 0 0 0 10px; cursor : pointer; vertical-align : middle;" })}
         </td>
       </tr>
     "
