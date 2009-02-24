@@ -1,55 +1,45 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
 <div style="width : 440px; height : 200px;">
     <%  if params[:obj_id] == "new"
-      @menu = TrstSysMenu.new
+      obj = TrstSysMenu.new
     else
-      @menu = find_obj(TrstSysMenu,params[:obj_id])
+      obj = find_obj(TrstSysMenu,params[:obj_id])
     end -%>
-  <% remote_form_for :menu, @menu,
+  <% remote_form_for :menu, obj,
     :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
     <table style="width:80%; margin:auto;">
       <thead>
         <tr>
-          <th><%=t 'activerecord.attributes.label_attribute' %></th>
-          <th><%=t 'activerecord.attributes.label_value' %></th>
+          <%= f.th_label_tag :id, nil, {:attributes => "label_attribute"} %>
+          <%= f.th_label_tag :id, nil, {:attributes => "label_value"} %>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_menu.list.name' %></td>
-          <td><%= f.text_field :name %></td>
+          <%= f.td_label_tag :name %>
+          <%= f.td_text_field :name %>
         </tr>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_menu.list.controller' %></td>
-          <td><%= f.text_field :controller %></td>
+          <%= f.td_label_tag :controller %>
+          <%= f.td_text_field :controller %>
         </tr>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_menu.list.chapter' %></td>
-          <td><%= f.text_field :chapter %></td>
+          <%= f.td_label_tag :chapter %>
+          <%= f.td_text_field :chapter %>
         </tr>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_menu.list.page' %></td>
-          <td><%= f.text_field :page %></td>
+          <%= f.td_label_tag :page %>
+          <%= f.td_text_field :page %>
         </tr>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_menu.list.has_submenu' %></td>
-          <td align="left"><%= f.check_box :has_submenu %></td>
+          <%= f.td_label_tag :has_submenu %>
+          <%= f.td_text_field :has_submenu %>
         </tr>
         <tr>
-          <td align="left"><%=t 'tasks.db_sys_menu.list.title' %></td>
-          <td><%= f.text_field :title %></td>
+          <%= f.td_label_tag :title %>
+          <%= f.td_text_field :title %>
         </tr>
-        <tr>
-          <td align="center" colspan="2">
-            <br/>
-            <input type="hidden"  name="menu[updated_by]" value="<%= current_trst_user.id %>" />
-            <input type="submit" value="<%=t 'activerecord.attributes.crud.save' %>"/>
-            <input type="button" value="<%=t 'activerecord.attributes.crud.cancel' %>" onclick="Lightview.hide()"/>
-          </td>
-        </tr>
+        <%= f.hidden_fields :updated_by => current_trst_user.id %>
+        <%= f.last_row_for :edit %>
       </tbody>
     </table>
   <% end %>

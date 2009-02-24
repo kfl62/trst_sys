@@ -73,6 +73,7 @@ ro:
         link_to_list: "Lista utilizatorilor"
     db_sys_menu:
       list:
+        id: "ID"
         name: "Denumire"
         controller: "Controllerul invocat"
         chapter: "Capitolul"
