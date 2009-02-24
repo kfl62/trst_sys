@@ -1,10 +1,10 @@
 <div style="width : 400px; height : 260px;">
   <%  if params[:obj_id] == "new"
-    @page = TrstSysPage.new
+    obj = TrstSysPage.new
   else
-    @page = find_obj(TrstSysPage,params[:obj_id])
+    obj = find_obj(TrstSysPage,params[:obj_id])
   end -%>
-  <% remote_form_for :page, @page,
+  <% remote_form_for :page, obj,
     :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
     <table style="width:80%; margin:auto;">
       <thead>
