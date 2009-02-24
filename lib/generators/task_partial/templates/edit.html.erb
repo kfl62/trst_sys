@@ -14,8 +14,12 @@
         </tr>
       </thead>
       <tbody>
-          <%%= f.hidden_fields :updated_by => current_trst_user.id %>
-          <%%= f.last_row_for :edit %>
+        <tr>
+          <%%= f.td_label_tag :ReplaceMe %>
+          <%%= f.td_text_field :ReplaceMe %>
+        </tr>
+        <%%= f.hidden_fields :updated_by => current_trst_user.id %>
+        <%%= f.last_row_for :edit %>
       </tbody>
     </table>
   <%% end %>

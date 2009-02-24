@@ -5,10 +5,18 @@
   <%% end %>
   <table class="full">
     <thead>
+      <th>&nbsp;</th>
+      <%%= th_label_tag obj, :ReplaceMe %>
+      ...
+      <th>&nbsp;</th>
     </thead>
     <tbody>
       <%% for o in obj %>
         <tr class="<%%= cycle("even","odd")%>" >
+          <td align="right"><%%= i += 1 %>.</td>
+          <%%= td_value_tag o, :ReplaceMe %>
+          ...
+          <%%= link_to_task o, :last_column %>
       <%% end %>
       <%%= last_row_for obj, :row20, {:colspan => .., :offset => i } %>
       <%%= last_row_for obj, :list, {:colspan => .. } %>

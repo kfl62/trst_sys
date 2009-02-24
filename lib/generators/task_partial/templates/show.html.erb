@@ -3,11 +3,18 @@
   <table style="width:80%; margin:auto;">
     <thead>
       <tr>
-        <th><%%=t 'activerecord.attributes.label_attribute' %></th>
-        <th><%%=t 'activerecord.attributes.label_value' %></th>
+        <%%= f.th_label_tag :id, nil, {:attributes => "label_attribute"} %>
+        <%%= f.th_label_tag :id, nil, {:attributes => "label_value"} %>
       </tr>
     </thead>
     <tbody align="left">
+      <tr>
+        <%%= td_label_tag o, :ReplaceMe %>
+        <%%= td_value_tag o, :ReplaceMe %>
+      </tr>
+      <tr>
+        <td colspan="2"><hr/></td>
+      </tr>
       <%%= custom_schema_definitions_html(o) %>
       <%%= last_row_for  o, :show %>
     </tbody>

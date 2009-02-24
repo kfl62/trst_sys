@@ -23,8 +23,8 @@ end -%>
     <table style="width:80%; margin:auto;">
       <thead>
         <tr>
-          <th><%%=t 'activerecord.attributes.label_attribute' %></th>
-          <th><%%=t 'activerecord.attributes.label_value' %></th>
+          <%%= th_label_tag o, :id, nil, {:attributes => "label_attribute"} %>
+          <%%= th_label_tag o, :id, nil, {:attributes => "label_value"} %>
         </tr>
       </thead>
       <tbody align="left">
