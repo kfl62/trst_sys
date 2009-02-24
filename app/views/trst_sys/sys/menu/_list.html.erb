@@ -1,8 +1,9 @@
+<% obj = trst_find_all(TrstSysMenu) ; i = obj.offset %>
+<% if obj.length == 0  %>
+  <script type="text/javascript"> alert("<%=  t('activerecord.attributes.no_record') %>")</script>
+  <script type="text/javascript"> TrstWindow.edit(<%= params[:id] %>,"new");</script>
+<% else %>
 <div  style="width:760px;height:480px">
-  <% obj = trst_find_all(TrstSysMenu) ; i = obj.offset %>
-  <% if obj.length == 0  %>
-    <script type="text/javascript"> TrstWindow.edit(<%= params[:id] %>,"new");</script>
-  <% end %>
   <table class="full">
     <thead>
       <tr>
@@ -34,3 +35,4 @@
     </tbody>
   </table>
 </div>
+<% end %>

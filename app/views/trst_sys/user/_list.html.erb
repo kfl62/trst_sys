@@ -1,52 +1,54 @@
-<% if current_trst_user.id != 1  %>
-  <div align="center" style="width : 400px; height : 5em;">
-    <%=t 'tasks.db_user.list.not_allowed', :id_1 => TrstUser.find(1).login %><br />
-    <%=t 'tasks.db_user.list.allowed_text_0' %>
-    <%= link_to_function t('tasks.db_user.list.allowed_password_change'),"TrstWindow.edit(#{params[:id]},#{current_trst_user.id}); return false;" %>
-    <%=t 'tasks.db_user.list.allowed_text_1' %>
-    <%= link_to_function t('tasks.db_user.list.allowed_view_account'),"TrstWindow.show(#{params[:id]},#{current_trst_user.id}); return false;" %>
-  </div>
+<% obj = trst_find_all(TrstUser) ; i = obj.offset %>
+<% if obj.length == 0  %>
+  <script type="text/javascript"> alert("<%=  t('activerecord.attributes.no_record') %>")</script>
+  <script type="text/javascript"> TrstWindow.edit(<%= params[:id] %>,"new");</script>
 <% else %>
-  <% obj = trst_find_all(TrstUser) ; i = obj.offset %>
-  <% if obj.length == 0  %>
-    <script type="text/javascript"> TrstWindow.edit(<%= params[:id] %>,"new");</script>
-  <% end %>
-  <div  style="width:760px;height:480px">
-    <table class="full">
-      <thead>
-        <tr>
-          <th>&nbsp;</th>
-          <%= th_label_tag obj, :id %>
-          <%= th_label_tag obj, :login %>
-          <%= th_label_tag obj, :lst_name %>
-          <%= th_label_tag obj, :frst_name %>
-          <%= th_label_tag obj, :mdl_name %>
-          <%= th_label_tag obj, :email %>
-          <%= th_label_tag obj, :login_count %>
-          <%= th_label_tag obj, :last_login_at %>
-          <%= th_label_tag obj, :last_login_ip %>
-          <th>&nbsp;</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for o in obj %>
-          <tr class="<%= cycle("even","odd") %>">
-            <td align="right"><%= i += 1 %>.&nbsp;</td>
-            <%= td_value_tag o, :id, :align => 'right' %>
-            <%= td_value_tag o, :login %>
-            <%= td_value_tag o, :lst_name %>
-            <%= td_value_tag o, :frst_name %>
-            <%= td_value_tag o, :mdl_name %>
-            <%= td_value_tag o, :email %>
-            <%= td_value_tag o, :login_count %>
-            <%= td_value_tag o, :last_login_at %>
-            <%= td_value_tag o, :last_login_ip %>
-            <%= link_to_task o, :last_column %>
+  <% if current_trst_user.id != 1  %>
+    <div align="center" style="width : 400px; height : 5em;">
+      <%=t 'tasks.db_user.list.not_allowed', :id_1 => TrstUser.find(1).login %><br />
+      <%=t 'tasks.db_user.list.allowed_text_0' %>
+      <%= link_to_function t('tasks.db_user.list.allowed_password_change'),"TrstWindow.edit(#{params[:id]},#{current_trst_user.id}); return false;" %>
+      <%=t 'tasks.db_user.list.allowed_text_1' %>
+      <%= link_to_function t('tasks.db_user.list.allowed_view_account'),"TrstWindow.show(#{params[:id]},#{current_trst_user.id}); return false;" %>
+    </div>
+  <% else %>
+    <div  style="width:760px;height:480px">
+      <table class="full">
+        <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <%= th_label_tag obj, :id %>
+            <%= th_label_tag obj, :login %>
+            <%= th_label_tag obj, :lst_name %>
+            <%= th_label_tag obj, :frst_name %>
+            <%= th_label_tag obj, :mdl_name %>
+            <%= th_label_tag obj, :email %>
+            <%= th_label_tag obj, :login_count %>
+            <%= th_label_tag obj, :last_login_at %>
+            <%= th_label_tag obj, :last_login_ip %>
+            <th>&nbsp;</th>
           </tr>
-        <% end %>
-      <%= last_row_for obj, :row20, {:colspan => 11, :offset => i } %>
-      <%= last_row_for obj, :list, {:colspan => 10 } %>
-      </tbody>
-    </table>
-  </div>
+        </thead>
+        <tbody>
+          <% for o in obj %>
+            <tr class="<%= cycle("even","odd") %>">
+              <td align="right"><%= i += 1 %>.&nbsp;</td>
+              <%= td_value_tag o, :id, :align => 'right' %>
+              <%= td_value_tag o, :login %>
+              <%= td_value_tag o, :lst_name %>
+              <%= td_value_tag o, :frst_name %>
+              <%= td_value_tag o, :mdl_name %>
+              <%= td_value_tag o, :email %>
+              <%= td_value_tag o, :login_count %>
+              <%= td_value_tag o, :last_login_at %>
+              <%= td_value_tag o, :last_login_ip %>
+              <%= link_to_task o, :last_column %>
+            </tr>
+          <% end %>
+        <%= last_row_for obj, :row20, {:colspan => 11, :offset => i } %>
+        <%= last_row_for obj, :list, {:colspan => 10 } %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
 <% end %>

@@ -336,6 +336,7 @@ ro:
     attributes:
       label_attribute : "Câmp"
       label_value: "Valoare"
+      no_record: "Tabelul nu conţine înregistrări ..."
       custom_schema_definitions:
         created_on: "Creat la data de"
         created_by: "Creat de către"
