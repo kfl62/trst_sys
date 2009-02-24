@@ -1,54 +1,46 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
 <div style="width:460px;height:320px">
   <% o = find_obj(TrstSysSubmenu,params[:obj_id]) %>
   <table style="width:80%; margin:auto;">
     <thead>
       <tr>
-        <th><%=t 'activerecord.attributes.label_attribute' %></th>
-        <th><%=t 'activerecord.attributes.label_value' %></th>
+        <%= th_label_tag o, :id, nil, {:attributes => "label_attribute"} %>
+        <%= th_label_tag o, :id, nil, {:attributes => "label_value"} %>
       </tr>
     </thead>
     <tbody align="left">
       <tr>
-        <td>Id</td>
-        <td><%= o.id %></td>
+        <%= td_label_tag o, :id %>
+        <%= td_value_tag o, :id %>
       </tr>
       <tr>
-        <td><%=t 'tasks.db_sys_submenu.list.name' %></td>
-        <td><%= o.name %></td>
+        <%= td_label_tag o, :name %>
+        <%= td_value_tag o, :name %>
       </tr>
       <tr>
-        <td><%=t 'tasks.db_sys_submenu.list.controller' %></td>
-        <td><%= o.controller %></td>
+        <%= td_label_tag o, :controller %>
+        <%= td_value_tag o, :controller %>
       </tr>
       <tr>
-        <td><%=t 'tasks.db_sys_submenu.list.chapter' %></td>
-        <td><%= o.chapter %></td>
+        <%= td_label_tag o, :chapter %>
+        <%= td_value_tag o, :chapter %>
       </tr>
       <tr>
-        <td><%=t 'tasks.db_sys_submenu.list.page' %></td>
-        <td><%= o.page %></td>
+        <%= td_label_tag o, :page %>
+        <%= td_value_tag o, :page %>
       </tr>
       <tr>
-        <td><%=t 'tasks.db_sys_submenu.list.active' %></td>
-        <td><%= o.active %></td>
+        <%= td_label_tag o, :active %>
+        <%= td_value_tag o, :active %>
       </tr>
       <tr>
-        <td><%=t 'tasks.db_sys_submenu.list.title' %></td>
-        <td><%= o.title %></td>
+        <%= td_label_tag o, :title %>
+        <%= td_value_tag o, :title %>
+      </tr>
+      <tr>
+        <td colspan="2"><hr/></td>
       </tr>
       <%= custom_schema_definitions_html(o) %>
-      <tr>
-          <td align="center" colspan="2" style="padding-top:10px">
-            <%= link_to_function t('tasks.db_sys_submenu.show.link_to_edit'),
-              "TrstWindow.edit(#{params[:id]},#{params[:obj_id]})" %>&nbsp;|&nbsp;
-            <%= link_to_function t('tasks.db_sys_submenu.show.link_to_list'),
-              "TrstWindow.exe(#{params[:id]},#{params[:obj_id]})" %>
-          </td>
-      </tr>
+      <%= last_row_for o, :show %>
     </tbody>
   </table>
 </div>

@@ -91,6 +91,7 @@ ro:
         link_to_list: "Lista meniurilor"
     db_sys_submenu:
       list:
+        id: "ID"
         name: "Denumire"
         controller: "Controllerul invocat"
         chapter: "Capitolul"

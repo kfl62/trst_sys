@@ -1,7 +1,3 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
 <% if params[:obj_id] == "new"
   params[:submenu][:created_by] = current_trst_user.id
   save_obj(TrstSysSubmenu,params[:obj_id],params[:submenu])
@@ -27,20 +23,13 @@ end -%>
     <table style="width:80%; margin:auto;">
       <thead>
         <tr>
-          <th><%=t 'activerecord.attributes.label_attribute' %></th>
-          <th><%=t 'activerecord.attributes.label_value' %></th>
+          <%= th_label_tag o, :id, nil, {:attributes => "label_attribute"} %>
+          <%= th_label_tag o, :id, nil, {:attributes => "label_value"} %>
         </tr>
       </thead>
       <tbody align="left">
         <%= custom_schema_definitions_html(o) %>
-        <tr>
-          <td align="center" colspan="2" style="padding-top:10px">
-            <%= link_to_function t('tasks.db_sys_submenu.save.link_to_show'),
-              "TrstWindow.show(#{params[:id]},#{params[:obj_id]})" %>&nbsp;|&nbsp;
-            <%= link_to_function t('tasks.db_sys_submenu.save.link_to_list'),
-              "TrstWindow.exe(#{params[:id]},#{params[:obj_id]})" %>
-          </td>
-        </tr>
+        <%= last_row_for o, :save %>
       </tbody>
     </table>
   </div>
