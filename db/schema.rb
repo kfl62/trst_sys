@@ -9,35 +9,60 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090130162621) do
+ActiveRecord::Schema.define(:version => 20090224123553) do
+
+  create_table "trst_hmrs", :force => true do |t|
+    t.string   "prefix",      :limit => 10, :default => "",    :null => false
+    t.string   "lstname",     :limit => 25, :default => "",    :null => false
+    t.string   "mdlname",     :limit => 25, :default => "",    :null => false
+    t.string   "frstname",    :limit => 25, :default => "",    :null => false
+    t.string   "stts",        :limit => 10, :default => "f;e", :null => false
+    t.datetime "created_on"
+    t.integer  "created_by",  :limit => 6,  :default => 0,     :null => false
+    t.datetime "updated_on"
+    t.integer  "updated_by",  :limit => 6,  :default => 0,     :null => false
+    t.integer  "approved_by", :limit => 6,  :default => 0,     :null => false
+  end
+
+  create_table "trst_hrs", :force => true do |t|
+    t.string   "prefix",      :limit => 10, :default => "",    :null => false
+    t.string   "lstname",     :limit => 25, :default => "",    :null => false
+    t.string   "mdlname",     :limit => 25, :default => "",    :null => false
+    t.string   "frstname",    :limit => 25, :default => "",    :null => false
+    t.string   "stts",        :limit => 10, :default => "f;e", :null => false
+    t.datetime "created_on"
+    t.integer  "created_by",  :limit => 6,  :default => 0,     :null => false
+    t.datetime "updated_on"
+    t.integer  "updated_by",  :limit => 6,  :default => 0,     :null => false
+    t.integer  "approved_by", :limit => 6,  :default => 0,     :null => false
+  end
 
   create_table "trst_prtns", :force => true do |t|
-    t.string   "prefix",        :limit => 10,  :default => "",    :null => false
-    t.string   "name",          :limit => 100, :default => "",    :null => false
-    t.string   "suffix",        :limit => 10,  :default => "",    :null => false
-    t.string   "namesh",        :limit => 10,  :default => "",    :null => false
-    t.string   "id_chamcom",    :limit => 25,  :default => "",    :null => false
-    t.string   "id_fiscal",     :limit => 15,  :default => "",    :null => false
-    t.string   "id_itm",        :limit => 15,  :default => "",    :null => false
-    t.string   "id_account",    :limit => 15,  :default => "",    :null => false
-    t.string   "id_internet",   :limit => 15,  :default => "",    :null => false
-    t.string   "adress",        :limit => 100, :default => "",    :null => false
-    t.string   "city",          :limit => 30,  :default => "",    :null => false
-    t.string   "zip",           :limit => 30,  :default => "",    :null => false
-    t.string   "state",         :limit => 30,  :default => "",    :null => false
-    t.integer  "id_country",    :limit => 4,   :default => 0,     :null => false
-    t.string   "contactpers",   :limit => 30,  :default => "",    :null => false
-    t.string   "contactpers_q", :limit => 25,  :default => "",    :null => false
-    t.string   "tel",           :limit => 30,  :default => "",    :null => false
-    t.string   "fax",           :limit => 30,  :default => "",    :null => false
-    t.string   "email",         :limit => 30,  :default => "",    :null => false
-    t.string   "webadress",     :limit => 30,  :default => "",    :null => false
-    t.boolean  "flag_clb",                     :default => false, :null => false
+    t.string   "prefix",        :limit => 10,  :default => "", :null => false
+    t.string   "name",          :limit => 100, :default => "", :null => false
+    t.string   "suffix",        :limit => 10,  :default => "", :null => false
+    t.string   "namesh",        :limit => 10,  :default => "", :null => false
+    t.string   "id_chamcom",    :limit => 25,  :default => "", :null => false
+    t.string   "id_fiscal",     :limit => 15,  :default => "", :null => false
+    t.string   "id_itm",        :limit => 15,  :default => "", :null => false
+    t.string   "id_account",    :limit => 15,  :default => "", :null => false
+    t.string   "id_internet",   :limit => 15,  :default => "", :null => false
+    t.string   "address",       :limit => 100, :default => "", :null => false
+    t.string   "city",          :limit => 30,  :default => "", :null => false
+    t.string   "zip",           :limit => 30,  :default => "", :null => false
+    t.string   "state",         :limit => 30,  :default => "", :null => false
+    t.integer  "id_country",    :limit => 4,   :default => 0,  :null => false
+    t.string   "contactpers",   :limit => 30,  :default => "", :null => false
+    t.string   "contactpers_q", :limit => 25,  :default => "", :null => false
+    t.string   "tel",           :limit => 30,  :default => "", :null => false
+    t.string   "fax",           :limit => 30,  :default => "", :null => false
+    t.string   "email",         :limit => 30,  :default => "", :null => false
+    t.string   "webaddress",    :limit => 30,  :default => "", :null => false
     t.datetime "created_on"
-    t.integer  "created_by",    :limit => 6,   :default => 0,     :null => false
+    t.integer  "created_by",    :limit => 6,   :default => 0,  :null => false
     t.datetime "updated_on"
-    t.integer  "updated_by",    :limit => 6,   :default => 0,     :null => false
-    t.integer  "approved_by",   :limit => 6,   :default => 0,     :null => false
+    t.integer  "updated_by",    :limit => 6,   :default => 0,  :null => false
+    t.integer  "approved_by",   :limit => 6,   :default => 0,  :null => false
   end
 
   create_table "trst_sys_menus", :force => true do |t|
@@ -87,7 +112,7 @@ ActiveRecord::Schema.define(:version => 20090130162621) do
 
   create_table "trst_sys_tasks", :force => true do |t|
     t.integer  "trst_sys_page_id", :limit => 6,  :default => 34,        :null => false
-    t.string   "controller",       :limit => 15, :default => "info",    :null => false
+    t.string   "prefix",           :limit => 15, :default => "info",    :null => false
     t.string   "exe_id",           :limit => 20, :default => "...?...", :null => false
     t.string   "exe_params",       :limit => 40, :default => "...?...", :null => false
     t.string   "name",             :limit => 15, :default => "...?...", :null => false
