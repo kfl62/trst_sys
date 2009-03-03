@@ -30,7 +30,7 @@
           <%= f.td_label_tag  :title %>
           <td>
             <a href="#" onclick="TrstWindow.mce_edit(<%= params[:id] %>,'TrstSysPage' ,<%= params[:obj_id] %>, 'title')">
-              <%= truncate(strip_tags(@page.title), :length => 40) %>
+              <%= truncate(strip_tags(obj.title), :length => 40) %>
             </a>
           </td>
         </tr>
@@ -38,7 +38,7 @@
           <%= f.td_label_tag  :intro %>
           <td>
             <a href="#" onclick="TrstWindow.mce_edit(<%= params[:id] %>,'TrstSysPage' ,<%= params[:obj_id] %>, 'intro')">
-              <%= truncate(strip_tags(@page.intro), :length => 40) %>
+              <%= truncate(strip_tags(obj.intro), :length => 40) %>
             </a>
           </td>
         </tr>
@@ -47,7 +47,7 @@
           <%= f.td_label_tag  :actions %>
           <td>
             <a href="#" onclick="TrstWindow.mce_edit(<%= params[:id] %>,'TrstSysPage' ,<%= params[:obj_id] %>, 'actions')">
-              <%= truncate(strip_tags(@page.actions), :length => 40) %>
+              <%= truncate(strip_tags(obj.actions), :length => 40) %>
             </a>
           </td>
         </tr>
@@ -56,7 +56,7 @@
           <%= f.td_label_tag  :content %>
           <td>
             <a href="#" onclick="TrstWindow.mce_edit(<%= params[:id] %>,'TrstSysPage' ,<%= params[:obj_id] %>, 'content')">
-              <%= truncate(strip_tags(@page.content), :length => 40) %>
+              <%= truncate(strip_tags(obj.content), :length => 40) %>
             </a>
           </td>
         </tr>
@@ -65,7 +65,7 @@
           <%= f.td_label_tag  :note %>
           <td>
             <a href="#" onclick="TrstWindow.mce_edit(<%= params[:id] %>,'TrstSysPage' ,<%= params[:obj_id] %>, 'note')">
-              <%= truncate(strip_tags(@page.note), :length => 40) %>
+              <%= truncate(strip_tags(obj.note), :length => 40) %>
             </a>
           </td>
         </tr>
