@@ -173,12 +173,13 @@ module Forms::ApplicationHelper
   def image_tag_for_link(src,options ={})
     html = ""
     src.split(",").each { |s|
-      options[:alt] = options[:title] = t('activerecord.attributes.crud.' + s)
+      options[:alt] = options[:title] = options[:arg2] == "'new'" ? t('activerecord.attributes.crud.new')  : t('activerecord.attributes.crud.' + s)
       options[:size] ||= "13x13"
       options[:style] ||= "cursor : pointer; vertical-align : middle;"
       options[:onclick] = "TrstWindow.#{s}(#{options[:arg1]}, #{options[:arg2]}); return false;"
       options[:onclick] = "if (confirm('#{t('activerecord.attributes.crud.remove_confirm')}')) {TrstWindow.#{s}(#{options[:arg1]}, #{options[:arg2]}); return false} else {return false;}" if s == "remove"
-      html += image_tag("db_#{s}.png", options.dup.delete_if { |k,v|  k.to_s.include? "arg"})
+      img = options[:arg2] == "'new'" ? "db_new.png" : "db_#{s}.png"
+      html += image_tag(img, options.dup.delete_if { |k,v|  k.to_s.include? "arg"})
     }
     html
   end
