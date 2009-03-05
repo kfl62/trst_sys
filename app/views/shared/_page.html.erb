@@ -24,15 +24,19 @@
     <%= strip_tags(pg.intro) %>
   </div>
   <div class="sys_actions">
-    <strong><em><%=t 'layout.page.sys_actions' %></em></strong>
-    <ul>
+    <span style="cursor:pointer;" onclick="$$('span.handle').each(function(x) { x.toggle() })">
+      <strong><em><%=t 'layout.page.sys_actions' %></em></strong>
+    </span>
+    <ul id="tasks">
       <% for task in current_tasks %>
-        <li>
+        <% content_tag_for :li,  task do %>
+          <span class="handle" style="display:none;">&nbsp;[sort]&nbsp;</span>
           <a class="link_info" href="#"  title="<%= task.title -%>" onclick="TrstWindow.info('<%= task.id -%>')"><%= task.name %></a>
           <a class="link_exe" href="#"  title="<%= task.title -%>" onclick="TrstWindow.exe('<%= task.id -%>')">&nbsp;</a>
-        </li>
+        <% end %>
       <% end %>
     </ul>
+    <%= sortable_element("tasks", :url => "/trst_sys/sort_tasks", :handle => "handle") %>
   </div>
   <div id="sys_content_container" class="sys_content_container">
     <div id="sys_content" class="sys_content" style="display:none;">

@@ -2,7 +2,7 @@ module TrstSysHelper
   
   # Caută în baza de date acţiunile aferente paginii
   def current_tasks
-    current_tasks = TrstSysTask.find(:all,:conditions => ['trst_sys_page_id = ?',current_page])
+    current_tasks = TrstSysTask.find(:all,:conditions => ['trst_sys_page_id = ?',current_page], :order => 'position')
     return current_tasks
   end
 
