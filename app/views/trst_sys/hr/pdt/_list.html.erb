@@ -1,0 +1,27 @@
+<% obj = trst_find_all(TrstReplaceMe) ; i = obj.offset %>
+<% if obj.length == 0  %>
+  <script type="text/javascript"> alert("<%=  t('activerecord.attributes.no_record') %>")</script>
+  <script type="text/javascript"> TrstWindow.edit(<%= params[:id] %>,"new");</script>
+<% else %>
+<div  style="width:760px;height:480px">
+  <table class="full">
+    <thead>
+      <th>&nbsp;</th>
+      <%= th_label_tag obj, :ReplaceMe %>
+      ...
+      <th>&nbsp;</th>
+    </thead>
+    <tbody>
+      <% for o in obj %>
+        <tr class="<%= cycle("even","odd")%>" >
+          <td align="right"><%= i += 1 %>.</td>
+          <%= td_value_tag o, :ReplaceMe %>
+          ...
+          <%= link_to_task o, :last_column %>
+      <% end %>
+      <%= last_row_for obj, :row20, {:colspan => .., :offset => i } %>
+      <%= last_row_for obj, :list, {:colspan => .. } %>
+    </tbody>
+  </table>
+</div>
+<% end %>
