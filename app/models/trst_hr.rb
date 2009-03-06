@@ -23,7 +23,8 @@
 #==Rolul tabelului
 #Descriere ....
 class TrstHr < ActiveRecord::Base
-
+  has_one :trst_hr_pdt
+  
   def self.per_page
     20
   end
