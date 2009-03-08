@@ -7,7 +7,7 @@ class TrstSysController < ApplicationController
   end
   
   def mce_edit
-   render :layout => false
+    render :layout => false
   end
 
   def sort_tasks
@@ -16,4 +16,5 @@ class TrstSysController < ApplicationController
     end
     render :nothing => true
   end
+
 end

@@ -1,5 +1,5 @@
 module Forms::ApplicationHelper
-
+  
   def label(object_name,method, text = nil, options = {})
     obj = object_name_is(object_name,options)
     if options[:short_name]
@@ -46,16 +46,6 @@ module Forms::ApplicationHelper
     td_options = options[:td]
     options.delete(:td)
     "<td #{td_options}>#{tag(:input, options)}</td>"
-  end
-    
-  def text_field(object_name,method, options = {})
-    options[:size] ||= options["maxlength"] || 30
-    options[:type] = "text"
-    options[:value] ||= options[:object].send(method)
-    options[:id] = "#{object_name}_#{method}"
-    options[:name] = "#{object_name}[#{method}]"
-    options.delete(:object)
-    tag(:input, options)
   end
 
   def hidden_fields(object_name, fields = {})
