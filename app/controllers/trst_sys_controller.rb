@@ -16,7 +16,7 @@ class TrstSysController < ApplicationController
     end
     render :nothing => true
   end
-
+  
   def auto_complete
     find_options = {
       :conditions => [ "LOWER(#{params[:method]}) LIKE ?", '%' + params[:search].downcase + '%' ],
