@@ -53,6 +53,7 @@ module Forms::ApplicationHelper
     options[:type] = "hidden"
     html ="<tr><td  colspan='2'>"
     fields.each_pair { |key,value|
+      options[:id] = "#{object_name}_#{key}"
       options[:name] = "#{object_name}[#{key}]"
       options[:value] = "#{value}"
       html += tag(:input, options)
@@ -82,7 +83,14 @@ module Forms::ApplicationHelper
       last_row_for_show(object_name, options)
     end
   end
-  
+
+  def td_auto_complete_search(object_name,method, options = {})
+    html = '<td>'
+    html += tag(:input, :id => 'auto_complete_search', :type => 'text')
+    html += tag(:div, :id => 'auto_complete_search_result', :class => 'autocomplete')
+    html += auto_complete_search(object_name,method, options)
+  end
+
   private
   
   def object_name_is(object_name,options)
@@ -172,6 +180,35 @@ module Forms::ApplicationHelper
       html += image_tag(img, options.dup.delete_if { |k,v|  k.to_s.include? "arg"})
     }
     html
+  end
+
+  def auto_complete_search(object_name,method, options = {})
+    function = "new Ajax.Autocompleter("
+    function << "'auto_complete_search', "
+    function << "'auto_complete_search_result', "
+    function << "'/trst_sys/auto_complete'"
+
+    js_options = {}
+    js_options[:parameters] = "'object=#{options[:search_object]}&method=#{options[:search_method]}'"
+    js_options[:tokens] = array_or_string_for_javascript(options[:tokens]) if options[:tokens]
+    js_options[:callback] = "function(element, value) { return #{options[:with]} }" if options[:with]
+    js_options[:indicator] = "'#{options[:indicator]}'" if options[:indicator]
+    js_options[:select] = "'#{options[:select]}'" if options[:select]
+    js_options[:paramName] = options[:param_name] ? "'#{options[:param_name]}'" : "'search'"
+    js_options[:frequency] = "#{options[:frequency]}" if options[:frequency]
+    js_options[:method] = "'get'"
+    js_options[:afterUpdateElement] = "updateHiddenField"
+
+    { :on_show => :onShow, :on_hide => :onHide, :min_chars => :minChars }.each do |k,v|
+      js_options[v] = options[k] if options[k]
+    end
+
+    function << (', ' + options_for_javascript(js_options) + ');')
+    function << "function updateHiddenField(text, li) {"
+    function << "$('#{object_name}_#{method}').value = li.id"
+    function << "}"
+
+    javascript_tag(function)
   end
 
 end
