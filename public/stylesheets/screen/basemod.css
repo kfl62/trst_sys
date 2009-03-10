@@ -90,7 +90,12 @@ div.flash_loading {
     position: absolute;
     width: 80%;
 }
-
+div.searching {
+    background: #dfd url("/images/indicator.gif") no-repeat center left;
+    text-indent: 25px;
+    position: absolute;
+    width: 80px;
+}
 #footer {
     text-align: center;
     color: #f5f5f5;

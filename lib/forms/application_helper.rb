@@ -86,9 +86,20 @@ module Forms::ApplicationHelper
 
   def td_auto_complete_search(object_name,method, options = {})
     html = '<td>'
+    html += "<div id='searching' class='searching' style='display:none'>...?...</div>"
     html += tag(:input, :id => 'auto_complete_search', :type => 'text')
-    html += tag(:div, :id => 'auto_complete_search_result', :class => 'autocomplete')
+    html += tag(:div, :id => 'auto_complete_search_result', :class => 'auto_complete')
     html += auto_complete_search(object_name,method, options)
+    html += '</td>'
+    if options[:hidden_field_value]
+      html += "<tr><td colspan='2'>"
+      html += tag(:input,
+        :type => "hidden",
+        :id => "#{object_name}_#{method}",
+        :name => "#{object_name}[#{method}]")
+      html += "</td></tr>"
+    end
+    html
   end
 
   private
@@ -192,22 +203,29 @@ module Forms::ApplicationHelper
     js_options[:parameters] = "'object=#{options[:search_object]}&method=#{options[:search_method]}'"
     js_options[:tokens] = array_or_string_for_javascript(options[:tokens]) if options[:tokens]
     js_options[:callback] = "function(element, value) { return #{options[:with]} }" if options[:with]
-    js_options[:indicator] = "'#{options[:indicator]}'" if options[:indicator]
+    js_options[:indicator] = options[:indicator] ? "'#{options[:indicator]}'" : "'searching'"
     js_options[:select] = "'#{options[:select]}'" if options[:select]
     js_options[:paramName] = options[:param_name] ? "'#{options[:param_name]}'" : "'search'"
     js_options[:frequency] = "#{options[:frequency]}" if options[:frequency]
     js_options[:method] = "'get'"
-    js_options[:afterUpdateElement] = "updateHiddenField"
+    js_options[:afterUpdateElement] = "updateHiddenField" if options[:hidden_field_value]
+    js_options[:parameters] = "'object=#{options[:search_object]}&method=#{options[:search_method]}"
+    js_options[:parameters] += "&hidden_field_value=#{options[:hidden_field_value]}" if options[:hidden_field_value]
+    js_options[:parameters] +=  "&informal=#{options[:informal]}" if options[:informal]
+    js_options[:parameters] += "'"
 
     { :on_show => :onShow, :on_hide => :onHide, :min_chars => :minChars }.each do |k,v|
       js_options[v] = options[k] if options[k]
     end
 
     function << (', ' + options_for_javascript(js_options) + ');')
-    function << "function updateHiddenField(text, li) {"
-    function << "$('#{object_name}_#{method}').value = li.id"
-    function << "}"
 
+    if options[:hidden_field_value]
+      function << "function updateHiddenField(text, li) {"
+      function << "$('#{object_name}_#{method}').value = li.id"
+      function << "}"
+    end
+    
     javascript_tag(function)
   end
 

@@ -1,0 +1,8 @@
+<ul>
+  <% for item in @items -%>
+    <% html = '' %>
+    <% html = item[params[:method]] -%>
+    <% html += "<div class='informal'>#{item.send(params[:informal])}</div>" if params[:informal] -%>
+    <li <%= "id=#{item[params[:hidden_field_value]]}" if params[:hidden_field_value] %> ><%= html %></li>
+  <% end -%>
+</ul>
