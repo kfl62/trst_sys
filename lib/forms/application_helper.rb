@@ -85,9 +85,15 @@ module Forms::ApplicationHelper
   end
 
   def td_auto_complete_search(object_name,method, options = {})
+    habtm_value = ""
+    if method.to_s.split("_").last == "id"
+      habtm_field = method.to_s.gsub(/_id/, "")
+      habtm_method = options[:informal] ? options[:informal] : options[:search_method]
+      habtm_value = options[:object].send(habtm_field).send(habtm_method) rescue habtm_value = ""
+    end
     html = '<td>'
     html += "<div id='searching' class='searching' style='display:none'>...?...</div>"
-    html += tag(:input, :id => 'auto_complete_search', :type => 'text')
+    html += tag(:input, :id => 'auto_complete_search', :type => 'text', :value => habtm_value)
     html += tag(:div, :id => 'auto_complete_search_result', :class => 'auto_complete')
     html += auto_complete_search(object_name,method, options)
     html += '</td>'
@@ -96,7 +102,8 @@ module Forms::ApplicationHelper
       html += tag(:input,
         :type => "hidden",
         :id => "#{object_name}_#{method}",
-        :name => "#{object_name}[#{method}]")
+        :name => "#{object_name}[#{method}]",
+        :value => options[:object].send(method))
       html += "</td></tr>"
     end
     html
