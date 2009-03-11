@@ -93,7 +93,7 @@ module Forms::ApplicationHelper
     end
     html = '<td>'
     html += "<div id='searching' class='searching' style='display:none'>...?...</div>"
-    html += tag(:input, :id => 'auto_complete_search', :type => 'text', :value => habtm_value)
+    html += tag(:input, :id => 'auto_complete_search', :type => 'text', :value => habtm_value, :size => options[:size])
     html += tag(:div, :id => 'auto_complete_search_result', :class => 'auto_complete')
     html += auto_complete_search(object_name,method, options)
     html += '</td>'
