@@ -3,7 +3,7 @@
 #* Fişier migrare: <b><em>RAILS_ROOT/db/migrate/xxx_create_trst_employees</em></b>
 #    create_table "trst_hr_employees",   :force => true do |t|
 #      t.integer  "trst_hr_id",          :limit => 6,   :default => 0,                     :null => false
-#      t.integer  "trst_frm_id",         :limit => 6,   :default => 1,                     :null => false
+#      t.integer  "trst_firm_id",        :limit => 6,   :default => 1,                     :null => false
 #      t.integer  "trst_payroll_job_id", :limit => 6,   :default => 3631,                  :null => false
 #      t.string   "CIM_id",              :limit => 4,   :default => "0",                   :null => false
 #      t.datetime "CIM_date",                           :default => '1980-01-01 00:00:00'

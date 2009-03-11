@@ -2,7 +2,7 @@ class CreateTrstHrEmployees < ActiveRecord::Migration
   def self.up
     create_table :trst_hr_employees do |t|
       t.integer  "trst_hr_id",          :limit => 6,   :default => 0,                     :null => false
-      t.integer  "trst_frm_id",         :limit => 6,   :default => 1,                     :null => false
+      t.integer  "trst_firm_id",        :limit => 6,   :default => 1,                     :null => false
       t.integer  "trst_payroll_job_id", :limit => 6,   :default => 3631,                  :null => false
       t.string   "CIM_id",              :limit => 4,   :default => "0",                   :null => false
       t.datetime "CIM_date",                           :default => '1980-01-01 00:00:00'
