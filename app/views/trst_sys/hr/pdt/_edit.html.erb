@@ -16,7 +16,7 @@
       <tbody>
         <tr>
           <%= f.td_label_tag :trst_hr_id %>
-          <%= f.td_auto_complete_search :trst_hr_id,
+          <%= f.td_auto_complete_search :trst_hr_id, :size => 24,
             :search_object => 'TrstHr',
             :search_method => 'lst_name',
             :hidden_field_value => 'id',
@@ -25,7 +25,7 @@
         </tr>
         <tr>
           <%= f.td_label_tag :cnp %>
-          <%= f.td_text_field :CNP %>
+          <%= f.td_text_field :CNP, :size => 24 %>
         </tr>
         <tr>
           <%= f.td_label_tag :bi_info, nil, {:colspan => 2} %>
@@ -34,8 +34,8 @@
           <td colspan="2">
             <%= f.text_field :BI_sr, :size => 1 %>
             <%= f.text_field :BI_nr, :size => 7 %>
-            <%= f.text_field :BI_elib, :size => 11 %>
-            <%= f.text_field :BI_date, :size => 11 %>
+            <%= f.text_field :BI_elib, :size => 12 %>
+            <%= f.calendar_date_select :BI_date, :time => false, :size => 7 %>
           </td>
         </tr>
         <tr>
@@ -45,13 +45,13 @@
           <td colspan="2">
             <%= f.text_field :PS_sr, :size => 1 %>
             <%= f.text_field :PS_nr, :size => 7 %>
-            <%= f.text_field :PS_elib, :size => 11 %>
-            <%= f.text_field :PS_date, :size => 11 %>
+            <%= f.text_field :PS_elib, :size => 12 %>
+            <%= f.calendar_date_select :PS_date, :time => false, :size => 7 %>
           </td>
         </tr>
         <tr>
           <%= f.td_label_tag :cttn %>
-          <%= f.td_text_field :cttn %>
+          <%= f.td_text_field :cttn, :size => 24 %>
         </tr>
         <tr>
           <%= f.td_label_tag :adress_info, nil, {:colspan => 2} %>
