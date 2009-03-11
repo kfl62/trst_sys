@@ -1,10 +1,10 @@
-<div style="width : 380px; height : 240px;">
+<div style="width : 400px; height : 320px;">
   <%  if params[:obj_id] == "new"
-    obj = TrstReplaceMe new
+    obj = TrstHrPdt.new
   else
-    obj = find_obj(TrstReplaceMe,params[:obj_id])
+    obj = find_obj(TrstHrPdt,params[:obj_id])
   end -%>
-  <% remote_form_for :replace_me_with_form_for, obj,
+  <% remote_form_for :pdt, obj,
     :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
     <table style="width:80%; margin:auto;">
       <thead>
@@ -15,8 +15,67 @@
       </thead>
       <tbody>
         <tr>
-          <%= f.td_label_tag :ReplaceMe %>
-          <%= f.td_text_field :ReplaceMe %>
+          <%= f.td_label_tag :trst_hr_id %>
+          <%= f.td_auto_complete_search :trst_hr_id,
+            :search_object => 'TrstHr',
+            :search_method => 'lst_name',
+            :hidden_field_value => 'id',
+            :informal => 'full_name'
+        %>
+        </tr>
+        <tr>
+          <%= f.td_label_tag :cnp %>
+          <%= f.td_text_field :CNP %>
+        </tr>
+        <tr>
+          <%= f.td_label_tag :bi_info, nil, {:colspan => 2} %>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <%= f.text_field :BI_sr, :size => 1 %>
+            <%= f.text_field :BI_nr, :size => 7 %>
+            <%= f.text_field :BI_elib, :size => 11 %>
+            <%= f.text_field :BI_date, :size => 11 %>
+          </td>
+        </tr>
+        <tr>
+          <%= f.td_label_tag :ps_info, nil, {:colspan => 2} %>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <%= f.text_field :PS_sr, :size => 1 %>
+            <%= f.text_field :PS_nr, :size => 7 %>
+            <%= f.text_field :PS_elib, :size => 11 %>
+            <%= f.text_field :PS_date, :size => 11 %>
+          </td>
+        </tr>
+        <tr>
+          <%= f.td_label_tag :cttn %>
+          <%= f.td_text_field :cttn %>
+        </tr>
+        <tr>
+          <%= f.td_label_tag :adress_info, nil, {:colspan => 2} %>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <%= f.text_field :addr_strt, :size => 14 %>
+            <%= f.text_field :addr_city, :size => 8 %>
+            <%= f.text_field :addr_state, :size => 2 %>
+            <%= f.text_field :addr_zip, :size => 6 %>
+          </td>
+        </tr>
+        <tr>
+          <%= f.td_label_tag :contact_info, nil, {:colspan => 2} %>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <%= f.text_field :tel, :size => 12 %>
+            <%= f.text_field :fax, :size => 11 %>
+            <%= f.text_field :mob, :size => 11 %>
+            <br />
+            <%= f.text_field :email, :size => 19 %>
+            <%= f.text_field :web, :size => 19 %>
+          </td>
         </tr>
         <%= f.hidden_fields :updated_by => current_trst_user.id %>
         <%= f.last_row_for :edit %>

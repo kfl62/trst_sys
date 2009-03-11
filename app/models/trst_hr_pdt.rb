@@ -39,4 +39,29 @@
 #Descriere ....
 class TrstHrPdt < ActiveRecord::Base
   belongs_to :trst_hr
+
+  def self.per_page
+    20
+  end
+
+  def hr_name
+    "( " + self.trst_hr_id.to_s + " )  " + self.trst_hr.full_name
+  end
+
+  def bi_info
+    "  BI  " + self.BI_sr + "." + self.BI_nr + " " + self.BI_elib + " " + I18n.l(self.BI_date, :format => 'date')
+  end
+
+  def ps_info
+    "  PS  " + self.PS_sr + "." + self.PS_nr + " " + self.PS_elib + " " + I18n.l(self.PS_date, :format => 'date')
+  end
+
+  def adress_info
+    self.addr_strt + " " + self.addr_city + " " + self.addr_state + " " + self.addr_zip
+  end
+
+  def contact_info
+    self.tel + " ; " + self.fax + " ; " + self.mob + " ; " + self.email + " ; " + self.web
+  end
+  
 end

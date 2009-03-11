@@ -196,7 +196,26 @@ ro:
       show:
         link_to_edit: "Editare resursă umană"
         link_to_list: "Lista resurselor umane"
-
+    db_hr_pdt:
+      list:
+        id: "ID"
+        hr_name: "Resurse umane (id,nume)"
+        trst_hr_id: "Nume"
+        cnp: "Cod numeric personal"
+        bi_info: "Buletin seria / numărul / eliberat de / la data de"
+        ps_info: "Paşaport seria / numărul / eliberat de / la data de"
+        cttn: "Cetăţenia"
+        adress_info: "Domiciliu stradă(nr) / localitate /judeţ / cod poştal"
+        contact_info: "Contact tel / fax / mobil / email / web"
+      save:
+        create: "Datele personale  au fost create ..."
+        update: "Modificările au fost salvate..."
+        remove: "Datele personale <strong>{{hr_name}}</strong> a fost şterse..."
+        link_to_show: "Detalii date personale"
+        link_to_list: "Lista datelor personale"
+      show:
+        link_to_edit: "Editare date personale"
+        link_to_list: "Lista datelor personale"
 
   date:
     formats:
@@ -217,7 +236,8 @@ ro:
   time:
     formats:
       default: "%a %d %b %Y, %H:%M:%S %z"
-#      time: "%H:%M"
+      time: "%H:%M"
+      date: "%d-%m-%Y"
       short: "%d %b %H:%M"
       long: "%d %B %Y %H:%M"
 #      only_second: "%S"
@@ -431,3 +451,15 @@ ro:
         mdl_name: "Prenume2"
         lst_name: "Nume"
         stts: "Statut"
+      trst_hr_pdt:
+        id: "ID"
+        trst_hr_id: "Nume"
+        CNP: "CNP"
+        BI_sr: "BI"
+        BI_nr: "BI nr."
+        addr_strt: "Adresă"
+        addr_city: "Localitate"
+        addr_state: "Judeţ"
+        tel: "Tel."
+        mob: "Mobil"
+        email: "Email"
