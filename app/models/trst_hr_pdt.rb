@@ -1,7 +1,7 @@
 #==Baza de date :Tabel => <em>trst_hr_pdts</em>
 #Tabelul care conţine evidenţa datelor personale (resurse umane)
 #* Fişier migrare: <b><em>RAILS_ROOT/db/migrate/xxx_create_trst_hr_pdts</em></b>
-#    create_table "trst_hmrs_pdts", :force => true do |t|
+#    create_table "trst_hr_pdts", :force => true do |t|
 #      t.integer  "trst_hr_id",        :limit => 6,  :default => 0,                     :null => false
 #      t.string   "CNP",               :limit => 14, :default => "",                    :null => false
 #      t.string   "BI_sr",             :limit => 2,  :default => "",                    :null => false
