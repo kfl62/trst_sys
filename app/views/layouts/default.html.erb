@@ -7,6 +7,8 @@
     <script type="text/javascript" src="javascripts/scriptaculous.js?load=effects,dragdrop,controls"></script>
     <script type="text/javascript" src="javascripts/lightview.js"></script>
     <script type="text/javascript" src="javascripts/application.js"></script>
+    <% CalendarDateSelect.format = :iso_date -%>
+    <%= calendar_date_select_includes "silver", :locale => 'ro'%>
     <%= stylesheet_link_tag "central.css" -%>
     <style>
       #header {
