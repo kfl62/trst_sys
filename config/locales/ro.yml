@@ -1,222 +1,4 @@
-## YAML Template.
 ro:
-  layout:
-    title: "Firma Dvs."
-    title_development: "Firma Dvs."
-    title_demo: "Demo S.R.L."
-    title_klclean: "klClean"
-    title_diren: "Diren/Continent"
-    title_clean-tech: "Cleantech"
-    title_clean-cons: "Clean Consulting"
-    header:
-      authenticated_as: "Autentificat ca şi:"
-    menu:
-      submenu_show: "Arată submeniul"
-      submenu_hide: "Ascunde submeniul"
-    page:
-      sys_intro: "Info:"
-      sys_actions: "Lista activităţilor"
-      sys_note: "Notă"
-    flash:
-      loading: "O clipă ... acum se încarcă pagina ..."
-      
-  login:
-    title: "Autentificare"
-    name: "Utilizator"
-    password: "Parola"
-    flash:
-      logged_in: "Autentificare reuşită ..."
-      error: "Ooops ... autentificare nereuşită ..."
-      logged_out: "Sesiune terminată ..."
-      require_user: "Numai pentru utilizatorii autentificaţi ..."
-      require_no_user: "Numai pentru utilizatorii anonimi ..."
-
-  pages:
-    pg34:
-      tdy: "Astăzi {{dt_long}}, săpt.({{dt_week}}) ziua ({{dt_yday}}) a anului, au mai rămas ({{dt_dylft}}) zile."
-    mce_edit:
-      title: "Editor de text"
-      update: "Modificările la câmpul <strong>\"{{attribut_name}}\"</strong>  au fost salvate, cu următorul conţinut:"
-      link_to_edit: "Înapoi la câmpuri"
-      link_to_list: "Înapoi la tabel"
-
-  tasks:
-    db_user:
-      list:
-        login: "Utilizator"
-        email: "Email"
-        lst_name: "Nume"
-        frst_name: "Prenume"
-        mdl_name: "Prenume2"
-        password: "Parolă"
-        login_count: "Nr.Conexiuni"
-        last_login_at: "Ultima conexiune"
-        last_login_ip: "IP ultima conexiune"
-        not_allowed: "Editarea/Adăugarea este permis numai utilizatorului \"<strong>{{id_1}}</strong>\""
-        allowed_text_0: "Dvs. puteţi să "
-        allowed_password_change: "vă modificaţi parola"
-        allowed_text_1: " şi să vă consultaţi "
-        allowed_view_account: "...contul..."
-      edit:
-        password: "Parolă"
-        password_change_title: "Modificare parolă"
-        password_change: "Parola modificată"
-        password_confirmation: "Confirmare parolă"
-      save:
-        create: "Utilizatorul  a fost creat ..."
-        update: "Modificările au fost salvate..."
-        remove: "Utilizatorul <strong>{{login_name}}</strong> a fost şters..."
-        link_to_show: "Detalii cont"
-        link_to_list: "Lista utilizatorilor"
-      show:
-        link_to_edit: "Editare utilizator"
-        link_to_list: "Lista utilizatorilor"
-    db_sys_menu:
-      list:
-        id: "ID"
-        name: "Denumire"
-        controller: "Controllerul invocat"
-        chapter: "Capitolul"
-        page: "Pagina implicită"
-        has_submenu: "Are submeniu ?"
-        title: "Tooltip"
-      save:
-        create: "Elementul din meniu  a fost creat ..."
-        update: "Modificările au fost salvate..."
-        remove: "Elementul din meniu <strong>{{menu_name}}</strong> a fost şters..."
-        link_to_show: "Detalii meniu"
-        link_to_list: "Lista meniurilor"
-      show:
-        link_to_edit: "Editare meniu"
-        link_to_list: "Lista meniurilor"
-    db_sys_submenu:
-      list:
-        id: "ID"
-        name: "Denumire"
-        controller: "Controllerul invocat"
-        chapter: "Capitolul"
-        page: "Pagina implicită"
-        active: "Este activ ?"
-        title: "Tooltip"
-      save:
-        create: "Elementul din submeniu  a fost creat ..."
-        update: "Modificările au fost salvate..."
-        remove: "Elementul din submeniu <strong>{{submenu_name}}</strong> a fost şters..."
-        link_to_show: "Detalii submeniu"
-        link_to_list: "Lista submeniurilor"
-      show:
-        link_to_edit: "Editare submeniu"
-        link_to_list: "Lista submeniurilor"
-    db_sys_page:
-      list:
-        id: "ID"
-        controller: "Controller"
-        chapter: "Capitolul"
-        page: "Pagina"
-        title: "Titlu"
-        intro: "Introducere"
-        actions: "Acțiuni"
-        content: "Conținut"
-        note: "Notă"
-      save:
-        create: "Pagina  a fost creată ..."
-        update: "Modificările au fost salvate..."
-        remove: "Pagina <strong>{{pagina_name}}</strong> a fost ştearsă..."
-        link_to_show: "Detalii pagină"
-        link_to_list: "Lista paginilor"
-      show:
-        link_to_edit: "Editare pagină"
-        link_to_list: "Lista paginilor"
-    db_sys_task:
-      list:
-        trst_sys_page_id: "Pagina"
-        prefix: "Prefix"
-        exe_id: "Identificator"
-        exe_params: "Parametrii"
-        name: "Nume"
-        title: "Titlu"
-        info: "Info"
-      save:
-        create: "Acțiunea  a fost creată ..."
-        update: "Modificările au fost salvate..."
-        remove: "Acțiunea <strong>{{task_name}}</strong> a fost ştearsă..."
-        link_to_show: "Detalii acțiune"
-        link_to_list: "Lista acțiunilor"
-      show:
-        link_to_edit: "Editare acțiune"
-        link_to_list: "Lista acțiunilor"
-    db_prtn:
-      list:
-        id: "Identificator"
-        prefix: "Prefix (S.C. ...)"
-        name: "Nume"
-        suffix: "Suffix (S.A., S.R.L. ...)"
-        full_name: "Nume (S.C. Firma S.R.L.)"
-        namesh: "Nume prescurtat (Porecla)"
-        id_chamcom: "Camera de Comerţ şi Industrie"
-        id_fiscal: "Cod Fiscal"
-        id_itm: "Cod Camera de muncă"
-        id_account: "Cont contabilitate"
-        id_internet: "Adresa IP"
-        address: "Adresa (str. ... nr ....)"
-        city: "Localitate"
-        zip: "Cod poştal"
-        state: "Judeţ"
-        id_country: ""
-        contactpers: "Persoana de contact"
-        contactpers_q: "Funcţia/Calitatea persoanei de contact"
-        tel: "Nr. telefon"
-        fax: "Nr. Fax"
-        email: "Adresa email"
-        webaddress: "Adresa paginei de internet"
-      save:
-        create: "Acțiunea  a fost creată ..."
-        update: "Modificările au fost salvate..."
-        remove: "Firma <strong>{{prtn_name}}</strong> a fost ştearsă..."
-        link_to_show: "Detalii firmă"
-        link_to_list: "Lista firmelor"
-      show:
-        link_to_edit: "Editare firmă"
-        link_to_list: "Lista firmelor"
-    db_hr:
-      list:
-        id: "ID"
-        prefix: "Prefix (dr. etc.)"
-        frst_name: "Prenume"
-        mdl_name: "Prenume2"
-        lst_name: "Nume"
-        stts: "Statut"
-        full_name: "Nume complet"
-      save:
-        create: "Resursa umană  a fost creată ..."
-        update: "Modificările au fost salvate..."
-        remove: "Resursa umană <strong>{{hr_name}}</strong> a fost ştearsă..."
-        link_to_show: "Detalii resursă umană"
-        link_to_list: "Lista resurselor umane"
-      show:
-        link_to_edit: "Editare resursă umană"
-        link_to_list: "Lista resurselor umane"
-    db_hr_pdt:
-      list:
-        id: "ID"
-        hr_name: "Resurse umane (id,nume)"
-        trst_hr_id: "Nume"
-        cnp: "Cod numeric personal"
-        bi_info: "Buletin seria / numărul / eliberat de / la data de"
-        ps_info: "Paşaport seria / numărul / eliberat de / la data de"
-        cttn: "Cetăţenia"
-        adress_info: "Domiciliu stradă(nr) / localitate /judeţ / cod poştal"
-        contact_info: "Contact tel / fax / mobil / email / web"
-      save:
-        create: "Datele personale  au fost create ..."
-        update: "Modificările au fost salvate..."
-        remove: "Datele personale <strong>{{hr_name}}</strong> a fost şterse..."
-        link_to_show: "Detalii date personale"
-        link_to_list: "Lista datelor personale"
-      show:
-        link_to_edit: "Editare date personale"
-        link_to_list: "Lista datelor personale"
-
   date:
     formats:
       default: "%d-%m-%Y"
@@ -226,7 +8,6 @@ ro:
       day_name: "%A"
       day_abbr_month: "%d-%b"
 #      only_day: "%e"
-
     day_names: [Duminică, Luni, Marți, Miercuri, Joi, Vineri, Sâmbată]
     abbr_day_names: [Dum, Lun, Mar, Mie, Joi, Vin, Sâm]
     month_names: [~, Ianuarie, Februarie, Martie, Aprilie, Mai, Iunie, Iulie, August, Septembrie, Octombrie, Noiembrie, Decembrie]
@@ -241,14 +22,11 @@ ro:
       short: "%d %b %H:%M"
       long: "%d %B %Y %H:%M"
 #      only_second: "%S"
-
 #      datetime:
 #        formats:
 #          default: "%d-%m-%YT%H:%M:%S%Z"
-
     am: ''
     pm: ''
-
   datetime:
     distance_in_words:
       half_a_minute: "jumătate de minut"
@@ -325,7 +103,6 @@ ro:
         words_connector: ", "
         two_words_connector: " şi "
         last_word_connector: " şi "
-
   activerecord:
     errors:
       template:
@@ -353,113 +130,5 @@ ro:
         less_than_or_equal_to: "trebuie să fie mai mic sau egal cu {{count}}"
         odd: "trebuie să fie par"
         even: "trebuie să fie impar"
-    attributes:
-      label_attribute : "Câmp"
-      label_value: "Valoare"
-      no_record: "Tabelul nu conţine înregistrări ..."
-      custom_schema_definitions:
-        created_on: "Creat la data de"
-        created_by: "Creat de către"
-        updated_on: "Modificat la data de"
-        updated_by: "Modificat de către"
-        approved_by: "Aprobat de către"
-        authenticated_as: "autentificat ca şi"
-      crud:
-        new: "Adăugare"
-        edit: "Editare"
-        save: "Salvare"
-        remove: "Ştergere"
-        remove_confirm: "!!! Atenţie se va şterge înregistrarea !!!"
-        cancel: "Renunţare"
-        show: "Detalii"
-      paginate:
-        first: "Prima pagină"
-        prev: "Pagina anterioară"
-        next: "Pagina următoare"
-        last: "Ultima pagină"
-      trst_user:
-        id: "Id."
-        login: "Utilizator"
-        frst_name: "Prenume"
-        mdl_name: "Prenume2"
-        lst_name: "Nume"
-        login_count: "Nr.Conexiuni"
-        last_login_at: "Ultima conexiune"
-        last_login_ip: "IP"
-      trst_sys_menu:
-        name: "Nume"
-        controller: "Contr."
-        chapter: "Cap."
-        page: "Pag."
-        has_submenu: "SubM ?"
-        title: "Titlu"
-      trst_sys_submenu:
-        name: "Nume"
-        controller: "Contr."
-        chapter: "Cap."
-        page: "Pag."
-        has_submenu: "Activ ?"
-        title: "Titlu"
-      trst_sys_page:
-        controller: "Contr."
-        chapter: "Cap."
-        page: "Pag."
-        title: "Titlu"
-        intro: "Intro"
-        actions: "Acțiuni"
-        content: "Conținut"
-        note: "Notă"
-      trst_sys_task:
-        trst_sys_page_id: "Pag."
-        Prefix: "Prefix"
-        exe_id: "Identificator"
-        exe_params: "Parametrii"
-        name: "Nume"
-        title: "Titlu"
-        info: "Info"
-      trst_prtn:
-        id: "Id"
-        prefix: "Prefix"
-        name: "Nume"
-        suffix: "Suffix"
-        full_name: "Nume"
-        namesh: "NumeSc."
-        id_chamcom: "J..."
-        id_fiscal: "R..."
-        id_itm: "Cod ITM"
-        id_account: "Cod cont."
-        id_internet: "IP"
-        address: "Adresa"
-        city: "Loc."
-        zip: "Cod post."
-        state: "Jud."
-        id_country: ""
-        contactpers: "Contac.pers"
-        contactpers_q: ""
-        tel: "Tel."
-        fax: "Fax."
-        email: "Email"
-        webaddress: "www"
-        fullname_0_edit: "Prefix (S.C. ...) / Nume / Suffix S.A. ..."
-        fullname_1_edit: "Nr. Cam. Comerţ / Cod Fiscal / Cod ITM / Cont contab."
-        fullname_2_edit: "Adresa (str.nr...)/ Oraş / Cod poştal / Judeţ"
-        fullname_3_edit: "Nr. telefon/ Fax, Mobil / Adresă email"
-      trst_hr:
-        id: "ID"
-        prefix: "Prefix"
-        frst_name: "Prenume"
-        mdl_name: "Prenume2"
-        lst_name: "Nume"
-        stts: "Statut"
-      trst_hr_pdt:
-        id: "ID"
-        trst_hr_id: "Nume"
-        CNP: "CNP"
-        BI_sr: "BI"
-        BI_nr: "BI nr."
-        addr_strt: "Adresă"
-        addr_city: "Localitate"
-        addr_state: "Judeţ"
-        tel: "Tel."
-        mob: "Mobil"
-        email: "Email"
+
+        

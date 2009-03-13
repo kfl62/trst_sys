@@ -3,8 +3,7 @@
 # thanks to KKata, replaced and #hup.hu
 # Cleaned up by László Bácsi (http://lackac.hu)
 # updated by kfl62 kfl62g@gmail.com
-
-"hu":
+hu:
   date:
     formats:
       default: "%Y.%m.%d."
@@ -16,7 +15,6 @@
     month_names: [~, január, február, március, április, május, június, július, augusztus, szeptember, október, november, december]
     abbr_month_names: [~, jan., febr., márc., ápr., máj., jún., júl., aug., szept., okt., nov., dec.]
     order: [ :year, :month, :day ]
-
   time:
     formats:
       default: "%Y. %b %e., %H:%M"
@@ -24,7 +22,6 @@
       long: "%Y. %B %e., %A, %H:%M"
     am: "de."
     pm: "du."
-
   datetime:
     distance_in_words:
       half_a_minute: 'fél perc'
@@ -67,7 +64,6 @@
       hour:   "Óra"
       minute: "Perc"
       second: "Másodperc"
-
   number:
     format:
       precision: 2
@@ -91,7 +87,6 @@
         delimiter: ""
         precision: 1
       storage_units: [bájt, KB, MB, GB, TB]
-
   support:
     array:
       sentence_connector: "és"

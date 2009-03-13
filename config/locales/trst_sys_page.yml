@@ -1,0 +1,103 @@
+en:
+  tasks:
+    db_sys_page:
+      list:
+        id: ""
+        controller: ""
+        chapter: ""
+        page: ""
+        title: ""
+        intro: ""
+        actions: ""
+        content: ""
+        note: ""
+      save:
+        create: ""
+        update: ""
+        remove: ""
+        link_to_show: ""
+        link_to_list: ""
+      show:
+        link_to_edit: ""
+        link_to_list: ""
+  activerecord:
+    attributes:
+      trst_sys_page:
+        controller: ""
+        chapter: ""
+        page: ""
+        title: ""
+        intro: ""
+        actions: ""
+        content: ""
+        note: ""
+
+#Romanian translation
+ro:
+  tasks:
+    db_sys_page:
+      list:
+        id: "ID"
+        controller: "Controller"
+        chapter: "Capitolul"
+        page: "Pagina"
+        title: "Titlu"
+        intro: "Introducere"
+        actions: "Acțiuni"
+        content: "Conținut"
+        note: "Notă"
+      save:
+        create: "Pagina  a fost creată ..."
+        update: "Modificările au fost salvate..."
+        remove: "Pagina <strong>{{pagina_name}}</strong> a fost ştearsă..."
+        link_to_show: "Detalii pagină"
+        link_to_list: "Lista paginilor"
+      show:
+        link_to_edit: "Editare pagină"
+        link_to_list: "Lista paginilor"
+  activerecord:
+    attributes:
+      trst_sys_page:
+        controller: "Contr."
+        chapter: "Cap."
+        page: "Pag."
+        title: "Titlu"
+        intro: "Intro"
+        actions: "Acțiuni"
+        content: "Conținut"
+        note: "Notă"
+
+#Hungarian translation
+hu:
+  tasks:
+    db_sys_page:
+      list:
+        id: ""
+        controller: ""
+        chapter: ""
+        page: ""
+        title: ""
+        intro: ""
+        actions: ""
+        content: ""
+        note: ""
+      save:
+        create: ""
+        update: ""
+        remove: ""
+        link_to_show: ""
+        link_to_list: ""
+      show:
+        link_to_edit: ""
+        link_to_list: ""
+  activerecord:
+    attributes:
+      trst_sys_page:
+        controller: ""
+        chapter: ""
+        page: ""
+        title: ""
+        intro: ""
+        actions: ""
+        content: ""
+        note: ""

@@ -1,0 +1,100 @@
+en:
+  tasks:
+    db_sys_menu:
+      list:
+        id: ""
+        name: ""
+        controller: ""
+        chapter: ""
+        page: ""
+        has_submenu: ""
+        title: ""
+      save:
+        create: ""
+        update: ""
+        remove: ""
+        link_to_show: ""
+        link_to_list: ""
+      show:
+        link_to_edit: ""
+        link_to_list: ""
+  activerecord:
+    attributes:
+      trst_sys_menu:
+        name: ""
+        controller: ""
+        chapter: ""
+        page: ""
+        has_submenu: ""
+        title: ""
+
+#Romanian translation
+ro:
+  tasks:
+    db_sys_menu:
+      list:
+        id: "ID"
+        name: "Denumire"
+        controller: "Controllerul invocat"
+        chapter: "Capitolul"
+        page: "Pagina implicită"
+        has_submenu: "Are submeniu ?"
+        title: "Tooltip"
+      save:
+        create: "Elementul din meniu  a fost creat ..."
+        update: "Modificările au fost salvate..."
+        remove: "Elementul din meniu <strong>{{menu_name}}</strong> a fost şters..."
+        link_to_show: "Detalii meniu"
+        link_to_list: "Lista meniurilor"
+      show:
+        link_to_edit: "Editare meniu"
+        link_to_list: "Lista meniurilor"
+  activerecord:
+    attributes:
+      trst_sys_menu:
+        name: "Nume"
+        controller: "Contr."
+        chapter: "Cap."
+        page: "Pag."
+        has_submenu: "SubM ?"
+        title: "Titlu"
+
+#Hungarian translation
+hu:
+  tasks:
+    db_sys_menu:
+      list:
+        id: ""
+        name: ""
+        controller: ""
+        chapter: ""
+        page: ""
+        has_submenu: ""
+        title: ""
+      save:
+        create: ""
+        update: ""
+        remove: ""
+        link_to_show: ""
+        link_to_list: ""
+      show:
+        link_to_edit: ""
+        link_to_list: ""
+  activerecord:
+    attributes:
+      trst_sys_menu:
+        name: ""
+        controller: ""
+        chapter: ""
+        page: ""
+        has_submenu: ""
+        title: ""
+  activerecord:
+    attributes:
+      trst_sys_menu:
+        name: ""
+        controller: ""
+        chapter: ""
+        page: ""
+        has_submenu: ""
+        title: ""

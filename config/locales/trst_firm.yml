@@ -1,0 +1,22 @@
+en:
+  tasks:
+    db_firm:
+  activerecord:
+    attributes:
+      trst_firm:
+
+#Romanian translation
+ro:
+  tasks:
+    db_firm:
+  activerecord:
+    attributes:
+      trst_firm:
+
+#Hungarian translation
+hu:
+  tasks:
+    db_firm:
+  activerecord:
+    attributes:
+      trst_firm:

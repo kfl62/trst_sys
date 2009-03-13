@@ -1,0 +1,94 @@
+en:
+  tasks:
+    db_sys_task:
+      list:
+        trst_sys_page_id: ""
+        prefix: ""
+        exe_id: ""
+        exe_params: ""
+        name: ""
+        title: ""
+        info: ""
+      save:
+        create: ""
+        update: ""
+        remove: ""
+        link_to_show: ""
+        link_to_list: "Lista acțiunilor"
+      show:
+        link_to_edit: ""
+        link_to_list: ""
+  activerecord:
+    attributes:
+      trst_sys_task:
+        trst_sys_page_id: ""
+        Prefix: ""
+        exe_id: ""
+        exe_params: ""
+        name: ""
+        title: ""
+        info: ""
+
+#Romanian translation
+ro:
+  tasks:
+    db_sys_task:
+      list:
+        trst_sys_page_id: "Pagina"
+        prefix: "Prefix"
+        exe_id: "Identificator"
+        exe_params: "Parametrii"
+        name: "Nume"
+        title: "Titlu"
+        info: "Info"
+      save:
+        create: "Acțiunea  a fost creată ..."
+        update: "Modificările au fost salvate..."
+        remove: "Acțiunea <strong>{{task_name}}</strong> a fost ştearsă..."
+        link_to_show: "Detalii acțiune"
+        link_to_list: "Lista acțiunilor"
+      show:
+        link_to_edit: "Editare acțiune"
+        link_to_list: "Lista acțiunilor"
+  activerecord:
+    attributes:
+      trst_sys_task:
+        trst_sys_page_id: "Pag."
+        Prefix: "Prefix"
+        exe_id: "Identificator"
+        exe_params: "Parametrii"
+        name: "Nume"
+        title: "Titlu"
+        info: "Info"
+
+#Hungarian translation
+hu:
+  tasks:
+    db_sys_task:
+      list:
+        trst_sys_page_id: ""
+        prefix: ""
+        exe_id: ""
+        exe_params: ""
+        name: ""
+        title: ""
+        info: ""
+      save:
+        create: ""
+        update: ""
+        remove: ""
+        link_to_show: ""
+        link_to_list: "Lista acțiunilor"
+      show:
+        link_to_edit: ""
+        link_to_list: ""
+  activerecord:
+    attributes:
+      trst_sys_task:
+        trst_sys_page_id: ""
+        Prefix: ""
+        exe_id: ""
+        exe_params: ""
+        name: ""
+        title: ""
+        info: ""

@@ -1,0 +1,22 @@
+en:
+  tasks:
+    db_payroll_job:
+  activerecord:
+    attributes:
+      db_payroll_job:
+
+#Romanian translation
+ro:
+  tasks:
+    db_payroll_job:
+  activerecord:
+    attributes:
+      db_payroll_job:
+
+#Hungarian translation
+hu:
+  tasks:
+    db_payroll_job:
+  activerecord:
+    attributes:
+      db_payroll_job:

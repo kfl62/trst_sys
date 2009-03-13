@@ -1,0 +1,202 @@
+en:
+  layout:
+    title: ""
+    title_development: ""
+    title_demo: ""
+    title_klclean: ""
+    title_diren: ""
+    title_clean-tech: ""
+    title_clean-cons: ""
+    header:
+      authenticated_as: ""
+    menu:
+      submenu_show: ""
+      submenu_hide: ""
+    page:
+      sys_intro: ""
+      sys_actions: ""
+      sys_note: ""
+    flash:
+      loading: ""
+
+  login:
+    title: ""
+    name: ""
+    password: ""
+    flash:
+      logged_in: ""
+      error: ""
+      logged_out: ""
+      require_user: ""
+      require_no_user: ""
+
+  pages:
+    pg34:
+      tdy: ""
+    mce_edit:
+      title: ""
+      update: ""
+      link_to_edit: ""
+      link_to_list: ""
+
+  activerecord:
+    attributes:
+      label_attribute : ""
+      label_value: ""
+      no_record: ""
+      custom_schema_definitions:
+        created_on: ""
+        created_by: ""
+        updated_on: ""
+        updated_by: ""
+        approved_by: ""
+        authenticated_as: ""
+      crud:
+        new: ""
+        edit: ""
+        save: ""
+        remove: ""
+        remove_confirm: ""
+        cancel: ""
+        show: ""
+      paginate:
+        first: ""
+        prev: ""
+        next: ""
+        last: ""
+
+#Romanian translation
+ro:
+  layout:
+    title: "Firma Dvs."
+    title_development: "Firma Dvs."
+    title_demo: "Demo S.R.L."
+    title_klclean: "klClean"
+    title_diren: "Diren/Continent"
+    title_clean-tech: "Cleantech"
+    title_clean-cons: "Clean Consulting"
+    header:
+      authenticated_as: "Autentificat ca şi:"
+    menu:
+      submenu_show: "Arată submeniul"
+      submenu_hide: "Ascunde submeniul"
+    page:
+      sys_intro: "Info:"
+      sys_actions: "Lista activităţilor"
+      sys_note: "Notă"
+    flash:
+      loading: "O clipă ... acum se încarcă pagina ..."
+
+  login:
+    title: "Autentificare"
+    name: "Utilizator"
+    password: "Parola"
+    flash:
+      logged_in: "Autentificare reuşită ..."
+      error: "Ooops ... autentificare nereuşită ..."
+      logged_out: "Sesiune terminată ..."
+      require_user: "Numai pentru utilizatorii autentificaţi ..."
+      require_no_user: "Numai pentru utilizatorii anonimi ..."
+
+  pages:
+    pg34:
+      tdy: "Astăzi {{dt_long}}, săpt.({{dt_week}}) ziua ({{dt_yday}}) a anului, au mai rămas ({{dt_dylft}}) zile."
+    mce_edit:
+      title: "Editor de text"
+      update: "Modificările la câmpul <strong>\"{{attribut_name}}\"</strong>  au fost salvate, cu următorul conţinut:"
+      link_to_edit: "Înapoi la câmpuri"
+      link_to_list: "Înapoi la tabel"
+
+  activerecord:
+    attributes:
+      label_attribute : "Câmp"
+      label_value: "Valoare"
+      no_record: "Tabelul nu conţine înregistrări ..."
+      custom_schema_definitions:
+        created_on: "Creat la data de"
+        created_by: "Creat de către"
+        updated_on: "Modificat la data de"
+        updated_by: "Modificat de către"
+        approved_by: "Aprobat de către"
+        authenticated_as: "autentificat ca şi"
+      crud:
+        new: "Adăugare"
+        edit: "Editare"
+        save: "Salvare"
+        remove: "Ştergere"
+        remove_confirm: "!!! Atenţie se va şterge înregistrarea !!!"
+        cancel: "Renunţare"
+        show: "Detalii"
+      paginate:
+        first: "Prima pagină"
+        prev: "Pagina anterioară"
+        next: "Pagina următoare"
+        last: "Ultima pagină"
+
+#Hungarian translation
+hu:
+  layout:
+    title: ""
+    title_development: ""
+    title_demo: ""
+    title_klclean: ""
+    title_diren: ""
+    title_clean-tech: ""
+    title_clean-cons: ""
+    header:
+      authenticated_as: ""
+    menu:
+      submenu_show: ""
+      submenu_hide: ""
+    page:
+      sys_intro: ""
+      sys_actions: ""
+      sys_note: ""
+    flash:
+      loading: ""
+
+  login:
+    title: ""
+    name: ""
+    password: ""
+    flash:
+      logged_in: ""
+      error: ""
+      logged_out: ""
+      require_user: ""
+      require_no_user: ""
+
+  pages:
+    pg34:
+      tdy: ""
+    mce_edit:
+      title: ""
+      update: ""
+      link_to_edit: ""
+      link_to_list: ""
+
+  activerecord:
+    attributes:
+      label_attribute : ""
+      label_value: ""
+      no_record: ""
+      custom_schema_definitions:
+        created_on: ""
+        created_by: ""
+        updated_on: ""
+        updated_by: ""
+        approved_by: ""
+        authenticated_as: ""
+      crud:
+        new: ""
+        edit: ""
+        save: ""
+        remove: ""
+        remove_confirm: ""
+        cancel: ""
+        show: ""
+      paginate:
+        first: ""
+        prev: ""
+        next: ""
+        last: ""

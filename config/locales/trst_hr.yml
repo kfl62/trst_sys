@@ -1,0 +1,89 @@
+en:
+  tasks:
+    db_hr:
+      list:
+        id: ""
+        prefix: ""
+        frst_name: ""
+        mdl_name: ""
+        lst_name: ""
+        stts: ""
+        full_name: ""
+      save:
+        create: ""
+        update: ""
+        remove: ""
+        link_to_show: ""
+        link_to_list: ""
+      show:
+        link_to_edit: ""
+        link_to_list: ""
+  activerecord:
+    attributes:
+      trst_hr:
+        id: ""
+        prefix: ""
+        frst_name: ""
+        mdl_name: ""
+        lst_name: ""
+        stts: ""
+#Romanian translation
+ro:
+  tasks:
+    db_hr:
+      list:
+        id: "ID"
+        prefix: "Prefix (dr. etc.)"
+        frst_name: "Prenume"
+        mdl_name: "Prenume2"
+        lst_name: "Nume"
+        stts: "Statut"
+        full_name: "Nume complet"
+      save:
+        create: "Resursa umană  a fost creată ..."
+        update: "Modificările au fost salvate..."
+        remove: "Resursa umană <strong>{{hr_name}}</strong> a fost ştearsă..."
+        link_to_show: "Detalii resursă umană"
+        link_to_list: "Lista resurselor umane"
+      show:
+        link_to_edit: "Editare resursă umană"
+        link_to_list: "Lista resurselor umane"
+  activerecord:
+    attributes:
+      trst_hr:
+        id: "ID"
+        prefix: "Prefix"
+        frst_name: "Prenume"
+        mdl_name: "Prenume"
+        lst_name: "Nume"
+        stts: "Statut"
+#Hungarian translation
+hu:
+  tasks:
+    db_hr:
+      list:
+        id: ""
+        prefix: ""
+        frst_name: ""
+        mdl_name: ""
+        lst_name: ""
+        stts: ""
+        full_name: ""
+      save:
+        create: ""
+        update: ""
+        remove: ""
+        link_to_show: ""
+        link_to_list: ""
+      show:
+        link_to_edit: ""
+        link_to_list: ""
+  activerecord:
+    attributes:
+      trst_hr:
+        id: ""
+        prefix: ""
+        frst_name: ""
+        mdl_name: ""
+        lst_name: ""
+        stts: ""

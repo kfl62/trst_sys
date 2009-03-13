@@ -1,0 +1,91 @@
+en:
+  tasks:
+    db_sys_submenu:
+      list:
+        id: ""
+        name: ""
+        controller: ""
+        chapter: ""
+        page: ""
+        active: ""
+        title: ""
+      save:
+        create: ""
+        update: ""
+        remove: ""
+        link_to_show: ""
+        link_to_list: ""
+      show:
+        link_to_edit: ""
+        link_to_list: ""
+  activerecord:
+    attributes:
+      trst_sys_submenu:
+        name: ""
+        controller: ""
+        chapter: ""
+        page: ""
+        has_submenu: ""
+        title: ""
+
+#Romanian translation
+ro:
+  tasks:
+    db_sys_submenu:
+      list:
+        id: "ID"
+        name: "Denumire"
+        controller: "Controllerul invocat"
+        chapter: "Capitolul"
+        page: "Pagina implicită"
+        active: "Este activ ?"
+        title: "Tooltip"
+      save:
+        create: "Elementul din submeniu  a fost creat ..."
+        update: "Modificările au fost salvate..."
+        remove: "Elementul din submeniu <strong>{{submenu_name}}</strong> a fost şters..."
+        link_to_show: "Detalii submeniu"
+        link_to_list: "Lista submeniurilor"
+      show:
+        link_to_edit: "Editare submeniu"
+        link_to_list: "Lista submeniurilor"
+  activerecord:
+    attributes:
+      trst_sys_submenu:
+        name: "Nume"
+        controller: "Contr."
+        chapter: "Cap."
+        page: "Pag."
+        has_submenu: "Activ ?"
+        title: "Titlu"
+
+#Hungarian translation
+hu:
+  tasks:
+    db_sys_submenu:
+      list:
+        id: ""
+        name: ""
+        controller: ""
+        chapter: ""
+        page: ""
+        active: ""
+        title: ""
+      save:
+        create: ""
+        update: ""
+        remove: ""
+        link_to_show: ""
+        link_to_list: ""
+      show:
+        link_to_edit: ""
+        link_to_list: ""
+  activerecord:
+    attributes:
+      trst_sys_submenu:
+        name: ""
+        controller: ""
+        chapter: ""
+        page: ""
+        has_submenu: ""
+        title: ""
