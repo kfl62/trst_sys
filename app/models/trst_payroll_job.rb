@@ -21,4 +21,10 @@
 #Descriere ....
 
 class TrstPayrollJob < ActiveRecord::Base
+  has_many :trst_hr_employee
+
+  def self.per_page
+    20
+  end
+  
 end

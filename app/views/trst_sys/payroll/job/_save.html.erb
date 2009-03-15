@@ -1,17 +1,17 @@
 <% if params[:obj_id] == "new"
-  params[:replace_me_with_form_for][:created_by] = current_trst_user.id
-  save_obj(Trst.ReplaceMe,params[:obj_id],params[:replace_me_with_form_for])
-  o = find_obj(Trst.ReplaceMe,'last')
+  params[:job][:created_by] = current_trst_user.id
+  save_obj(TrstPayrollJob,params[:obj_id],params[:job])
+  o = find_obj(TrstPayrollJob,'last')
   params[:obj_id] = o.id
-  obs = t('tasks.replace_me_with_trans.save.create')
+  obs = t('tasks.db_payroll_job.save.create')
 elsif params[:remove]
-  o = find_obj(Trst.ReplaceMe,params[:obj_id])
-  obs = t('tasks.replace_me_with_trans.save.remove', :TransParam => o.Value)
-  Trst.ReplaceMe.delete(params[:obj_id])
+  o = find_obj(TrstPayrollJob,params[:obj_id])
+  obs = t('tasks.db_payroll_job.save.remove', :job_name => o.descript)
+  TrstPayrollJob.delete(params[:obj_id])
 else
-  save_obj(Trst.ReplaceMe,params[:obj_id],params[:replace_me_with_form_for])
-  o = find_obj(Trst.ReplaceMe,params[:obj_id])
-  obs = t('tasks.replace_me_with_trans.save.update')
+  save_obj(TrstPayrollJob,params[:obj_id],params[:job])
+  o = find_obj(TrstPayrollJob,params[:obj_id])
+  obs = t('tasks.db_payroll_job.save.update')
 end -%>
 <% if params[:remove] %>
   <div align="center" style="width:400px;height:3em">

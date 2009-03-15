@@ -1,22 +1,66 @@
 en:
   tasks:
     db_payroll_job:
+      list:
+        jobID: ""
+        descript: ""
+      save:
+        create: ""
+        update: ""
+        remove: ""
+        link_to_show: ""
+        link_to_list: ""
+      show:
+        link_to_edit: ""
+        link_to_list: ""
   activerecord:
     attributes:
       db_payroll_job:
+        jobID: ""
+        descript: ""
 
 #Romanian translation
 ro:
   tasks:
     db_payroll_job:
+      list:
+        id: "Id. intern"
+        jobID: "Identificator"
+        descript: "Denumire/Descriere"
+      save:
+        create: "Ocupaţia a fost creată"
+        update: "Modificările au fost salvate..."
+        remove: "Ocupaţia <strong>{{jobID}}</strong> a fost ştearsă..."
+        link_to_show: "Detalii ocupaţii"
+        link_to_list: "Lista ocupaţiilor"
+      show:
+        link_to_edit: "Editare ocupaţie"
+        link_to_list: "Lista ocupaţiilor"
   activerecord:
     attributes:
       db_payroll_job:
+        id: "Id. intern"
+        jobID: "Identificator"
+        descript: "Denumire/Descriere"
 
 #Hungarian translation
 hu:
   tasks:
     db_payroll_job:
+      list:
+        jobID: ""
+        descript: ""
+      save:
+        create: ""
+        update: ""
+        remove: ""
+        link_to_show: ""
+        link_to_list: ""
+      show:
+        link_to_edit: ""
+        link_to_list: ""
   activerecord:
     attributes:
       db_payroll_job:
+        jobID: ""
+        descript: ""
