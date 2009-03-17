@@ -1,4 +1,4 @@
-<% obj = trst_find_all(TrstReplaceMe) ; i = obj.offset %>
+<% obj = trst_find_all(TrstFirm) ; i = obj.offset %>
 <% if obj.length == 0  %>
   <script type="text/javascript"> alert("<%=  t('activerecord.attributes.no_record') %>")</script>
   <script type="text/javascript"> TrstWindow.edit(<%= params[:id] %>,"new");</script>
@@ -7,20 +7,38 @@
   <table class="full">
     <thead>
       <th>&nbsp;</th>
-      <%= th_label_tag obj, :ReplaceMe %>
-      ...
+      <%= th_label_tag obj, :full_name %>
+      <%= th_label_tag obj, :id_chamcom %>
+      <%= th_label_tag obj, :id_fiscal %>
+      <%= th_label_tag obj, :id_itm %>
+      <%= th_label_tag obj, :id_account %>
+      <%= th_label_tag obj, :address %>
+      <%= th_label_tag obj, :city %>
+      <%= th_label_tag obj, :zip %>
+      <%= th_label_tag obj, :state %>
+      <%= th_label_tag obj, :tel %>
+      <%= th_label_tag obj, :manager_id %>
       <th>&nbsp;</th>
     </thead>
     <tbody>
       <% for o in obj %>
         <tr class="<%= cycle("even","odd")%>" >
           <td align="right"><%= i += 1 %>.</td>
-          <%= td_value_tag o, :ReplaceMe %>
-          ...
+          <%= td_value_tag o, :full_name %>
+          <%= td_value_tag o, :id_chamcom %>
+          <%= td_value_tag o, :id_fiscal %>
+          <%= td_value_tag o, :id_itm %>
+          <%= td_value_tag o, :id_account %>
+          <%= td_value_tag o, :address %>
+          <%= td_value_tag o, :city %>
+          <%= td_value_tag o, :zip %>
+          <%= td_value_tag o, :state %>
+          <%= td_value_tag o, :tel %>
+          <td><%= o.trst_hr.lst_name %></td>
           <%= link_to_task o, :last_column %>
       <% end %>
-      <%= last_row_for obj, :row20, {:colspan => .., :offset => i } %>
-      <%= last_row_for obj, :list, {:colspan => .. } %>
+      <%= last_row_for obj, :row20, {:colspan => 13, :offset => i } %>
+      <%= last_row_for obj, :list, {:colspan => 12 } %>
     </tbody>
   </table>
 </div>

@@ -9,9 +9,67 @@ en:
 ro:
   tasks:
     db_firm:
+      list:
+        id: "Identificator"
+        prefix: "Prefix (S.C. ...)"
+        name: "Nume"
+        suffix: "Suffix (S.A., S.R.L. ...)"
+        full_name: "Nume (S.C. Firma S.R.L.)"
+        namesh: "Nume prescurtat (Porecla)"
+        id_chamcom: "Camera de Comerţ şi Industrie"
+        id_fiscal: "Cod Fiscal"
+        id_itm: "Cod Camera de muncă"
+        id_account: "Cont contabilitate"
+        id_internet: "Adresa IP"
+        address: "Adresa (str. ... nr ....)"
+        city: "Localitate"
+        zip: "Cod poştal"
+        state: "Judeţ"
+        tel: "Nr. telefon"
+        fax: "Nr. Fax"
+        email: "Adresa email"
+        webaddress: "Adresa paginei de internet"
+        manager_id: "Manager"
+        mission: "Misiune*"
+        objectives: "Obiective*"
+        name_info: "Prefix (S.C. ...) / Nume / Suffix (S.A. ...)"
+        id_info: "Nr. Cam. Comerţ / Cod Fiscal / Cod ITM / Cont contab."
+        address_info: "Adresa (str.nr...)/ Oraş / Cod poştal / Judeţ"
+        contact_info: "Nr. telefon/ Fax, Mobil / Adresă email"
+      save:
+        create: "Partenerul  a fost creat ..."
+        update: "Modificările au fost salvate..."
+        remove: "P <strong>{{prtn_name}}</strong> a fost ştearsă..."
+        link_to_show: "Detalii firmă"
+        link_to_list: "Lista firmelor"
+      show:
+        link_to_edit: "Editare firmă"
+        link_to_list: "Lista firmelor"
   activerecord:
     attributes:
       trst_firm:
+        id: "Id"
+        prefix: "Prefix"
+        name: "Nume"
+        suffix: "Suffix"
+        full_name: "Nume"
+        namesh: "NumeSc."
+        id_chamcom: "J..."
+        id_fiscal: "R..."
+        id_itm: "Cod ITM"
+        id_account: "Cod cont."
+        id_internet: "IP"
+        address: "Adresa"
+        city: "Loc."
+        zip: "Cod post."
+        state: "Jud."
+        tel: "Tel."
+        fax: "Fax."
+        email: "Email"
+        manager_id: "Manager"
+        webaddress: "www"
+        mission: "Misiune"
+        objectives: "Obiective"
 
 #Hungarian translation
 hu:

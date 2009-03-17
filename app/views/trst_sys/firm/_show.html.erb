@@ -1,5 +1,5 @@
-<div style="width:460px;height:310px">
-  <% o = find_obj(TrstReplaceMe,params[:obj_id]) %>
+<div style="width:500px;height:380px">
+  <% o = find_obj(TrstFirm,params[:obj_id]) %>
   <table style="width:80%; margin:auto;">
     <thead>
       <tr>
@@ -9,8 +9,34 @@
     </thead>
     <tbody align="left">
       <tr>
-        <%= td_label_tag o, :ReplaceMe %>
-        <%= td_value_tag o, :ReplaceMe %>
+        <%= td_label_tag o, :full_name %>
+        <%= td_value_tag o, :full_name %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :namesh %>
+        <%= td_value_tag o, :namesh %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :id_info, nil, {:colspan => '2', :style => 'font-style:italic'} %>
+      </tr>
+      <tr>
+        <%= td_value_tag o, :id_info, :colspan => '2' %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :address_info, nil, {:colspan => '2', :style => 'font-style:italic'} %>
+      </tr>
+      <tr>
+        <%= td_value_tag o, :address_info, :colspan => '2' %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :contact_info, nil, {:colspan => '2', :style => 'font-style:italic'} %>
+      </tr>
+      <tr>
+        <%= td_value_tag o, :contact_info, :colspan => '2' %>
+      </tr>
+      <tr>
+        <%= td_label_tag o, :manager_id %>
+        <td><%= o.trst_hr.full_name %></td>
       </tr>
       <tr>
         <td colspan="2"><hr/></td>

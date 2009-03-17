@@ -12,31 +12,31 @@
 ActiveRecord::Schema.define(:version => 20090311160126) do
 
   create_table "trst_firms", :force => true do |t|
-    t.string   "prefix",      :limit => 10,  :default => "", :null => false
-    t.string   "name",        :limit => 100, :default => "", :null => false
-    t.string   "suffix",      :limit => 10,  :default => "", :null => false
-    t.string   "namesh",      :limit => 10,  :default => "", :null => false
-    t.string   "id_chamcom",  :limit => 25,  :default => "", :null => false
-    t.string   "id_fiscal",   :limit => 15,  :default => "", :null => false
-    t.string   "id_itm",      :limit => 15,  :default => "", :null => false
-    t.string   "id_account",  :limit => 15,  :default => "", :null => false
-    t.string   "id_internet", :limit => 15,  :default => "", :null => false
-    t.string   "adress",      :limit => 100, :default => "", :null => false
-    t.string   "city",        :limit => 30,  :default => "", :null => false
-    t.string   "zip",         :limit => 30,  :default => "", :null => false
-    t.string   "state",       :limit => 30,  :default => "", :null => false
-    t.string   "tel",         :limit => 30,  :default => "", :null => false
-    t.string   "fax",         :limit => 30,  :default => "", :null => false
-    t.string   "email",       :limit => 30,  :default => "", :null => false
-    t.string   "webadress",   :limit => 30,  :default => "", :null => false
-    t.integer  "manager_id",  :limit => 6,   :default => 0,  :null => false
-    t.text     "mission",                    :default => "", :null => false
-    t.text     "objectives",                 :default => "", :null => false
+    t.string   "prefix",      :limit => 10,  :default => "",    :null => false
+    t.string   "name",        :limit => 100, :default => "",    :null => false
+    t.string   "suffix",      :limit => 10,  :default => "",    :null => false
+    t.string   "namesh",      :limit => 10,  :default => "",    :null => false
+    t.string   "id_chamcom",  :limit => 25,  :default => "",    :null => false
+    t.string   "id_fiscal",   :limit => 15,  :default => "",    :null => false
+    t.string   "id_itm",      :limit => 15,  :default => "",    :null => false
+    t.string   "id_account",  :limit => 15,  :default => "",    :null => false
+    t.string   "id_internet", :limit => 15,  :default => "",    :null => false
+    t.string   "address",     :limit => 100, :default => "",    :null => false
+    t.string   "city",        :limit => 30,  :default => "",    :null => false
+    t.string   "zip",         :limit => 30,  :default => "",    :null => false
+    t.string   "state",       :limit => 30,  :default => "",    :null => false
+    t.string   "tel",         :limit => 30,  :default => "",    :null => false
+    t.string   "fax",         :limit => 30,  :default => "",    :null => false
+    t.string   "email",       :limit => 30,  :default => "",    :null => false
+    t.string   "webaddress",  :limit => 30,  :default => "",    :null => false
+    t.integer  "manager_id",  :limit => 6,   :default => 0,     :null => false
+    t.text     "mission",                    :default => ".?.", :null => false
+    t.text     "objectives",                 :default => ".?.", :null => false
     t.datetime "created_on"
-    t.integer  "created_by",  :limit => 6,   :default => 0,  :null => false
+    t.integer  "created_by",  :limit => 6,   :default => 0,     :null => false
     t.datetime "updated_on"
-    t.integer  "updated_by",  :limit => 6,   :default => 0,  :null => false
-    t.integer  "approved_by", :limit => 6,   :default => 0,  :null => false
+    t.integer  "updated_by",  :limit => 6,   :default => 0,     :null => false
+    t.integer  "approved_by", :limit => 6,   :default => 0,     :null => false
   end
 
   create_table "trst_hr_employees", :force => true do |t|
