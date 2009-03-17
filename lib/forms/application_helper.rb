@@ -87,7 +87,7 @@ module Forms::ApplicationHelper
   def td_auto_complete_search(object_name,method, options = {})
     habtm_value = ""
     if method.to_s.split("_").last == "id"
-      habtm_field = method.to_s.gsub(/_id/, "")
+      habtm_field = options[:search_object].underscore
       habtm_method = options[:informal] ? options[:informal] : options[:search_method]
       habtm_value = options[:object].send(habtm_field).send(habtm_method) rescue habtm_value = ""
     end
