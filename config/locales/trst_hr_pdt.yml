@@ -47,7 +47,7 @@ ro:
         bi_info: "Buletin seria / numărul / eliberat de / la data de"
         ps_info: "Paşaport seria / numărul / eliberat de / la data de"
         cttn: "Cetăţenia"
-        adress_info: "Domiciliu stradă(nr) / localitate /judeţ / cod poştal"
+        address_info: "Domiciliu stradă(nr) / localitate /judeţ / cod poştal"
         contact_info: "Contact tel / fax / mobil / email / web"
       save:
         create: "Datele personale  au fost create ..."

@@ -56,7 +56,7 @@ class TrstHrPdt < ActiveRecord::Base
     "  PS  " + self.PS_sr + "." + self.PS_nr + " " + self.PS_elib + " " + I18n.l(self.PS_date, :format => 'date')
   end
 
-  def adress_info
+  def address_info
     self.addr_strt + " " + self.addr_city + " " + self.addr_state + " " + self.addr_zip
   end
 
