@@ -1,4 +1,4 @@
-<div style="width : 380px; height : 260px;">
+<div style="width : 380px; height : 280px;">
   <%  if params[:obj_id] == "new"
     obj = TrstPrtn.new
   else
@@ -15,17 +15,17 @@
       </thead>
       <tbody>
         <tr>
-          <%= f.td_label_tag :full_name,  t('activerecord.attributes.trst_prtn.fullname_0_edit'), {:colspan => 2} %>
+          <%= f.td_label_tag :name_info, nil, {:colspan => 2} %>
         </tr>
         <tr>
           <td colspan="2">
             <%= f.text_field :prefix, {:size => 2} %>
-            <%= f.text_field :name, {:size => 15} %>
+            <%= f.text_field :name, {:size => 27} %>
             <%= f.text_field :suffix, {:size => 3} %>
           </td>
         </tr>
         <tr>
-          <%= f.td_label_tag :full_name,  t('activerecord.attributes.trst_prtn.fullname_1_edit'), {:colspan => 2} %>
+          <%= f.td_label_tag :id_info, nil, {:colspan => 2} %>
         </tr>
         <tr>
           <td colspan="2">
@@ -36,7 +36,7 @@
           </td>
         </tr>
         <tr>
-          <%= f.td_label_tag :full_name, t('activerecord.attributes.trst_prtn.fullname_2_edit'), {:colspan => 2} %>
+          <%= f.td_label_tag :address_info, nil, {:colspan => 2} %>
         </tr>
         <tr>
           <td colspan="2">
@@ -48,16 +48,17 @@
         </tr>
         <tr>
           <%= f.td_label_tag :contactpers %>
-          <%= f.td_text_field :contactpers, {:size => 20 } %>
+          <%= f.td_text_field :contactpers, {:size => 23 } %>
         </tr>
         <tr>
-          <%= f.td_label_tag :full_name, t('activerecord.attributes.trst_prtn.fullname_3_edit'), {:colspan => 2} %>
+          <%= f.td_label_tag :contact_info, nil, {:colspan => 2} %>
         </tr>
         <tr>
           <td colspan="2">
             <%= f.text_field :tel, {:size => 8} %>
             <%= f.text_field :fax, {:size => 8} %>
-            <%= f.text_field :email, {:size => 14} %>
+            <%= f.text_field :email, {:size => 16} %>
+            <%= f.text_field :webaddress, {:size => 40} %>
           </td>
         </tr>
         <%= f.hidden_fields :updated_by => current_trst_user.id %>

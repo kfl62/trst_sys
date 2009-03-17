@@ -1,4 +1,4 @@
-<div style="width:500px;height:440px">
+<div style="width:500px;height:380px">
   <% o = find_obj(TrstPrtn,params[:obj_id]) %>
   <table style="width:80%; margin:auto;">
     <thead>
@@ -17,41 +17,27 @@
         <%= td_value_tag o, :namesh %>
       </tr>
       <tr>
-        <%= td_label_tag o, :id_chamcom %>
-        <%= td_value_tag o, :id_chamcom %>
+        <%= td_label_tag o, :id_info, nil, {:colspan => '2', :style => 'font-style:italic'} %>
       </tr>
       <tr>
-        <%= td_label_tag o, :id_fiscal %>
-        <%= td_value_tag o, :id_fiscal %>
+        <%= td_value_tag o, :id_info, :colspan => '2' %>
       </tr>
       <tr>
-        <%= td_label_tag o, :id_itm %>
-        <%= td_value_tag o, :id_itm %>
+        <%= td_label_tag o, :address_info, nil, {:colspan => '2', :style => 'font-style:italic'} %>
       </tr>
       <tr>
-        <%= td_label_tag o, :id_account %>
-        <%= td_value_tag o, :id_account %>
-      </tr>
-      <tr>
-        <%= td_label_tag o, :id_internet %>
-        <%= td_value_tag o, :id_internet %>
-      </tr>
-      <tr>
-        <%= td_label_tag o, :address %>
-        <%= td_value_tag o, :full_address %>
+        <%= td_value_tag o, :address_info, :colspan => '2' %>
       </tr>
       <tr>
         <%= td_label_tag o, :contactpers %>
         <%= td_value_tag o, :contactpers %>
       </tr>
       <tr>
-        <%= td_label_tag o, :tel %>
-        <%= td_value_tag o, :full_telnr %>
+        <%= td_label_tag o, :contact_info, nil, {:colspan => '2', :style => 'font-style:italic'} %>
       </tr>
       <tr>
-        <%= td_label_tag o, :email %>
-        <%= td_value_tag o, :email %>
-      </tr
+        <%= td_value_tag o, :contact_info, :colspan => '2' %>
+      </tr>
       <tr>
         <td colspan="2"><hr/></td>
       </tr>

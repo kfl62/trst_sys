@@ -21,7 +21,7 @@
 #    t.string   "tel",           :limit => 30,  :default => "",    :null => false
 #    t.string   "fax",           :limit => 30,  :default => "",    :null => false
 #    t.string   "email",         :limit => 30,  :default => "",    :null => false
-#    t.string   "webadress",     :limit => 30,  :default => "",    :null => false
+#    t.string   "webaddress",    :limit => 30,  :default => "",    :null => false
 #    t.boolean  "flag_clb",                     :default => false, :null => false
 #    t.trst
 #  end
@@ -52,18 +52,28 @@ class TrstPrtn < ActiveRecord::Base
     return prefix + ' ' + name + ' ' + suffix
   end
 
-  def full_address
-    address = self.address? ? self.addres : 'str. ?'
+  def id_info
+    chamcom = self.id_chamcom? ? self.id_chamcom : 'J12/.../....'
+    fiscal = self.id_fiscal? ? self.id_fiscal : 'R...'
+    itm = self.id_itm? ? self.id_itm : '...?...'
+    account = self.id_account? ? self.id_account : '...?...'
+    return chamcom + '; ' + fiscal + '; ' + itm + '; ' + account
+  end
+
+  def address_info
+    address = self.address? ? self.address : 'str. ?'
     city = self.city? ? self.city : '...?...'
     zip = self.zip? ? self.zip : '...?...'
     state = self.state? ? self.state : '...?...'
     return address + ', ' + city + ', ' + zip + ', ' + state
   end
 
-  def full_telnr
+  def contact_info
     tel = self.tel? ? self.tel : '...?...'
     fax = self.fax? ? self.fax : '...?...'
-    return tel + ', Fax/Mobil ' + fax
+    email = self.email? ? self.email : '...?...'
+    web = self.webaddress? ? self.webaddress : '...?...'
+    return tel + ' ' + fax + ' ' + email + ' ' + web
   end
 
 end

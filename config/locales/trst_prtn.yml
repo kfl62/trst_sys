@@ -58,10 +58,6 @@ en:
         fax: ""
         email: ""
         webaddress: ""
-        fullname_0_edit: ""
-        fullname_1_edit: ""
-        fullname_2_edit: ""
-        fullname_3_edit: ""
 
 #Romanian translation
 ro:
@@ -90,15 +86,19 @@ ro:
         fax: "Nr. Fax"
         email: "Adresa email"
         webaddress: "Adresa paginei de internet"
+        name_info: "Prefix (S.C. ...) / Nume / Suffix (S.A. ...)"
+        id_info: "Nr. Cam. Comerţ / Cod Fiscal / Cod ITM / Cont contab."
+        address_info: "Adresa (str.nr...)/ Oraş / Cod poştal / Judeţ"
+        contact_info: "Nr. telefon/ Fax, Mobil / Adresă email / Adresă internet"
       save:
         create: "Partenerul  a fost creat ..."
         update: "Modificările au fost salvate..."
-        remove: "Firma <strong>{{prtn_name}}</strong> a fost ştearsă..."
-        link_to_show: "Detalii firmă"
-        link_to_list: "Lista firmelor"
+        remove: "Partenerul <strong>{{prtn_name}}</strong> a fost ştearsă..."
+        link_to_show: "Detalii partener"
+        link_to_list: "Lista patenerilor"
       show:
-        link_to_edit: "Editare firmă"
-        link_to_list: "Lista firmelor"
+        link_to_edit: "Editare partener"
+        link_to_list: "Lista partenerilor"
   activerecord:
     attributes:
       trst_prtn:
@@ -124,10 +124,6 @@ ro:
         fax: "Fax."
         email: "Email"
         webaddress: "www"
-        fullname_0_edit: "Prefix (S.C. ...) / Nume / Suffix S.A. ..."
-        fullname_1_edit: "Nr. Cam. Comerţ / Cod Fiscal / Cod ITM / Cont contab."
-        fullname_2_edit: "Adresa (str.nr...)/ Oraş / Cod poştal / Judeţ"
-        fullname_3_edit: "Nr. telefon/ Fax, Mobil / Adresă email"
 
 #Hungarian translation
 hu:
@@ -190,7 +186,3 @@ hu:
         fax: ""
         email: ""
         webaddress: ""
-        fullname_0_edit: ""
-        fullname_1_edit: ""
-        fullname_2_edit: ""
-        fullname_3_edit: ""
