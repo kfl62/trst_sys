@@ -6,7 +6,7 @@ if params[:has_submenu] == 'true'
   page.insert_html :bottom,
     'nav_main_list',
     '<li>' +
-    link_to_remote( image_tag("forward.gif", :size => "16x13", :title => t('layaout.menu.submenu_show')),{
+    link_to_remote( image_tag("forward.gif", :size => "16x13", :title => t('layout.menu.submenu_show')),{
       :url => {:controller => 'trst_sys', :action => 'pg', :chapter => params[:chapter], :page => '02', :nav_sub_request => true},
       :loading => "$('flash-loading').show()",
       :complete => "$('flash-loading').hide()"
@@ -23,7 +23,7 @@ if params[:nav_sub_request] == 'true'
   page.insert_html :top,
     'nav_main_list',
     '<li>' +
-    link_to_remote( image_tag("back.gif", :size => "16x13", :title => t('layaout.menu.submenu_hide')),{
+    link_to_remote( image_tag("back.gif", :size => "16x13", :title => t('layout.menu.submenu_hide')),{
       :url => {:controller => 'trst_sys', :action => 'pg', :chapter => params[:chapter], :page => '01', :has_submenu => true},
       :loading => "$('flash-loading').show()",
       :complete => "$('flash-loading').hide()"
