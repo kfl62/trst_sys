@@ -55,6 +55,8 @@
 #Descriere ....
 class TrstHrEmployee < ActiveRecord::Base
   belongs_to :trst_hr
+  belongs_to :trst_firm
+  belongs_to :trst_payroll_job
 
   def self.per_page
     20
@@ -62,6 +64,14 @@ class TrstHrEmployee < ActiveRecord::Base
 
   def hr_name
     "( " + self.trst_hr_id.to_s + " )  " + self.trst_hr.full_name
+  end
+
+  def firm_name
+    "( " + self.trst_firm_id.to_s + " )  " + self.trst_firm.full_name
+  end
+
+  def job_name
+    "( " + self.trst_payroll_job.jobID + " )  " + self.trst_payroll_job.descript
   end
   
 end

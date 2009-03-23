@@ -1,5 +1,5 @@
 <div style="width:460px;height:310px">
-  <% o = find_obj(TrstReplaceMe,params[:obj_id]) %>
+  <% o = find_obj(TrstHrEmployee,params[:obj_id]) %>
   <table style="width:80%; margin:auto;">
     <thead>
       <tr>
@@ -9,8 +9,8 @@
     </thead>
     <tbody align="left">
       <tr>
-        <%= td_label_tag o, :ReplaceMe %>
-        <%= td_value_tag o, :ReplaceMe %>
+        <%= td_label_tag o, :id %>
+        <%= td_value_tag o, :id %>
       </tr>
       <tr>
         <td colspan="2"><hr/></td>

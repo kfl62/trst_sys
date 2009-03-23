@@ -1,10 +1,10 @@
-<div style="width : 380px; height : 240px;">
+<div style="width : 380px; height : 320px;">
   <%  if params[:obj_id] == "new"
-    obj = TrstReplaceMe new
+    obj = TrstHrEmployee.new
   else
-    obj = find_obj(TrstReplaceMe,params[:obj_id])
+    obj = find_obj(TrstHrEmployee,params[:obj_id])
   end -%>
-  <% remote_form_for :replace_me_with_form_for, obj,
+  <% remote_form_for :employee, obj,
     :url => {:action => 'task', :id => params[:id], :type => 'save', :obj_id => params[:obj_id]} do |f| %>
     <table style="width:80%; margin:auto;">
       <thead>
@@ -15,8 +15,31 @@
       </thead>
       <tbody>
         <tr>
-          <%= f.td_label_tag :ReplaceMe %>
-          <%= f.td_text_field :ReplaceMe %>
+          <%= f.td_label_tag :trst_hr_id %>
+          <%= f.td_auto_complete_search :trst_hr_id, :size => 24,
+            :search_object => 'TrstHr',
+            :search_method => 'lst_name',
+            :hidden_field_value => 'id',
+            :informal => 'full_name'
+        %>
+        </tr>
+        <tr>
+          <%= f.td_label_tag :trst_firm_id %>
+          <%= f.td_auto_complete_search :trst_firm_id, :size => 24,
+            :search_object => 'TrstFirm',
+            :search_method => 'name',
+            :hidden_field_value => 'id',
+            :informal => 'full_name'
+        %>
+        </tr>
+        <tr>
+          <%= f.td_label_tag :trst_payroll_job_id %>
+          <%= f.td_auto_complete_search :trst_payroll_job_id, :size => 24,
+            :search_object => 'TrstPayrollJob',
+            :search_method => 'descript',
+            :hidden_field_value => 'id',
+            :informal => 'jobID'
+        %>
         </tr>
         <%= f.hidden_fields :updated_by => current_trst_user.id %>
         <%= f.last_row_for :edit %>

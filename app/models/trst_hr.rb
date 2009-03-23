@@ -24,6 +24,7 @@
 #Descriere ....
 class TrstHr < ActiveRecord::Base
   has_one :trst_hr_pdt
+  has_one :trst_hr_employee
   
   def self.per_page
     20
