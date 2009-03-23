@@ -1,6 +1,6 @@
 .*
 !.gitignore
-!.gitmodules
 nbproject
-/vendor/rails/
-/website/
+website
+vendor
+
