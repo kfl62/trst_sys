@@ -30,7 +30,7 @@ Rails::Initializer.run do |config|
   config.gem "sqlite3-ruby", :lib => "sqlite3", :source => "http://gems.rubyforge.org"
   config.gem "authlogic", :source => "http://gems.rubyforge.org"
   config.gem "mislav-will_paginate", :lib => "will_paginate", :source => "http://gems.github.com"
-
+  config.gem "newrelic_rpm"
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
   # :all can be used as a placeholder for all plugins not explicitly named
