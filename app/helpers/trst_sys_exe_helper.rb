@@ -12,14 +12,15 @@ module TrstSysExeHelper
   end
 
   #Vremea la arg1=localitate (implicit Cluj) actualizat din 30-30minute info de la weather.com
-  # url http://xoap.weather.com/weather/local/ROXX0022?cc=*&dayf=1&unit=m
+  # url http://xoap.weather.com/weather/local/ROXX0022?cc=*&dayf=1&unit=m&link=xoap&prod=xoap&par=PartnerID&key=LicenseKey
   # alte localităţi:
   # Arad ROXX0024, Bucureşti(Băneasa) ROXX0012, Constanţa ROXX0034,
   # Craiova ROXX0007, Iaşi ROXX0020, Sibiu ROXX0014, Oradea ROXX0019
   # Braşov ROXX0002, Timişoara ROXX0040 ...etc
-  def weather(arg1="ROXX0022")
+  # arg2,arg3 https://registration.weather.com/ursa/xmloap/step1
+  def weather(arg1="ROXX0022",arg2="1145465919&",arg3="ff3a71a9c4a95620")
     h = Net::HTTP.new('xoap.weather.com', 80)
-    resp, data = h.get('/weather/local/' + arg1 + '?cc=*&dayf=1&unit=m')
+    resp, data = h.get('/weather/local/' + arg1 + '?cc=*&dayf=1&unit=m&link=xoap&prod=xoap&par=' + arg2 + '&key=' + arg3)
     w = Hash.new("weather")
     w["resp"] = resp
     w["city"] = data[data.index('<dnam>') .. data.index('</dnam>') -1]
@@ -30,13 +31,13 @@ module TrstSysExeHelper
     w["tmp"] = data[data.index('<tmp>') .. data.index('</tmp>') -1]
     w["pres"] = data[data.index('<r>') + 3 .. data.index('</r>') -1]
     w["hmid"] = data[data.index('<hmid>') .. data.index('</hmid>') -1]
-    w["ws"] = data[data.index('<s>') + 3  .. data.index('</s>') -1 ]
-    w["wd"] = data[data.index('<t>',850) + 3 .. data.index('</t>',850) -1]
+    w["ws"] = data[data.index('<s>') +3 .. data.index('</s>') -1 ]
+    w["wd"] = data[data.index('<wind>') .. data.index('</wind>') -1].split(' ')[4]
     w["sunr"] = data[data.index('<sunr>') .. data.index('</sunr>') -1]
     w["suns"] = data[data.index('<suns>') .. data.index('</suns>') -1]
 
     w["ws"] = "0" if w["ws"] == "calm"
-    w["wd"] = "Variabil"  if w["wd"] == "CALM" || w["wd"] == "VAR"
+    w["wd"] = "Variabil"  if w["wd"].include? "CALM" or w["wd"].include? "VAR"
     return w
   end
   
@@ -55,8 +56,8 @@ module TrstSysExeHelper
        mnth = mdy.month
        dy = mdy.day
        @dt[i] = mdy
-       @r_eur[i], @d_eur[i] = h.get("/#{yr}/#{mnth}/#{dy}/EUR.bnr")
-       @r_usd[i], @d_usd[i] = h.get("/#{yr}/#{mnth}/#{dy}/USD.bnr")
+       @r_eur[i], @d_eur[i] = h.get("/#{yr}/#{mnth}/#{dy}/eur.bnr")
+       @r_usd[i], @d_usd[i] = h.get("/#{yr}/#{mnth}/#{dy}/usd.bnr")
      end
   end
 
