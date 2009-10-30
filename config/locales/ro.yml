@@ -1,3 +1,5 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails/locale for starting points.
 ro:
   date:
     formats:
@@ -8,7 +10,8 @@ ro:
       day_name: "%A"
       day_abbr_month: "%d-%b"
 #      only_day: "%e"
-    day_names: [Duminică, Luni, Marți, Miercuri, Joi, Vineri, Sâmbată]
+
+    day_names: [Duminică, Luni, Marți, Miercuri, Joi, Vineri, Sâmbătă]
     abbr_day_names: [Dum, Lun, Mar, Mie, Joi, Vin, Sâm]
     month_names: [~, Ianuarie, Februarie, Martie, Aprilie, Mai, Iunie, Iulie, August, Septembrie, Octombrie, Noiembrie, Decembrie]
     abbr_month_names: [~, Ian, Feb, Mar, Apr, Mai, Iun, Iul, Aug, Sep, Oct, Noi, Dec]
@@ -27,6 +30,7 @@ ro:
 #          default: "%d-%m-%YT%H:%M:%S%Z"
     am: ''
     pm: ''
+
   datetime:
     distance_in_words:
       half_a_minute: "jumătate de minut"
@@ -60,6 +64,9 @@ ro:
       over_x_years:
         one:  "mai mult de un an"
         other: "mai mult de {{count}} ani"
+      almost_x_years:
+        one:   "aproape 1 an"
+        other: "aproape {{count}} ani"
     prompts:
       year:   "Anul"
       month:  "Luna"
@@ -95,14 +102,17 @@ ro:
 #        separator: "."
         delimiter: ","
         precision: 1
-      storage_units: [Bytes, KB, MB, GB, TB]
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
 
-  support:
-      array:
-#        sentence_connector: "și"
-        words_connector: ", "
-        two_words_connector: " şi "
-        last_word_connector: " şi "
   activerecord:
     errors:
       template:
@@ -130,5 +140,14 @@ ro:
         less_than_or_equal_to: "trebuie să fie mai mic sau egal cu {{count}}"
         odd: "trebuie să fie par"
         even: "trebuie să fie impar"
+        record_invalid: "Validare nereuşită {{errors}}"
 
-        
+  support:
+    array:
+#        sentence_connector: "și"
+      words_connector: ", "
+      two_words_connector: " şi "
+      last_word_connector: " şi "
+    select:
+      # default value for :prompt => true in FormOptionsHelper
+      prompt: "Alegeţi"

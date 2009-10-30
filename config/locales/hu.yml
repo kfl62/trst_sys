@@ -1,8 +1,5 @@
-# Hungarian translations for Ruby on Rails 
-# by Richard Abonyi (richard.abonyi@gmail.com)
-# thanks to KKata, replaced and #hup.hu
-# Cleaned up by László Bácsi (http://lackac.hu)
-# updated by kfl62 kfl62g@gmail.com
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails/locale for starting points.
 hu:
   date:
     formats:
@@ -15,6 +12,7 @@ hu:
     month_names: [~, január, február, március, április, május, június, július, augusztus, szeptember, október, november, december]
     abbr_month_names: [~, jan., febr., márc., ápr., máj., jún., júl., aug., szept., okt., nov., dec.]
     order: [ :year, :month, :day ]
+
   time:
     formats:
       default: "%Y. %b %e., %H:%M"
@@ -22,6 +20,7 @@ hu:
       long: "%Y. %B %e., %A, %H:%M"
     am: "de."
     pm: "du."
+
   datetime:
     distance_in_words:
       half_a_minute: 'fél perc'
@@ -40,23 +39,26 @@ hu:
         one: '1 perc'
         other: '{{count}} perc'
       about_x_hours:
-        one: 'majdnem 1 óra'
-        other: 'majdnem {{count}} óra'
+        one: 'kb 1 óra'
+        other: 'kb {{count}} óra'
       x_days:
         one: '1 nap'
         other: '{{count}} nap'
       about_x_months:
-        one: 'majdnem 1 hónap'
-        other: 'majdnem {{count}} hónap'
+        one: 'kb 1 hónap'
+        other: 'kb {{count}} hónap'
       x_months:
         one: '1 hónap'
         other: '{{count}} hónap'
       about_x_years:
-        one: 'majdnem 1 év'
-        other: 'majdnem {{count}} év'
+        one: 'kb 1 év'
+        other: 'kb {{count}} év'
       over_x_years:
         one: 'több, mint 1 év'
         other: 'több, mint {{count}} év'
+      almost_x_years:
+        one:   "majdnem 1 év"
+        other: "majdnem {{count}} év"
     prompts:
       year:   "Év"
       month:  "Hónap"
@@ -64,6 +66,7 @@ hu:
       hour:   "Óra"
       minute: "Perc"
       second: "Másodperc"
+
   number:
     format:
       precision: 2
@@ -86,14 +89,17 @@ hu:
       format:
         delimiter: ""
         precision: 1
-      storage_units: [bájt, KB, MB, GB, TB]
-  support:
-    array:
-      sentence_connector: "és"
-      skip_last_comma: true
-      words_connector: ", "
-      two_words_connector: " és "
-      last_word_connector: " és "
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "bájt"
+            other: "bájt"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+
   activerecord:
     errors:
       template:
@@ -121,3 +127,16 @@ hu:
         less_than_or_equal_to: "legfeljebb {{count}} lehet"
         odd: "páratlan kell legyen"
         even: "páros kell legyen"
+        record_invalid: "Sikertelen validálás {{errors}}"
+
+  support:
+    array:
+#      sentence_connector: "és"
+#      skip_last_comma: true
+      words_connector: ", "
+      two_words_connector: " és "
+      last_word_connector: " és "
+    select:
+      # default value for :prompt => true in FormOptionsHelper
+      prompt: "Válasszon"
+      
